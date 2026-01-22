@@ -4,35 +4,83 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Über – weier.digital</title>
+  <meta name="description" content="Kurzprofil – neutral, im Aufbau." />
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap">
-      <a class="brand" href="/">weier.digital</a>
-      <nav class="nav">
-        <a href="/">Start</a>
-        <a href="/leistungen/">Leistungen</a>
-        <a class="active" href="/about/">Über</a>
-        <a href="/kontakt/">Kontakt</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <h1>Über</h1>
-      <p>ERP/CAD Admin · Python · SQL.</p>
-      <p style="margin-top:10px">Fokus: Reporting, Performance, Datenqualität.</p>
-    </section>
-  </main>
+<header class="topbar">
+  <div class="container navrow">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>weier.digital</span>
+    </a>
 
-  <footer class="footer">
-    <div class="wrap foot">
-      <small>© <span id="y"></span> weier.digital</small>
-      <small><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></small>
+    <nav class="menu" aria-label="Navigation">
+      <a class="" href="/">Start</a>
+      <a class="" href="/leistungen/">Leistungen</a>
+      <a class="active" href="/about/">Über</a>
+      <a class="" href="/kontakt/">Kontakt</a>
+    </nav>
+
+    <div class="actions">
+      <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme">
+        <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+          <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a class="btn primary" href="/kontakt/">Anfragen</a>
     </div>
-  </footer>
-  <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="hero">
+  <span class="kicker"><span class="dot"></span> Kurzprofil</span>
+  <h1>Über</h1>
+  <p class="lead">
+    Ich arbeite im Umfeld von Administration, Daten und Engineering‑Prozessen und baue als Nebenprojekt
+    kleine, robuste Verbesserungen: Automatisierung, Pflege, Korrekte Daten.
+  </p>
+  <p class="note">Keine öffentliche Referenzliste (noch). Ziel ist eine saubere, neutrale Präsenz.</p>
+</section>
+
+<section class="split">
+  <div class="panel">
+    <h2>Wofür ich stehe</h2>
+    <ul>
+      <li>Pragmatisch: lieber 1 Schritt, der sitzt</li>
+      <li>Messbar: vorher/nachher statt Gefühl</li>
+      <li>Wartbar: kein Bastel‑Lock‑in</li>
+      <li>Dokumentiert: damit es im Alltag läuft</li>
+    </ul>
+  </div>
+  <div class="panel">
+    <h2>Kompetenzfelder</h2>
+    <ul>
+      <li>Prozessnahes Denken</li>
+      <li>Automatisierung & Datenchecks</li>
+      <li>Reporting/Qualität im Bestandssystem</li>
+      <li>Engineering‑Kontext als Bonus</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footrow">
+    <small>© <span id="y"></span> weier.digital · im Aufbau</small>
+    <small><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></small>
+  </div>
+</footer>
+<script src="/assets/main.js"></script>
+
 </body>
 </html>
