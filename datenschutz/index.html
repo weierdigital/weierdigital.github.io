@@ -4,35 +4,68 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Datenschutz – weier.digital</title>
+  <meta name="description" content="Datenschutzhinweise." />
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap">
-      <a class="brand" href="/">weier.digital</a>
-      <nav class="nav">
-        <a href="/">Start</a>
-        <a href="/leistungen/">Leistungen</a>
-        <a href="/about/">Über</a>
-        <a href="/kontakt/">Kontakt</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <h1>Datenschutz</h1>
-      <p>Platzhalter – bitte ersetzen.</p>
-      <p style="margin-top:10px">Wenn du nichts einbaust: statische Seite, kein Tracking.</p>
-    </section>
-  </main>
+<header class="topbar">
+  <div class="container navrow">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>weier.digital</span>
+    </a>
 
-  <footer class="footer">
-    <div class="wrap foot">
-      <small>© <span id="y"></span> weier.digital</small>
-      <small><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></small>
+    <nav class="menu" aria-label="Navigation">
+      <a class="" href="/">Start</a>
+      <a class="" href="/leistungen/">Leistungen</a>
+      <a class="" href="/about/">Über</a>
+      <a class="" href="/kontakt/">Kontakt</a>
+    </nav>
+
+    <div class="actions">
+      <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme">
+        <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+          <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a class="btn primary" href="/kontakt/">Anfragen</a>
     </div>
-  </footer>
-  <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="hero">
+  <span class="kicker"><span class="dot"></span> Kurz & pragmatisch</span>
+  <h1>Datenschutz</h1>
+  <p class="lead">Diese Seite ist statisch und nutzt kein Tracking (solange nichts Zusätzliches eingebaut wird).</p>
+
+  <div class="panel" style="margin-top:16px">
+    <h2>Was passiert hier?</h2>
+    <ul>
+      <li>Keine Analyse‑Tools, keine Werbe‑Tracker, keine Newsletter‑Formulare.</li>
+      <li>Kontakt erfolgt per E‑Mail (wenn du klickst).</li>
+      <li>Hosting über GitHub Pages – dabei können serverseitige Zugriffsdaten in Logs anfallen.</li>
+    </ul>
+    <p class="note">Wenn später externe Dienste hinzukommen, wird diese Seite aktualisiert.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footrow">
+    <small>© <span id="y"></span> weier.digital · im Aufbau</small>
+    <small><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></small>
+  </div>
+</footer>
+<script src="/assets/main.js"></script>
+
 </body>
 </html>
