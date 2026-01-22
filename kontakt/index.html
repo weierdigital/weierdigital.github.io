@@ -4,45 +4,74 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kontakt – weier.digital</title>
+  <meta name="description" content="Kontakt per E-Mail." />
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap">
-      <a class="brand" href="/">weier.digital</a>
-      <nav class="nav">
-        <a href="/">Start</a>
-        <a href="/leistungen/">Leistungen</a>
-        <a href="/about/">Über</a>
-        <a class="active" href="/kontakt/">Kontakt</a>
-      </nav>
+
+<header class="topbar">
+  <div class="container navrow">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>weier.digital</span>
+    </a>
+
+    <nav class="menu" aria-label="Navigation">
+      <a class="" href="/">Start</a>
+      <a class="" href="/leistungen/">Leistungen</a>
+      <a class="" href="/about/">Über</a>
+      <a class="active" href="/kontakt/">Kontakt</a>
+    </nav>
+
+    <div class="actions">
+      <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme">
+        <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+          <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a class="btn primary" href="/kontakt/">Anfragen</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="wrap">
-    <section class="hero">
-      <h1>Kontakt</h1>
-      <p>Kurze Mail reicht.</p>
+<main class="container">
 
-      <div class="cta">
-        <a class="btn primary"
-           href="mailto:c@weier.digital?subject=Anfrage%20ERP%2FSQL&body=Hi%20Carsten%2C%0A%0Akurz%20das%20Thema%3A%20...%0A%0AERP%3A%20...%0ADB%3A%20...%0ASymptom%3A%20...%0AZiel%20in%2030%20Tagen%3A%20...%0A%0AViele%20Gr%C3%BC%C3%9Fe">
-          c@weier.digital
-        </a>
-      </div>
+<section class="hero">
+  <span class="kicker"><span class="dot"></span> Direkt & unkompliziert</span>
+  <h1>Kontakt</h1>
+  <p class="lead">Kurze Mail reicht. Ein paar Stichpunkte helfen.</p>
 
-      <p style="margin-top:12px">
-        Optional: ERP, Datenbank und 1–2 Symptome (z.B. „Report X langsam“, „Stammdaten-Dubletten“).
-      </p>
-    </section>
-  </main>
+  <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+    <a class="btn primary" href="mailto:c@weier.digital?subject=Anfrage%20%E2%80%93%20Prozess%2FAutomatisierung&body=Hi%20Carsten%2C%0A%0Akurz%20das%20Thema%3A%20...%0A%0AUmfeld%3A%20...%0AProblem%3A%20...%0AZiel%20in%2030%20Tagen%3A%20...%0A%0AViele%20Gr%C3%BC%C3%9Fe">c@weier.digital</a>
+    <a class="btn" href="/leistungen/">Leistungen</a>
+  </div>
 
-  <footer class="footer">
-    <div class="wrap foot">
-      <small>© <span id="y"></span> weier.digital</small>
-      <small><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></small>
-    </div>
-  </footer>
-  <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+  <div class="panel" style="margin-top:16px">
+    <h2>Stichpunkte (optional)</h2>
+    <ul>
+      <li>Was nervt konkret? (z.B. Nachpflege, doppelte Daten, manuelle Exporte)</li>
+      <li>Wie oft passiert es? (täglich/wöchentlich)</li>
+      <li>Was wäre ein guter Erfolg in 30 Tagen?</li>
+    </ul>
+  </div>
+
+  <p class="note">Adresse steht im Impressum. Auf dieser Seite bewusst nicht.</p>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footrow">
+    <small>© <span id="y"></span> weier.digital · im Aufbau</small>
+    <small><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></small>
+  </div>
+</footer>
+<script src="/assets/main.js"></script>
+
 </body>
 </html>
