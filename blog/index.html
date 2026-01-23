@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Blog – weier.digital</title>
-  <meta name="description" content="Notizen zu Projekten und Gedanken" />
+  <meta name="description" content="Projekte und Experimente" />
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
@@ -51,17 +51,65 @@
 
 <section class="page-header">
   <h1>Blog</h1>
-  <p class="lead" data-de="Notizen zu Projekten, Code und Gedanken" 
-     data-en="Notes on projects, code and thoughts">
-    Notizen zu Projekten, Code und Gedanken
+  <p class="lead" data-de="Projekte, Experimente und Gedanken zu Code & Automation" 
+     data-en="Projects, experiments and thoughts on code & automation">
+    Projekte, Experimente und Gedanken zu Code & Automation
   </p>
 </section>
 
-<section class="blog-empty">
-  <p class="empty-message" data-de="Hier entstehen zukünftig Artikel zu Projekten und Experimenten." 
-     data-en="Articles about projects and experiments will appear here in the future.">
-    Hier entstehen zukünftig Artikel zu Projekten und Experimenten.
-  </p>
+<!-- Project Cards -->
+<section class="projects-grid">
+  
+  <!-- PROJECT 1: Drawing Automation -->
+  <article class="project-card">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-tag">Python · CAD</span>
+        <span class="project-status status-active">🚧 In Arbeit</span>
+      </div>
+      <h2><a href="/blog/drawing-automation/">Automatische Zeichnungserstellung</a></h2>
+      <p class="project-description">
+        Eine Python-Anwendung die technische Zeichnungen automatisch aus Excel-Daten 
+        und später direkt aus dem ERP erstellt.
+      </p>
+    </div>
+    
+    <div class="project-footer">
+      <div class="project-stats">
+        <span class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          3 Updates
+        </span>
+        <span class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Gestartet Jan 2026
+        </span>
+      </div>
+      <a href="/blog/drawing-automation/" class="project-link">
+        Alle Updates ansehen →
+      </a>
+    </div>
+  </article>
+
+  <!-- PROJECT 2: Placeholder für nächstes Projekt -->
+  <article class="project-card project-placeholder">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-tag">Coming Soon</span>
+        <span class="project-status status-planned">💡 Geplant</span>
+      </div>
+      <h2>Nächstes Projekt</h2>
+      <p class="project-description">
+        Hier erscheint bald das nächste Projekt...
+      </p>
+    </div>
+  </article>
+
 </section>
 
 </main>
