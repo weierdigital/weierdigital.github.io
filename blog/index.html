@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>[POST_TITLE] – weier.digital</title>
-  <meta name="description" content="[POST_DESCRIPTION]" />
+  <title>Blog – weier.digital</title>
+  <meta name="description" content="Projekte und Experimente" />
   <link rel="stylesheet" href="/assets/style.css" />
-  <link rel="stylesheet" href="/assets/blog-post.css" />
 </head>
 <body>
 
@@ -50,123 +49,68 @@
 
 <main class="container">
 
-<article class="blog-post">
-  <!-- Back Link -->
-  <a href="/blog/" class="back-link">
-    <span data-de="← Zurück zum Blog" data-en="← Back to Blog">← Zurück zum Blog</span>
-  </a>
+<section class="page-header">
+  <h1>Blog</h1>
+  <p class="lead" data-de="Projekte, Experimente und Gedanken zu Code & Automation" 
+     data-en="Projects, experiments and thoughts on code & automation">
+    Projekte, Experimente und Gedanken zu Code & Automation
+  </p>
+</section>
 
-  <!-- Post Header -->
-  <header class="post-header">
-    <div class="post-meta">
-      <span class="post-tag">[PROJECT_TAG]</span>
-      <time class="post-date" datetime="[DATE_ISO]">[DATE_READABLE]</time>
-    </div>
-    <h1>[POST_TITLE]</h1>
-    <p class="post-subtitle">[POST_SUBTITLE]</p>
-  </header>
-
-  <!-- Post Content -->
-  <div class="post-content">
-    
-    <!-- SECTION: Das Problem / Motivation -->
-    <section class="content-section">
-      <h2 data-de="Das Problem" data-en="The Problem">Das Problem</h2>
-      <p>[PROBLEM_TEXT]</p>
-    </section>
-
-    <!-- SECTION: Mein Plan / Ansatz -->
-    <section class="content-section">
-      <h2 data-de="Mein Plan" data-en="My Plan">Mein Plan</h2>
-      <p>[PLAN_INTRO]</p>
-      <ul class="feature-list">
-        <li>[FEATURE_1]</li>
-        <li>[FEATURE_2]</li>
-        <li>[FEATURE_3]</li>
-        <li>[FEATURE_4]</li>
-      </ul>
-    </section>
-
-    <!-- SECTION: Tech Stack -->
-    <section class="content-section">
-      <h2 data-de="Tech Stack" data-en="Tech Stack">Tech Stack</h2>
-      <div class="tech-stack">
-        <span class="tech-badge">[TECH_1]</span>
-        <span class="tech-badge">[TECH_2]</span>
-        <span class="tech-badge">[TECH_3]</span>
-        <span class="tech-badge">[TECH_4]</span>
+<!-- Project Cards -->
+<section class="projects-grid">
+  
+  <!-- PROJECT 1: Drawing Automation -->
+  <article class="project-card">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-tag">Python · CAD</span>
+        <span class="project-status status-active">🚧 In Arbeit</span>
       </div>
-      <p class="tech-note">[TECH_REASONING]</p>
-    </section>
-
-    <!-- SECTION: Aktueller Status (optional für Start-Posts) -->
-    <section class="content-section">
-      <h2 data-de="Status" data-en="Status">Status</h2>
-      <div class="status-box">
-        <div class="status-badge">[STATUS_ICON] [STATUS_TEXT]</div>
-        <p>[STATUS_DETAILS]</p>
-      </div>
-    </section>
-
-    <!-- SECTION: Nächste Schritte (optional) -->
-    <section class="content-section">
-      <h2 data-de="Nächste Schritte" data-en="Next Steps">Nächste Schritte</h2>
-      <ul class="checklist">
-        <li><input type="checkbox" disabled> [NEXT_STEP_1]</li>
-        <li><input type="checkbox" disabled> [NEXT_STEP_2]</li>
-        <li><input type="checkbox" disabled> [NEXT_STEP_3]</li>
-      </ul>
-    </section>
-
-    <!-- SECTION: Code Snippet (optional für Progress Posts) -->
-    <!--
-    <section class="content-section">
-      <h2>Code Snippet</h2>
-      <pre><code class="language-python">[CODE_HERE]</code></pre>
-      <p class="code-explanation">[CODE_EXPLANATION]</p>
-    </section>
-    -->
-
-    <!-- SECTION: Learnings (optional für Abschluss-Posts) -->
-    <!--
-    <section class="content-section">
-      <h2>Was ich gelernt habe</h2>
-      <div class="learnings">
-        <div class="learning-item good">
-          <h3>✅ Was gut lief</h3>
-          <p>[WHAT_WORKED]</p>
-        </div>
-        <div class="learning-item bad">
-          <h3>❌ Was ich anders machen würde</h3>
-          <p>[WHAT_FAILED]</p>
-        </div>
-      </div>
-    </section>
-    -->
-
-  </div>
-
-  <!-- Post Footer -->
-  <footer class="post-footer">
-    <div class="post-closing">
-      <p><strong data-de="Updates folgen..." data-en="Updates coming soon...">Updates folgen...</strong></p>
+      <h2><a href="/blog/drawing-automation/">Automatische Zeichnungserstellung</a></h2>
+      <p class="project-description">
+        Eine Python-Anwendung die technische Zeichnungen automatisch aus Excel-Daten 
+        und später direkt aus dem ERP erstellt.
+      </p>
     </div>
     
-    <!-- Project Timeline (optional) -->
-    <!--
-    <div class="project-timeline">
-      <h3>Projekt Timeline</h3>
-      <ul>
-        <li class="active">📍 Start - Warum ich das baue</li>
-        <li>⏳ Update 1 - Erste Schritte</li>
-        <li>⏳ Update 2 - Challenges</li>
-        <li>⏳ Abschluss - Fertig & Learnings</li>
-      </ul>
+    <div class="project-footer">
+      <div class="project-stats">
+        <span class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          3 Updates
+        </span>
+        <span class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Gestartet Jan 2026
+        </span>
+      </div>
+      <a href="/blog/drawing-automation/" class="project-link">
+        Alle Updates ansehen →
+      </a>
     </div>
-    -->
-  </footer>
+  </article>
 
-</article>
+  <!-- PROJECT 2: Placeholder für nächstes Projekt -->
+  <article class="project-card project-placeholder">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-tag">Coming Soon</span>
+        <span class="project-status status-planned">💡 Geplant</span>
+      </div>
+      <h2>Nächstes Projekt</h2>
+      <p class="project-description">
+        Hier erscheint bald das nächste Projekt...
+      </p>
+    </div>
+  </article>
+
+</section>
 
 </main>
 
