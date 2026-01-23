@@ -17,22 +17,33 @@
     </a>
 
     <nav class="menu" aria-label="Navigation">
-      <a href="/">Start</a>
-      <a href="/about/">Über</a>
+      <a href="/">
+        <span data-de="Start" data-en="Home">Start</span>
+      </a>
+      <a href="/about/">
+        <span data-de="Über" data-en="About">Über</span>
+      </a>
       <a class="active" href="/blog/">Blog</a>
-      <a href="/kontakt/">Kontakt</a>
+      <a href="/kontakt/">
+        <span data-de="Kontakt" data-en="Contact">Kontakt</span>
+      </a>
     </nav>
 
-    <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme wechseln">
-      <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
-        <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
+    <div class="actions">
+      <button class="btn iconbtn" id="langToggle" type="button" aria-label="Language">
+        <span class="lang-label">DE</span>
+      </button>
+      <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme">
+        <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+          <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -40,11 +51,17 @@
 
 <section class="page-header">
   <h1>Blog</h1>
-  <p class="lead">Notizen zu Projekten, Code und Gedanken</p>
+  <p class="lead" data-de="Notizen zu Projekten, Code und Gedanken" 
+     data-en="Notes on projects, code and thoughts">
+    Notizen zu Projekten, Code und Gedanken
+  </p>
 </section>
 
 <section class="blog-empty">
-  <p class="empty-message">Hier entstehen zukünftig Artikel zu Projekten und Experimenten.</p>
+  <p class="empty-message" data-de="Hier entstehen zukünftig Artikel zu Projekten und Experimenten." 
+     data-en="Articles about projects and experiments will appear here in the future.">
+    Hier entstehen zukünftig Artikel zu Projekten und Experimenten.
+  </p>
 </section>
 
 </main>
@@ -53,8 +70,12 @@
   <div class="container footrow">
     <small>© <span id="y"></span> Carsten Weier</small>
     <small>
-      <a href="/impressum/">Impressum</a> · 
-      <a href="/datenschutz/">Datenschutz</a>
+      <a href="/impressum/">
+        <span data-de="Impressum" data-en="Legal Notice">Impressum</span>
+      </a> · 
+      <a href="/datenschutz/">
+        <span data-de="Datenschutz" data-en="Privacy">Datenschutz</span>
+      </a>
     </small>
   </div>
 </footer>
