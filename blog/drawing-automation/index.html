@@ -3,9 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Automatische Zeichnungserstellung – weier.digital</title>
-  <meta name="description" content="Alle Updates zum Zeichnungs-Automatisierungs-Projekt" />
+
+  <title data-de="Automatische Zeichnungserstellung – weier.digital" data-en="Automated Drawing Generation – weier.digital">
+    Automatische Zeichnungserstellung – weier.digital
+  </title>
+
+  <meta name="description" content="Projekt-Updates zur automatischen Zeichnungserstellung (Excel → Zeichnung → später ERP)." />
+
   <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/blog-post.css" />
 </head>
 <body>
 
@@ -49,128 +55,227 @@
 
 <main class="container">
 
-<div class="project-page">
-  <!-- Back Link -->
-  <a href="/blog/" class="back-link">← Zurück zur Blog-Übersicht</a>
+  <div class="project-page">
 
-  <!-- Project Header -->
-  <header class="project-page-header">
-    <div class="project-meta">
-      <span class="project-tag">Python · CAD</span>
-      <span class="project-status status-active">🚧 In Arbeit</span>
-    </div>
-    <h1>Automatische Zeichnungserstellung</h1>
-    <p class="project-intro">
-      Eine Python-Anwendung die technische Zeichnungen automatisch aus Excel-Daten 
-      erstellt und später direkt ans ERP-System angebunden wird.
-    </p>
-    
-    <div class="project-quick-info">
-      <div class="info-item">
-        <strong>Gestartet:</strong> Januar 2026
-      </div>
-      <div class="info-item">
-        <strong>Status:</strong> Phase 1 - Excel Parser
-      </div>
-      <div class="info-item">
-        <strong>Tech:</strong> Python, pandas, matplotlib, ezdxf
-      </div>
-    </div>
-  </header>
+    <a href="/blog/" class="back-link">← <span data-de="Zurück zur Blog-Übersicht" data-en="Back to blog overview">Zurück zur Blog-Übersicht</span></a>
 
-  <!-- Timeline / Posts -->
-  <section class="project-timeline-section">
-    <h2>Projekt Updates</h2>
-    
-    <!-- Post 1 -->
-    <article class="timeline-post">
-      <div class="timeline-marker">
-        <span class="marker-icon">📍</span>
+    <header class="project-page-header">
+      <div class="project-meta">
+        <span class="project-tag">Python · CAD</span>
+        <span class="project-status status-active" data-de="🚧 In Arbeit" data-en="🚧 In progress">🚧 In Arbeit</span>
       </div>
-      <div class="timeline-content">
-        <div class="post-meta-small">
-          <time datetime="2026-01-23">23. Januar 2026</time>
-          <span class="post-number">#1</span>
+
+      <h1 data-de="Automatische Zeichnungserstellung" data-en="Automated Drawing Generation">
+        Automatische Zeichnungserstellung
+      </h1>
+
+      <p class="project-intro" data-de="Eine kleine, robuste Pipeline: Excel → Validierung → Zeichnung. Später: ERP-Anbindung."
+         data-en="A small, robust pipeline: Excel → validation → drawing. Later: ERP integration.">
+        Eine kleine, robuste Pipeline: Excel → Validierung → Zeichnung. Später: ERP-Anbindung.
+      </p>
+
+      <div class="project-quick-info">
+        <div class="info-item">
+          <strong data-de="Gestartet:" data-en="Started:">Gestartet:</strong> Januar 2026
         </div>
-        <h3><a href="/blog/drawing-automation/01-start.html">Projekt-Start: Warum ich das baue</a></h3>
-        <p>
-          Das Problem definiert, den Tech-Stack gewählt und die ersten Schritte geplant. 
-          Warum manuelle Zeichnungserstellung Zeitverschwendung ist und wie ich das lösen will.
-        </p>
-        <a href="/blog/drawing-automation/01-start.html" class="read-more">Weiterlesen →</a>
-      </div>
-    </article>
-
-    <!-- Post 2 - Placeholder -->
-    <article class="timeline-post upcoming">
-      <div class="timeline-marker">
-        <span class="marker-icon">⏳</span>
-      </div>
-      <div class="timeline-content">
-        <div class="post-meta-small">
-          <span class="coming-soon">Demnächst</span>
-          <span class="post-number">#2</span>
+        <div class="info-item">
+          <strong data-de="Status:" data-en="Status:">Status:</strong>
+          <span data-de="Phase 1 – Excel Parser" data-en="Phase 1 – Excel parser">Phase 1 – Excel Parser</span>
         </div>
-        <h3>Update: Excel-Parser & erste Tests</h3>
-        <p>
-          Excel einlesen, Daten validieren und die ersten Stolpersteine beim Parsing. 
-          Plus: Welche Libraries ich teste.
-        </p>
-      </div>
-    </article>
-
-    <!-- Post 3 - Placeholder -->
-    <article class="timeline-post upcoming">
-      <div class="timeline-marker">
-        <span class="marker-icon">⏳</span>
-      </div>
-      <div class="timeline-content">
-        <div class="post-meta-small">
-          <span class="coming-soon">Demnächst</span>
-          <span class="post-number">#3</span>
+        <div class="info-item">
+          <strong data-de="Tech:" data-en="Tech:">Tech:</strong> Python, pandas, openpyxl, ezdxf
         </div>
-        <h3>Proof-of-Concept: Erste Zeichnung</h3>
-        <p>
-          Die erste automatisch generierte Zeichnung aus Excel-Daten. 
-          Simple Rechtecke mit Maßen - aber es funktioniert!
+      </div>
+    </header>
+
+    <!-- MAIN COLUMN -->
+    <section class="project-timeline-section">
+
+      <!-- Minimal “Latest Update” highlight -->
+      <div class="latest-update">
+        <div class="latest-update-head">
+          <span class="latest-pill" data-de="Neustes Update" data-en="Latest update">Neustes Update</span>
+          <time class="latest-date" datetime="2026-01-23">23. Januar 2026</time>
+        </div>
+        <h2 class="latest-title">
+          <a href="#post-1" data-de="Projekt-Start: Warum ich das baue" data-en="Kick-off: Why I'm building this">
+            Projekt-Start: Warum ich das baue
+          </a>
+        </h2>
+        <p class="latest-excerpt" data-de="Problem definiert, Tech-Stack gewählt, erster Plan. Fokus: weniger Handarbeit, mehr Datenqualität."
+           data-en="Problem defined, stack chosen, first plan. Focus: less manual work, better data quality.">
+          Problem definiert, Tech-Stack gewählt, erster Plan. Fokus: weniger Handarbeit, mehr Datenqualität.
         </p>
+        <a class="read-more" href="#post-1" data-de="Zum Update →" data-en="Go to update →">Zum Update →</a>
       </div>
-    </article>
 
-  </section>
+      <h2 data-de="Projekt Updates" data-en="Project updates">Projekt Updates</h2>
 
-  <!-- Project Resources (Optional) -->
-  <aside class="project-sidebar">
-    <div class="sidebar-card">
-      <h3>Tech Stack</h3>
-      <div class="tech-list">
-        <span class="tech-item">Python 3.11</span>
-        <span class="tech-item">pandas</span>
-        <span class="tech-item">openpyxl</span>
-        <span class="tech-item">matplotlib</span>
-        <span class="tech-item">ezdxf</span>
+      <!-- Timeline -->
+      <article class="timeline-post">
+        <div class="timeline-marker">
+          <span class="marker-icon" aria-hidden="true">📍</span>
+        </div>
+        <div class="timeline-content">
+          <div class="post-meta-small">
+            <time datetime="2026-01-23">23. Januar 2026</time>
+            <span class="post-number">#1</span>
+          </div>
+          <h3>
+            <a href="#post-1" data-de="Projekt-Start: Warum ich das baue" data-en="Kick-off: Why I'm building this">
+              Projekt-Start: Warum ich das baue
+            </a>
+          </h3>
+          <p data-de="Das Problem, Zielbild und der pragmatische Start: Excel rein, Regeln drauf, Zeichnung raus."
+             data-en="Problem, target picture and pragmatic start: Excel in, rules on top, drawing out.">
+            Das Problem, Zielbild und der pragmatische Start: Excel rein, Regeln drauf, Zeichnung raus.
+          </p>
+          <a href="#post-1" class="read-more" data-de="Weiterlesen →" data-en="Read →">Weiterlesen →</a>
+        </div>
+      </article>
+
+      <article class="timeline-post upcoming">
+        <div class="timeline-marker">
+          <span class="marker-icon" aria-hidden="true">⏳</span>
+        </div>
+        <div class="timeline-content">
+          <div class="post-meta-small">
+            <span class="coming-soon" data-de="Demnächst" data-en="Soon">Demnächst</span>
+            <span class="post-number">#2</span>
+          </div>
+          <h3 data-de="Update: Excel-Parser & erste Tests" data-en="Update: Excel parser & first tests">
+            Update: Excel-Parser & erste Tests
+          </h3>
+          <p data-de="Excel einlesen, Daten validieren, erste Stolpersteine beim Parsing – und welche Libraries sich lohnen."
+             data-en="Reading Excel, validating data, first parsing pitfalls – and which libraries are worth it.">
+            Excel einlesen, Daten validieren, erste Stolpersteine beim Parsing – und welche Libraries sich lohnen.
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-post upcoming">
+        <div class="timeline-marker">
+          <span class="marker-icon" aria-hidden="true">⏳</span>
+        </div>
+        <div class="timeline-content">
+          <div class="post-meta-small">
+            <span class="coming-soon" data-de="Demnächst" data-en="Soon">Demnächst</span>
+            <span class="post-number">#3</span>
+          </div>
+          <h3 data-de="Proof-of-Concept: Erste Zeichnung" data-en="Proof of concept: First drawing">
+            Proof-of-Concept: Erste Zeichnung
+          </h3>
+          <p data-de="Die erste automatisch generierte Zeichnung aus Excel-Daten. Simple – aber Ende-zu-Ende."
+             data-en="The first automatically generated drawing from Excel data. Simple – but end-to-end.">
+            Die erste automatisch generierte Zeichnung aus Excel-Daten. Simple – aber Ende-zu-Ende.
+          </p>
+        </div>
+      </article>
+
+      <!-- Full Update Content (inline; avoids broken links) -->
+      <section class="post-details-section" aria-label="Post Details">
+        <article class="post-detail" id="post-1">
+          <header class="post-header">
+            <h2 data-de="Projekt-Start: Warum ich das baue" data-en="Kick-off: Why I'm building this">
+              Projekt-Start: Warum ich das baue
+            </h2>
+            <div class="post-meta">
+              <time datetime="2026-01-23">23. Januar 2026</time>
+              <span aria-hidden="true">•</span>
+              <span class="post-meta-tag">Python · CAD</span>
+            </div>
+          </header>
+
+          <div class="post-content">
+            <p data-de="In vielen Engineering-Umgebungen ist Zeichnungserstellung noch erstaunlich viel Handarbeit: Maße aus Excel übertragen, Varianten pflegen, Checks per Augenmaß. Das ist fehleranfällig und frisst Zeit."
+               data-en="In many engineering environments, drawing creation still involves a lot of manual work: transferring dimensions from Excel, maintaining variants, eyeballing checks. It's error-prone and time-consuming.">
+              In vielen Engineering-Umgebungen ist Zeichnungserstellung noch erstaunlich viel Handarbeit: Maße aus Excel übertragen, Varianten pflegen, Checks per Augenmaß. Das ist fehleranfällig und frisst Zeit.
+            </p>
+
+            <h3 data-de="Das Problem" data-en="The problem">Das Problem</h3>
+            <ul>
+              <li data-de="Wiederholarbeit erzeugt Fehler und Inkonsistenzen" data-en="Repetition creates errors and inconsistencies">Wiederholarbeit erzeugt Fehler und Inkonsistenzen</li>
+              <li data-de="Änderungen/Varianten kosten unverhältnismäßig viel" data-en="Changes/variants cost disproportionately">Änderungen/Varianten kosten unverhältnismäßig viel</li>
+              <li data-de="Stammdatenqualität leidet, weil es keinen sauberen „Single Source“-Pfad gibt" data-en="Master data quality suffers without a clean single-source path">Stammdatenqualität leidet, weil es keinen sauberen „Single Source“-Pfad gibt</li>
+            </ul>
+
+            <h3 data-de="Ziel" data-en="Goal">Ziel</h3>
+            <p data-de="Eine kleine, robuste Pipeline: Excel rein → Validierung/Regeln → Zeichnung raus. Später als nächster Schritt: ERP-Anbindung."
+               data-en="A small, robust pipeline: Excel in → validation/rules → drawing out. Next step later: ERP integration.">
+              Eine kleine, robuste Pipeline: Excel rein → Validierung/Regeln → Zeichnung raus. Später als nächster Schritt: ERP-Anbindung.
+            </p>
+
+            <h3 data-de="Ansatz" data-en="Approach">Ansatz</h3>
+            <ul>
+              <li data-de="Excel-Schema festziehen (Pflichtfelder, Einheiten, Namenskonventionen)" data-en="Lock down Excel schema (required fields, units, naming)">Excel-Schema festziehen (Pflichtfelder, Einheiten, Namenskonventionen)</li>
+              <li data-de="Validierung: Plausibilität, Wertebereiche, Dubletten, fehlende Daten" data-en="Validation: plausibility, ranges, duplicates, missing data">Validierung: Plausibilität, Wertebereiche, Dubletten, fehlende Daten</li>
+              <li data-de="Zeichnung zuerst simpel (PoC), dann iterativ erweitern" data-en="Start with a simple PoC drawing, then iterate">Zeichnung zuerst simpel (PoC), dann iterativ erweitern</li>
+            </ul>
+
+            <h3 data-de="Nächste Schritte" data-en="Next steps">Nächste Schritte</h3>
+            <ul>
+              <li data-de="Parser + Validierungsregeln (erste Fehlerfälle abfangen)" data-en="Parser + validation rules (handle first edge cases)">Parser + Validierungsregeln (erste Fehlerfälle abfangen)</li>
+              <li data-de="PoC: erste Zeichnung Ende-zu-Ende generieren" data-en="PoC: generate first drawing end-to-end">PoC: erste Zeichnung Ende-zu-Ende generieren</li>
+              <li data-de="Export/Versionierung + kleines Change-Log" data-en="Export/versioning + small change log">Export/Versionierung + kleines Change-Log</li>
+            </ul>
+
+            <p class="post-cta">
+              <span data-de="Wenn du sowas bei dir auch hast:" data-en="If you have a similar case:">Wenn du sowas bei dir auch hast:</span>
+              <a href="/kontakt/" data-de="Schreib mir kurz →" data-en="Send me a note →">Schreib mir kurz →</a>
+            </p>
+
+            <p class="post-toplink">
+              <a href="#top" data-de="Nach oben ↑" data-en="Back to top ↑">Nach oben ↑</a>
+            </p>
+          </div>
+        </article>
+      </section>
+
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="project-sidebar">
+
+      <div class="sidebar-card">
+        <h3 data-de="Tech Stack" data-en="Tech stack">Tech Stack</h3>
+        <div class="tech-list">
+          <span class="tech-item">Python</span>
+          <span class="tech-item">pandas</span>
+          <span class="tech-item">openpyxl</span>
+          <span class="tech-item">ezdxf</span>
+        </div>
       </div>
-    </div>
 
-    <div class="sidebar-card">
-      <h3>Projekt Phasen</h3>
-      <ul class="phase-list">
-        <li class="phase-active">📍 Phase 1: Excel → Zeichnung</li>
-        <li>⏳ Phase 2: ERP-Integration</li>
-        <li>⏳ Phase 3: Template-System</li>
-        <li>⏳ Phase 4: DXF/PDF Export</li>
-      </ul>
-    </div>
-  </aside>
+      <div class="sidebar-card">
+        <h3 data-de="Projekt Phasen" data-en="Project phases">Projekt Phasen</h3>
+        <ul class="phase-list">
+          <li class="phase-active" data-de="📍 Phase 1: Excel → Zeichnung" data-en="📍 Phase 1: Excel → drawing">📍 Phase 1: Excel → Zeichnung</li>
+          <li data-de="⏳ Phase 2: ERP-Integration" data-en="⏳ Phase 2: ERP integration">⏳ Phase 2: ERP-Integration</li>
+          <li data-de="⏳ Phase 3: Template-System" data-en="⏳ Phase 3: Template system">⏳ Phase 3: Template-System</li>
+          <li data-de="⏳ Phase 4: DXF/PDF Export" data-en="⏳ Phase 4: DXF/PDF export">⏳ Phase 4: DXF/PDF Export</li>
+        </ul>
+      </div>
 
-</div>
+      <div class="sidebar-card cta-side">
+        <h3 data-de="Ihr Projekt" data-en="Your project">Ihr Projekt</h3>
+        <p class="sidebar-text"
+           data-de="Wenn du Prozesse, Datenqualität oder Engineering-Workflows verbessern willst: kurz beschreiben – ich melde mich."
+           data-en="If you want to improve processes, data quality or engineering workflows: describe it briefly – I’ll reply.">
+          Wenn du Prozesse, Datenqualität oder Engineering-Workflows verbessern willst: kurz beschreiben – ich melde mich.
+        </p>
+        <a class="btn primary" href="/kontakt/" data-de="Kontakt →" data-en="Contact →">Kontakt →</a>
+      </div>
+
+    </aside>
+
+  </div>
 
 </main>
 
-<footer class="footer">
+<footer class="footer" id="top">
   <div class="container footrow">
     <small>© <span id="y"></span> Carsten Weier</small>
-    
+
     <div class="footer-social">
       <a href="https://www.linkedin.com/in/carsten-weier-a241001a2/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor" class="footer-social-icon">
@@ -183,11 +288,11 @@
         </svg>
       </a>
     </div>
-    
+
     <small>
       <a href="/impressum/">
         <span data-de="Impressum" data-en="Legal Notice">Impressum</span>
-      </a> · 
+      </a> ·
       <a href="/datenschutz/">
         <span data-de="Datenschutz" data-en="Privacy">Datenschutz</span>
       </a>
