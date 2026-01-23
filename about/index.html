@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Über – weier.digital</title>
-  <meta name="description" content="Kurzprofil – neutral, im Aufbau." />
+  <meta name="description" content="Über Carsten Weier" />
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
@@ -17,70 +17,89 @@
     </a>
 
     <nav class="menu" aria-label="Navigation">
-      <a class="" href="/">Start</a>
-      <a class="" href="/leistungen/">Leistungen</a>
+      <a href="/">Start</a>
       <a class="active" href="/about/">Über</a>
-      <a class="" href="/kontakt/">Kontakt</a>
+      <a href="/blog/">Blog</a>
+      <a href="/kontakt/">Kontakt</a>
     </nav>
 
-    <div class="actions">
-      <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme">
-        <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
-          <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <a class="btn primary" href="/kontakt/">Anfragen</a>
-    </div>
+    <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme wechseln">
+      <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+        <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
 </header>
 
 <main class="container">
 
-<section class="hero">
-  <span class="kicker"><span class="dot"></span> Kurzprofil</span>
-  <h1>Über</h1>
+<section class="page-header">
+  <h1>Über mich</h1>
   <p class="lead">
-    Ich arbeite im Umfeld von Administration, Daten und Engineering‑Prozessen und baue als Nebenprojekt
-    kleine, robuste Verbesserungen: Automatisierung, Pflege, Korrekte Daten.
+    Ich arbeite im Umfeld von Administration, Daten und Engineering-Prozessen.
   </p>
-  <p class="note">Keine öffentliche Referenzliste (noch). Ziel ist eine saubere, neutrale Präsenz.</p>
 </section>
 
-<section class="split">
-  <div class="panel">
-    <h2>Wofür ich stehe</h2>
-    <ul>
-      <li>Pragmatisch: lieber 1 Schritt, der sitzt</li>
-      <li>Messbar: vorher/nachher statt Gefühl</li>
-      <li>Wartbar: kein Bastel‑Lock‑in</li>
-      <li>Dokumentiert: damit es im Alltag läuft</li>
-    </ul>
+<section class="about-content">
+  <div class="about-section">
+    <h2>Was ich mache</h2>
+    <p>
+      Ich baue kleine, robuste Verbesserungen in bestehenden Systemen – 
+      Automatisierung, Datenpflege und Qualitätschecks im ERP- und Engineering-Umfeld.
+    </p>
   </div>
-  <div class="panel">
-    <h2>Kompetenzfelder</h2>
-    <ul>
-      <li>Prozessnahes Denken</li>
-      <li>Automatisierung & Datenchecks</li>
-      <li>Reporting/Qualität im Bestandssystem</li>
-      <li>Engineering‑Kontext als Bonus</li>
-    </ul>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Technik</h3>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">ERP</span>
+        <span class="tech-tag">CAD</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Fokus</h3>
+      <div class="tech-tags">
+        <span class="tech-tag">Prozesse</span>
+        <span class="tech-tag">Automation</span>
+        <span class="tech-tag">Datenqualität</span>
+        <span class="tech-tag">Engineering</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Ansatz</h3>
+      <div class="tech-tags">
+        <span class="tech-tag">Pragmatisch</span>
+        <span class="tech-tag">Messbar</span>
+        <span class="tech-tag">Wartbar</span>
+        <span class="tech-tag">Dokumentiert</span>
+      </div>
+    </div>
   </div>
+
 </section>
 
 </main>
 
 <footer class="footer">
   <div class="container footrow">
-    <small>© <span id="y"></span> weier.digital · im Aufbau</small>
-    <small><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></small>
+    <small>© <span id="y"></span> Carsten Weier</small>
+    <small>
+      <a href="/impressum/">Impressum</a> · 
+      <a href="/datenschutz/">Datenschutz</a>
+    </small>
   </div>
 </footer>
-<script src="/assets/main.js"></script>
 
+<script src="/assets/main.js"></script>
 </body>
 </html>
