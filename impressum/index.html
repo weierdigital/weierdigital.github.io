@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Impressum – weier.digital</title>
-  <meta name="description" content="Impressum." />
+  <meta name="description" content="Impressum" />
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
@@ -17,46 +17,57 @@
     </a>
 
     <nav class="menu" aria-label="Navigation">
-      <a class="" href="/">Start</a>
-      <a class="" href="/leistungen/">Leistungen</a>
-      <a class="" href="/about/">Über</a>
-      <a class="" href="/kontakt/">Kontakt</a>
+      <a href="/">Start</a>
+      <a href="/about/">Über</a>
+      <a href="/blog/">Blog</a>
+      <a href="/kontakt/">Kontakt</a>
     </nav>
 
-    <div class="actions">
-      <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme">
-        <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
-          <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <a class="btn primary" href="/kontakt/">Anfragen</a>
-    </div>
+    <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme wechseln">
+      <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+        <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
 </header>
 
 <main class="container">
 
-<section class="hero">
-  <span class="kicker"><span class="dot"></span> Angaben gemäß § 5 DDG</span>
+<section class="page-header">
   <h1>Impressum</h1>
-  <p class="lead">Kontakt & Verantwortlicher.</p>
+  <p class="lead">Angaben gemäß § 5 DDG</p>
+</section>
 
-  <div class="panel" style="margin-top:16px">
+<section class="about-content">
+  <div class="about-section">
     <h2>Anbieter</h2>
     <p>
-      Carsten Weier<br/>
-      Birkenweg 16<br/>
-      57234 Wilnsdorf<br/>
+      Carsten Weier<br>
+      Birkenweg 16<br>
+      57234 Wilnsdorf<br>
       Deutschland
     </p>
-    <hr/>
+  </div>
+
+  <div class="about-section">
     <h2>Kontakt</h2>
-    <p>E-Mail: <a href="mailto:c@weier.digital">c@weier.digital</a></p>
+    <p>
+      E-Mail: <a href="mailto:c@weier.digital">c@weier.digital</a>
+    </p>
+  </div>
+
+  <div class="about-section">
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>
+      Carsten Weier<br>
+      Birkenweg 16<br>
+      57234 Wilnsdorf
+    </p>
   </div>
 </section>
 
@@ -64,11 +75,14 @@
 
 <footer class="footer">
   <div class="container footrow">
-    <small>© <span id="y"></span> weier.digital · im Aufbau</small>
-    <small><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></small>
+    <small>© <span id="y"></span> Carsten Weier</small>
+    <small>
+      <a href="/impressum/">Impressum</a> · 
+      <a href="/datenschutz/">Datenschutz</a>
+    </small>
   </div>
 </footer>
-<script src="/assets/main.js"></script>
 
+<script src="/assets/main.js"></script>
 </body>
 </html>
