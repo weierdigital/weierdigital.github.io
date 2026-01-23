@@ -676,3 +676,24 @@
     gap: 8px;
   }
 }
+.post-figure{
+  margin: 18px 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.post-figure img{
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 6px);
+  display:block;
+}
+.post-figure figcaption{
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
