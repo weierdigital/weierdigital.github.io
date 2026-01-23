@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "id": "drawing-automation",
+      "title": { "de": "Automatische Zeichnungserstellung", "en": "Automated Drawing Generation" },
+      "tag": "Python · CAD",
+      "status": "active",
+      "statusLabel": { "de": "🚧 In Arbeit", "en": "🚧 In progress" },
+      "started": "2026-01",
+      "description": {
+        "de": "Eine Python-Anwendung, die technische Zeichnungen automatisch aus Excel-Daten erstellt – später direkt aus dem ERP.",
+        "en": "A Python tool that generates technical drawings from Excel data – later directly from ERP."
+      },
+      "href": "/blog/drawing-automation/"
+    }
+  ],
+  "posts": [
+    {
+      "projectId": "drawing-automation",
+      "date": "2026-01-23",
+      "number": 1,
+      "slug": "01-start",
+      "title": { "de": "Projekt-Start: Warum ich das baue", "en": "Kick-off: Why I'm building this" },
+      "excerpt": {
+        "de": "Problem definiert, Tech-Stack gewählt und die ersten Schritte geplant – weg von manueller Zeichnungserstellung.",
+        "en": "Problem defined, tech stack chosen and first steps planned – moving away from manual drawing creation."
+      },
+      "href": "/blog/drawing-automation/01-start.html"
+    }
+  ]
+}
