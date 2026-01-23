@@ -1,12 +1,12 @@
-
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Automatische Zeichnungserstellung – weier.digital</title>
-  <meta name="description" content="Alle Updates zum Zeichnungs-Automatisierungs-Projekt" />
+  <title>Automatische Zeichnungserstellung aus Excel – weier.digital</title>
+  <meta name="description" content="Projekt-Start: Wie ich technische Zeichnungen automatisch aus Excel-Daten generiere" />
   <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/blog-post.css" />
 </head>
 <body>
 
@@ -50,121 +50,164 @@
 
 <main class="container">
 
-<div class="project-page">
+<article class="blog-post">
   <!-- Back Link -->
-  <a href="/blog/" class="back-link">← Zurück zur Blog-Übersicht</a>
+  <a href="/blog/" class="back-link">
+    <span data-de="← Zurück zum Blog" data-en="← Back to Blog">← Zurück zum Blog</span>
+  </a>
 
-  <!-- Project Header -->
-  <header class="project-page-header">
-    <div class="project-meta">
-      <span class="project-tag">Python · CAD</span>
-      <span class="project-status status-active">🚧 In Arbeit</span>
+  <!-- Post Header -->
+  <header class="post-header">
+    <div class="post-meta">
+      <span class="post-tag">Python · CAD</span>
+      <time class="post-date" datetime="2026-01-23">23. Januar 2026</time>
     </div>
-    <h1>Automatische Zeichnungserstellung</h1>
-    <p class="project-intro">
-      Eine Python-Anwendung die technische Zeichnungen automatisch aus Excel-Daten 
-      erstellt und später direkt ans ERP-System angebunden wird.
-    </p>
-    
-    <div class="project-quick-info">
-      <div class="info-item">
-        <strong>Gestartet:</strong> Januar 2026
-      </div>
-      <div class="info-item">
-        <strong>Status:</strong> Phase 1 - Excel Parser
-      </div>
-      <div class="info-item">
-        <strong>Tech:</strong> Python, pandas, matplotlib, ezdxf
-      </div>
-    </div>
+    <h1>Automatische Zeichnungserstellung aus Excel-Daten</h1>
+    <p class="post-subtitle">Warum ich eine Anwendung baue, die technische Zeichnungen basierend auf Excel-Tabellen erstellt – und später direkt aus dem ERP.</p>
   </header>
 
-  <!-- Timeline / Posts -->
-  <section class="project-timeline-section">
-    <h2>Projekt Updates</h2>
+  <!-- Post Content -->
+  <div class="post-content">
     
-    <!-- Post 1 -->
-    <article class="timeline-post">
-      <div class="timeline-marker">
-        <span class="marker-icon">📍</span>
+    <!-- SECTION: Das Problem -->
+    <section class="content-section">
+      <h2 data-de="Das Problem" data-en="The Problem">Das Problem</h2>
+      <p>
+        In unserem Engineering-Umfeld werden technische Zeichnungen häufig manuell erstellt – 
+        basierend auf Daten die bereits in Excel-Tabellen oder im ERP-System vorhanden sind. 
+        Jemand muss die Maße, Spezifikationen und Parameter aus den Daten lesen und dann 
+        manuell eine Zeichnung in CAD erstellen.
+      </p>
+      <p>
+        Das ist nicht nur <strong>zeitaufwändig</strong>, sondern auch <strong>fehleranfällig</strong>. 
+        Ein Zahlendreher, eine falsche Einheit, oder ein übersehenes Detail – und die Zeichnung muss 
+        neu erstellt werden. Für wiederkehrende, standardisierte Zeichnungen ist das pure Zeitverschwendung.
+      </p>
+    </section>
+
+    <!-- SECTION: Mein Plan -->
+    <section class="content-section">
+      <h2 data-de="Mein Plan" data-en="My Plan">Mein Plan</h2>
+      <p>
+        Ich entwickle eine Python-Anwendung, die technische Zeichnungen automatisch erstellt:
+      </p>
+      <ul class="feature-list">
+        <li><strong>Phase 1:</strong> Excel-Datei einlesen und Zeichnung generieren</li>
+        <li><strong>Phase 2:</strong> Direkte Anbindung ans ERP-System (Oracle)</li>
+        <li><strong>Phase 3:</strong> Template-System für verschiedene Zeichnungstypen</li>
+        <li><strong>Phase 4:</strong> PDF/DXF Export für CAD-Weiterverarbeitung</li>
+      </ul>
+      <p>
+        Ziel ist es, dass ein Konstrukteur nur noch die Artikel-Nummer eingibt und 
+        das System automatisch die passende Zeichnung erstellt – korrekt, konsistent und in Sekunden.
+      </p>
+    </section>
+
+    <!-- SECTION: Tech Stack -->
+    <section class="content-section">
+      <h2 data-de="Tech Stack" data-en="Tech Stack">Tech Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-badge">Python 3.11</span>
+        <span class="tech-badge">pandas</span>
+        <span class="tech-badge">matplotlib / CAD-Lib</span>
+        <span class="tech-badge">openpyxl</span>
       </div>
-      <div class="timeline-content">
-        <div class="post-meta-small">
-          <time datetime="2026-01-23">23. Januar 2026</time>
-          <span class="post-number">#1</span>
-        </div>
-        <h3><a href="/blog/drawing-automation/01-start.html">Projekt-Start: Warum ich das baue</a></h3>
+      <p class="tech-note">
+        <strong>Warum Python?</strong> Ich arbeite hauptsächlich mit Python und kenne die Libraries 
+        für Datenverarbeitung (pandas) und Visualisierung (matplotlib) bereits gut. 
+        Für CAD-Integration schaue ich mir noch <code>ezdxf</code> für DXF-Export an.
+      </p>
+    </section>
+
+    <!-- SECTION: Warum dieser Ansatz? -->
+    <section class="content-section">
+      <h2>Warum ich das mache</h2>
+      <p>
+        Es gibt zwar CAD-Tools mit Parametrisierung, aber:
+      </p>
+      <ul class="feature-list">
+        <li>Sie sind oft komplex und erfordern CAD-Kenntnisse</li>
+        <li>Die Integration mit Excel/ERP ist umständlich</li>
+        <li>Für einfache, wiederkehrende Zeichnungen sind sie Overkill</li>
+        <li>Ich will lernen, wie man sowas baut 😊</li>
+      </ul>
+      <p>
+        Meine Lösung soll <strong>einfach</strong>, <strong>schnell</strong> und 
+        <strong>wartbar</strong> sein – perfekt für standardisierte Zeichnungen.
+      </p>
+    </section>
+
+    <!-- SECTION: Status -->
+    <section class="content-section">
+      <h2 data-de="Aktueller Status" data-en="Current Status">Aktueller Status</h2>
+      <div class="status-box">
+        <div class="status-badge">🚀 Projekt gestartet</div>
         <p>
-          Das Problem definiert, den Tech-Stack gewählt und die ersten Schritte geplant. 
-          Warum manuelle Zeichnungserstellung Zeitverschwendung ist und wie ich das lösen will.
-        </p>
-        <a href="/blog/drawing-automation/01-start.html" class="read-more">Weiterlesen →</a>
-      </div>
-    </article>
-
-    <!-- Post 2 - Placeholder -->
-    <article class="timeline-post upcoming">
-      <div class="timeline-marker">
-        <span class="marker-icon">⏳</span>
-      </div>
-      <div class="timeline-content">
-        <div class="post-meta-small">
-          <span class="coming-soon">Demnächst</span>
-          <span class="post-number">#2</span>
-        </div>
-        <h3>Update: Excel-Parser & erste Tests</h3>
-        <p>
-          Excel einlesen, Daten validieren und die ersten Stolpersteine beim Parsing. 
-          Plus: Welche Libraries ich teste.
+          Ich bin gerade in der Planungsphase und recherchiere die besten Python-Libraries 
+          für die Zeichnungserstellung. Excel-Einlesen mit <code>pandas</code> und 
+          <code>openpyxl</code> beherrsche ich bereits – jetzt geht's an die grafische Ausgabe.
         </p>
       </div>
-    </article>
+    </section>
 
-    <!-- Post 3 - Placeholder -->
-    <article class="timeline-post upcoming">
-      <div class="timeline-marker">
-        <span class="marker-icon">⏳</span>
-      </div>
-      <div class="timeline-content">
-        <div class="post-meta-small">
-          <span class="coming-soon">Demnächst</span>
-          <span class="post-number">#3</span>
-        </div>
-        <h3>Proof-of-Concept: Erste Zeichnung</h3>
-        <p>
-          Die erste automatisch generierte Zeichnung aus Excel-Daten. 
-          Simple Rechtecke mit Maßen - aber es funktioniert!
-        </p>
-      </div>
-    </article>
+    <!-- SECTION: Nächste Schritte -->
+    <section class="content-section">
+      <h2 data-de="Nächste Schritte" data-en="Next Steps">Nächste Schritte</h2>
+      <ul class="checklist">
+        <li><input type="checkbox" disabled> Excel-Parser schreiben (Daten einlesen & validieren)</li>
+        <li><input type="checkbox" disabled> Proof-of-Concept: Einfache Rechteck-Zeichnung aus Daten</li>
+        <li><input type="checkbox" disabled> Recherche: DXF-Export mit ezdxf</li>
+        <li><input type="checkbox" disabled> Template-System designen</li>
+      </ul>
+      <p>
+        Erste Schritte sind das Excel-Einlesen perfektionieren und dann einen simplen 
+        Proof-of-Concept bauen: Eine Rechteck-Zeichnung mit Maßen aus einer Excel-Datei. 
+        Wenn das funktioniert, kann ich das System Schritt für Schritt erweitern.
+      </p>
+    </section>
 
-  </section>
+    <!-- SECTION: Was ich erwarte -->
+    <section class="content-section">
+      <h2>Challenges die kommen werden</h2>
+      <p>
+        Ich rechne mit ein paar Herausforderungen:
+      </p>
+      <ul class="feature-list">
+        <li><strong>Daten-Qualität:</strong> Nicht alle Excel-Dateien sind sauber strukturiert</li>
+        <li><strong>CAD-Logik:</strong> Zeichnungsregeln korrekt umsetzen (Bemaßung, Toleranzen, etc.)</li>
+        <li><strong>Performance:</strong> Bei vielen Zeichnungen muss es schnell gehen</li>
+        <li><strong>ERP-Integration:</strong> Oracle-Zugriff kann komplex werden</li>
+      </ul>
+      <p>
+        Aber genau darum geht's – learning by doing. Ich dokumentiere hier alle 
+        Stolpersteine und Lösungen.
+      </p>
+    </section>
 
-  <!-- Project Resources (Optional) -->
-  <aside class="project-sidebar">
-    <div class="sidebar-card">
-      <h3>Tech Stack</h3>
-      <div class="tech-list">
-        <span class="tech-item">Python 3.11</span>
-        <span class="tech-item">pandas</span>
-        <span class="tech-item">openpyxl</span>
-        <span class="tech-item">matplotlib</span>
-        <span class="tech-item">ezdxf</span>
-      </div>
+  </div>
+
+  <!-- Post Footer -->
+  <footer class="post-footer">
+    <div class="post-closing">
+      <p><strong>Updates folgen in den nächsten Wochen...</strong></p>
+      <p>Ich halte euch auf dem Laufenden wie das Projekt vorankommt!</p>
     </div>
-
-    <div class="sidebar-card">
-      <h3>Projekt Phasen</h3>
-      <ul class="phase-list">
-        <li class="phase-active">📍 Phase 1: Excel → Zeichnung</li>
-        <li>⏳ Phase 2: ERP-Integration</li>
-        <li>⏳ Phase 3: Template-System</li>
-        <li>⏳ Phase 4: DXF/PDF Export</li>
+    
+    <!-- Project Timeline -->
+    <div class="project-timeline">
+      <h3>Projekt Timeline</h3>
+      <ul>
+        <li class="active">📍 Start – Warum ich das baue</li>
+        <li>⏳ Update 1 – Excel-Parser & erste Tests</li>
+        <li>⏳ Update 2 – Proof-of-Concept Zeichnung</li>
+        <li>⏳ Update 3 – DXF-Export Implementation</li>
+        <li>⏳ Update 4 – ERP-Integration</li>
+        <li>⏳ Abschluss – Fertig & Learnings</li>
       </ul>
     </div>
-  </aside>
+  </footer>
 
-</div>
+</article>
 
 </main>
 
