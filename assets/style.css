@@ -709,3 +709,73 @@ h1 {
     transform: scale(0.99);
   }
 }
+
+/* Footer Social Icons - Füge das am Ende der Footer-Section im style.css ein */
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  color: var(--text-muted);
+}
+
+.footer-social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.footer-social-link:first-child:hover {
+  background: var(--linkedin);
+  border-color: var(--linkedin);
+  color: white;
+}
+
+.footer-social-link:last-child:hover {
+  background: var(--xing);
+  border-color: var(--xing);
+  color: white;
+}
+
+.footer-social-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Mobile Anpassung für Footer */
+@media (max-width: 768px) {
+  .footrow {
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .footer-social {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .footer-social-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
