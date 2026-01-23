@@ -11,7 +11,15 @@
         "de": "Eine Python-Anwendung, die technische Zeichnungen automatisch aus Excel-Daten erstellt – später direkt aus dem ERP.",
         "en": "A Python tool that generates technical drawings from Excel data – later directly from ERP."
       },
-      "href": "/blog/drawing-automation/"
+      "href": "/blog/drawing-automation/",
+      "tech": ["Python", "pandas", "openpyxl", "ezdxf"],
+      "currentPhase": { "de": "Phase 1 – Excel Parser", "en": "Phase 1 – Excel parser" },
+      "phases": [
+        { "de": "📍 Phase 1: Excel → Zeichnung", "en": "📍 Phase 1: Excel → drawing", "active": true },
+        { "de": "⏳ Phase 2: ERP-Integration", "en": "⏳ Phase 2: ERP integration" },
+        { "de": "⏳ Phase 3: Template-System", "en": "⏳ Phase 3: Template system" },
+        { "de": "⏳ Phase 4: DXF/PDF Export", "en": "⏳ Phase 4: DXF/PDF export" }
+      ]
     }
   ],
   "posts": [
