@@ -1,39 +1,63 @@
 {
-  "projects": [
-    {
-      "id": "drawing-automation",
-      "title": { "de": "Automatische Zeichnungserstellung", "en": "Automated Drawing Generation" },
-      "tag": "Python · CAD",
-      "status": "active",
-      "statusLabel": { "de": "🚧 In Arbeit", "en": "🚧 In progress" },
-      "started": "2026-01",
-      "description": {
-        "de": "Eine Python-Anwendung, die technische Zeichnungen automatisch aus Excel-Daten erstellt – später direkt aus dem ERP.",
-        "en": "A Python tool that generates technical drawings from Excel data – later directly from ERP."
-      },
-      "href": "/blog/drawing-automation/",
-      "tech": ["Python", "pandas", "openpyxl", "ezdxf"],
-      "currentPhase": { "de": "Phase 1 – Excel Parser", "en": "Phase 1 – Excel parser" },
-      "phases": [
-        { "de": "📍 Phase 1: Excel → Zeichnung", "en": "📍 Phase 1: Excel → drawing", "active": true },
-        { "de": "⏳ Phase 2: ERP-Integration", "en": "⏳ Phase 2: ERP integration" },
-        { "de": "⏳ Phase 3: Template-System", "en": "⏳ Phase 3: Template system" },
-        { "de": "⏳ Phase 4: DXF/PDF Export", "en": "⏳ Phase 4: DXF/PDF export" }
-      ]
-    }
-  ],
   "posts": [
     {
-      "projectId": "drawing-automation",
-      "date": "2026-01-23",
+      "id": "post-001",
       "number": 1,
-      "slug": "01-start",
-      "title": { "de": "Projekt-Start: Warum ich das baue", "en": "Kick-off: Why I'm building this" },
-      "excerpt": {
-        "de": "Problem definiert, Tech-Stack gewählt und die ersten Schritte geplant – weg von manueller Zeichnungserstellung.",
-        "en": "Problem defined, tech stack chosen and first steps planned – moving away from manual drawing creation."
+      "type": "blog",
+      "projectId": null,
+      "date": "2026-01-25",
+      "title": {
+        "de": "Mein erster Blog Post",
+        "en": "My First Blog Post"
       },
-      "href": "/blog/drawing-automation/01-start.html"
+      "excerpt": {
+        "de": "Ein Überblick über mein neues Blog-System",
+        "en": "An overview of my new blog system"
+      },
+      "href": "/blog/posts/post-001/",
+      "content": {
+        "de": "# Überschrift\n\nDas ist der Inhalt des Posts in Markdown.",
+        "en": "# Heading\n\nThis is the post content in Markdown."
+      },
+      "tags": ["automation", "python"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-1",
+      "tag": "AUTOMATION",
+      "status": "active",
+      "statusLabel": {
+        "de": "🔄 Aktiv",
+        "en": "🔄 Active"
+      },
+      "title": {
+        "de": "ERP-Automatisierung",
+        "en": "ERP Automation"
+      },
+      "description": {
+        "de": "Automatisierung von Geschäftsprozessen",
+        "en": "Business process automation"
+      },
+      "href": "/blog/projects/project-1/",
+      "started": "2026-01",
+      "currentPhase": {
+        "de": "Phase 2: Integration",
+        "en": "Phase 2: Integration"
+      },
+      "tech": ["Python", "SQL", "ERP"],
+      "phases": [
+        {
+          "de": "Phase 1: Analyse",
+          "en": "Phase 1: Analysis",
+          "active": false
+        },
+        {
+          "de": "Phase 2: Integration",
+          "en": "Phase 2: Integration",
+          "active": true
+        }
+      ]
     }
   ]
 }
