@@ -501,7 +501,7 @@ h1 {
   border: 1px solid var(--border);
   transition: all 0.2s;
   color: var(--text-muted);
-  line-height: 0; /* wichtig: verhindert “baseline”-Verschiebung bei SVG */
+  line-height: 0; /* verhindert baseline-Verschiebung bei SVG */
 }
 
 .footer-social-link:hover {
@@ -521,11 +521,10 @@ h1 {
   color: white;
 }
 
-/* Wichtig: Brand-SVGs sauber rendern */
 .footer-social-icon {
-  width: 20px;      /* statt 16px -> wirkt deutlich “cleaner” */
+  width: 20px;
   height: 20px;
-  display: block;   /* verhindert Inline-SVG-Abstände */
+  display: block;
   fill: currentColor;
 }
 
