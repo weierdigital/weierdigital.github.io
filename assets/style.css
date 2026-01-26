@@ -7,14 +7,14 @@
   --text: #1a1f36;
   --text-muted: #5e6c84;
   --border: #e4e7eb;
-  
+
   --primary: #6366f1;
   --primary-hover: #4f46e5;
   --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  
+
   --linkedin: #0077b5;
   --xing: #006567;
-  
+
   --radius: 12px;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -26,14 +26,14 @@
   --text: #e6edf3;
   --text-muted: #8b949e;
   --border: #30363d;
-  
+
   --primary: #818cf8;
   --primary-hover: #6366f1;
   --gradient: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
-  
+
   --linkedin: #0a66c2;
   --xing: #007575;
-  
+
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
@@ -217,7 +217,7 @@ h1 {
   margin: 0 auto 32px;
 }
 
-/* Social Links */
+/* Social Links (falls du sie irgendwo nutzt) */
 .social-links {
   display: flex;
   justify-content: center;
@@ -258,82 +258,6 @@ h1 {
 .social-icon {
   width: 24px;
   height: 24px;
-}
-
-.social-section {
-  margin: 60px 0 40px;
-}
-
-.social-section h2 {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.social-links-large {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.social-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  transition: all 0.2s;
-  box-shadow: var(--shadow);
-}
-
-.social-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-
-.social-card:first-child:hover {
-  border-color: var(--linkedin);
-}
-
-.social-card:first-child:hover .social-icon-large {
-  color: var(--linkedin);
-}
-
-.social-card:last-child:hover {
-  border-color: var(--xing);
-}
-
-.social-card:last-child:hover .social-icon-large {
-  color: var(--xing);
-}
-
-.social-icon-large {
-  width: 48px;
-  height: 48px;
-  color: var(--text-muted);
-  transition: color 0.2s;
-  flex-shrink: 0;
-}
-
-.social-card div {
-  flex: 1;
-  min-width: 0;
-}
-
-.social-card h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.social-card p {
-  color: var(--text-muted);
-  font-size: 14px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /* Grid */
@@ -559,6 +483,52 @@ h1 {
   color: var(--primary);
 }
 
+/* Footer Social Icons */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  color: var(--text-muted);
+  line-height: 0; /* wichtig: verhindert “baseline”-Verschiebung bei SVG */
+}
+
+.footer-social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.footer-social-link:first-child:hover {
+  background: var(--linkedin);
+  border-color: var(--linkedin);
+  color: white;
+}
+
+.footer-social-link:last-child:hover {
+  background: var(--xing);
+  border-color: var(--xing);
+  color: white;
+}
+
+/* Wichtig: Brand-SVGs sauber rendern */
+.footer-social-icon {
+  width: 20px;      /* statt 16px -> wirkt deutlich “cleaner” */
+  height: 20px;
+  display: block;   /* verhindert Inline-SVG-Abstände */
+  fill: currentColor;
+}
+
 /* Mobile Optimizations */
 @media (max-width: 768px) {
   .container {
@@ -630,19 +600,6 @@ h1 {
     height: 44px;
   }
 
-  .social-links-large {
-    grid-template-columns: 1fr;
-  }
-
-  .social-card {
-    padding: 20px;
-  }
-
-  .social-icon-large {
-    width: 40px;
-    height: 40px;
-  }
-
   .about-section h2 {
     font-size: 24px;
   }
@@ -650,7 +607,14 @@ h1 {
   .footrow {
     flex-direction: column;
     text-align: center;
-    gap: 8px;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .footer-social {
+    order: 2;
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -680,14 +644,14 @@ h1 {
     font-size: 18px;
   }
 
-  .social-card {
-    flex-direction: column;
-    text-align: center;
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
   }
 
-  .social-card p {
-    white-space: normal;
-    word-break: break-all;
+  .footer-social-icon {
+    width: 22px;
+    height: 22px;
   }
 }
 
@@ -696,7 +660,7 @@ h1 {
   .btn,
   .card,
   .social-btn,
-  .social-card {
+  .skill-card {
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -705,77 +669,7 @@ h1 {
   }
 
   .card:active,
-  .social-card:active {
+  .skill-card:active {
     transform: scale(0.99);
   }
 }
-
-/* Footer Social Icons - Füge das am Ende der Footer-Section im style.css ein */
-
-.footer-social {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.footer-social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  transition: all 0.2s;
-  color: var(--text-muted);
-}
-
-.footer-social-link:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
-.footer-social-link:first-child:hover {
-  background: var(--linkedin);
-  border-color: var(--linkedin);
-  color: white;
-}
-
-.footer-social-link:last-child:hover {
-  background: var(--xing);
-  border-color: var(--xing);
-  color: white;
-}
-
-.footer-social-icon {
-  width: 16px;
-  height: 16px;
-}
-
-/* Mobile Anpassung für Footer */
-@media (max-width: 768px) {
-  .footrow {
-    justify-content: center;
-    gap: 16px;
-  }
-  
-  .footer-social {
-    order: 2;
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-social-link {
-    width: 36px;
-    height: 36px;
-  }
-  
-  .footer-social-icon {
-    width: 18px;
-    height: 18px;
-  }
-}
-
