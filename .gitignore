@@ -1,0 +1,21 @@
+# Claude Code
+CLAUDE.md
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor backups
+*~
+*.swp
+*.swo
+
+# Node (falls mal Tools genutzt werden)
+node_modules/
+npm-debug.log*
