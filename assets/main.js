@@ -81,7 +81,7 @@
     }
     if(name === 'system' && !_pipelineInited){
       _pipelineInited = true;
-      setTimeout(function(){ if(typeof initPipelineDemo==='function') initPipelineDemo(); }, 80);
+      setTimeout(function(){ if(typeof window.pipelineRun==='function') window.pipelineRun(); }, 80);
     }
   }
 
@@ -314,9 +314,9 @@
       initTabs();
       initGantt();
       // Auto-start pipeline demo when system tab is the default visible tab
-      if(document.getElementById('pipeTermBody') && !_pipelineInited){
+      if(document.getElementById('termOutput') && !_pipelineInited){
         _pipelineInited = true;
-        setTimeout(function(){ if(typeof initPipelineDemo==='function') initPipelineDemo(); }, 400);
+        setTimeout(function(){ if(typeof window.pipelineRun==='function') window.pipelineRun(); }, 400);
       }
     }
   });

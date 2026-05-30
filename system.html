@@ -69,65 +69,100 @@
 
   <!-- ── Tab: System ── -->
   <div class="stab-panel" id="tabSystem" role="tabpanel" aria-labelledby="stabSystem">
-    <div class="pipe-demo">
-      <p class="pipe-eyebrow">ERP → Python → CAD</p>
+    <div class="sys-demo">
+      <div class="sys-layout">
 
-      <div class="pipe-split">
-
-        <!-- SVG Rohrbogen (inline, animiert) -->
-        <div class="pipe-svg-wrap">
-          <svg class="pipe-svg" viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
-            <line class="pipe-draw" x1="80" y1="20" x2="80" y2="120" stroke-dasharray="100" stroke-dashoffset="100"/>
-            <path class="pipe-draw" d="M80,120 Q80,200 160,200" stroke-dasharray="130" stroke-dashoffset="130"/>
-            <line class="pipe-draw" x1="160" y1="200" x2="280" y2="200" stroke-dasharray="120" stroke-dashoffset="120"/>
-
-            <g class="pipe-dims">
-              <line x1="80" y1="200" x2="160" y2="200" stroke-dasharray="4 3"/>
-              <text x="115" y="225" class="pipe-dim-text">R = 80</text>
-              <text x="100" y="165" class="pipe-dim-text">90°</text>
-              <line x1="55" y1="20" x2="55" y2="120"/>
-              <text x="20" y="75" class="pipe-dim-text">L1 = 100</text>
-              <line x1="160" y1="175" x2="280" y2="175"/>
-              <text x="195" y="168" class="pipe-dim-text">L2 = 120</text>
-            </g>
-
-            <g class="pipe-badge">
-              <rect x="170" y="30" width="130" height="52" rx="6"/>
-              <text x="182" y="50" class="pipe-badge-text">1.4301 · DN25</text>
-              <text x="182" y="68" class="pipe-badge-text">t = 2.0 mm</text>
-            </g>
-          </svg>
-        </div>
-
-        <!-- Animiertes Terminal -->
-        <div class="pipe-term" id="pipeTerminal">
-          <div class="pipe-term-bar">
-            <span class="ptb-dot ptb-red"></span>
-            <span class="ptb-dot ptb-yellow"></span>
-            <span class="ptb-dot ptb-green"></span>
-            <span class="ptb-title">pipeline.py</span>
-          </div>
-          <div class="pipe-term-body" id="pipeTermBody">
-            <!-- wird per JS befüllt -->
+        <!-- Terminal links -->
+        <div class="sys-terminal-wrap">
+          <div class="terminal">
+            <div class="term-titlebar">
+              <span class="term-dot term-dot--red"></span>
+              <span class="term-dot term-dot--yellow"></span>
+              <span class="term-dot term-dot--green"></span>
+              <span class="term-title">pipeline.py — ERP → Python → CAD</span>
+            </div>
+            <div class="term-stepper">
+              <span class="ps-step" data-phase="0">Auftrag</span>
+              <span class="ps-connector"></span>
+              <span class="ps-step" data-phase="1">Rohrbogen</span>
+              <span class="ps-connector"></span>
+              <span class="ps-step" data-phase="2">Rohrplatte</span>
+              <span class="ps-connector"></span>
+              <span class="ps-step" data-phase="3">Systeme</span>
+            </div>
+            <div class="term-output" id="termOutput">
+              <div class="term-idle"><span class="term-cursor">▋</span></div>
+            </div>
+            <div class="term-footer">
+              <button class="term-btn" id="termBtn" type="button">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="13" height="13" aria-hidden="true"><path d="M4 3l10 5-10 5z"/></svg>
+                <span data-de="Pipeline starten" data-en="Start pipeline">Pipeline starten</span>
+              </button>
+            </div>
           </div>
         </div>
 
-      </div>
+        <!-- KPI-Dashboard rechts -->
+        <div class="sys-kpi-wrap">
+          <div class="kpi-panel">
 
-      <!-- KPI-Badges -->
-      <div class="pipe-kpis">
-        <div class="pipe-kpi">
-          <span class="pkv">0</span>
-          <span class="pkl" data-de="Übertragungsfehler" data-en="Transfer errors">Übertragungsfehler</span>
+            <div class="kpi-header">
+              <div class="kpi-status kpi-status--idle" id="kpiStatus">
+                <span class="kpi-dot"></span>
+                <span data-de="Warte auf Pipeline" data-en="Awaiting pipeline">Warte auf Pipeline</span>
+              </div>
+              <span class="kpi-badge" data-de="Management View" data-en="Management View">Management View</span>
+            </div>
+
+            <div class="kpi-grid">
+              <div class="kpi-metric">
+                <div class="kpi-val" id="kpiQualityVal">—</div>
+                <div class="kpi-name" data-de="Systeme befüllt" data-en="Systems updated">Systeme befüllt</div>
+                <div class="kpi-change" id="kpiQualityChange" data-de="ERP · CAD · Fertigung · NC" data-en="ERP · CAD · Production · NC">ERP · CAD · Fertigung · NC</div>
+              </div>
+              <div class="kpi-metric">
+                <div class="kpi-val" id="kpiDupesVal">3</div>
+                <div class="kpi-name" data-de="Doppeleingaben" data-en="Double entries">Doppeleingaben</div>
+                <div class="kpi-change kpi-change--warn" id="kpiDupesChange" data-de="manuelle Übergänge" data-en="manual transfers">manuelle Übergänge</div>
+              </div>
+              <div class="kpi-metric">
+                <div class="kpi-val" id="kpiTimeVal">—</div>
+                <div class="kpi-name" data-de="Laufzeit" data-en="Runtime">Laufzeit</div>
+                <div class="kpi-change" id="kpiTimeChange" data-de="vs. ~2h manuell" data-en="vs. ~2h manually">vs. ~2h manuell</div>
+              </div>
+              <div class="kpi-metric">
+                <div class="kpi-val">0%</div>
+                <div class="kpi-name" data-de="Übertragungsfehler" data-en="Transfer errors">Übertragungsfehler</div>
+                <div class="kpi-change kpi-change--ok" data-de="Eine Quelle — alle Systeme" data-en="One source — all systems">Eine Quelle — alle Systeme</div>
+              </div>
+            </div>
+
+            <div class="kpi-chart">
+              <div class="kpi-chart-title" data-de="Systemübergänge — Vorher / Nachher" data-en="System transfers — Before / After">Systemübergänge — Vorher / Nachher</div>
+              <div class="kpi-bar-row">
+                <span class="kpi-bar-label" data-de="Manuell" data-en="Manual">Manuell</span>
+                <div class="kpi-bar-track"><div class="kpi-bar kpi-bar--before" style="width:75%"></div></div>
+                <span class="kpi-bar-pct">3×</span>
+              </div>
+              <div class="kpi-bar-row">
+                <span class="kpi-bar-label" data-de="System" data-en="System">System</span>
+                <div class="kpi-bar-track"><div class="kpi-bar kpi-bar--after" id="kpiBarAfter" style="width:0%"></div></div>
+                <span class="kpi-bar-pct" id="kpiBarAfterPct">0</span>
+              </div>
+            </div>
+
+            <div class="kpi-log" id="kpiLog">
+              <div class="kpi-log-item kpi-log-wait" data-de="Pipeline noch nicht ausgeführt" data-en="Pipeline not yet executed">Pipeline noch nicht ausgeführt</div>
+            </div>
+
+            <div class="kpi-workflow" id="kpiWorkflow">
+              <div class="kpi-chart-title" data-de="Auftragsstatus" data-en="Order status">Auftragsstatus</div>
+              <div class="workflow-steps"></div>
+            </div>
+
+          </div>
         </div>
-        <div class="pipe-kpi">
-          <span class="pkv">4.1s</span>
-          <span class="pkl" data-de="statt ~45 Min." data-en="vs. ~45 min.">statt ~45 Min.</span>
-        </div>
-        <div class="pipe-kpi">
-          <span class="pkv">100%</span>
-          <span class="pkl" data-de="reproduzierbar" data-en="reproducible">reproduzierbar</span>
-        </div>
+
       </div>
     </div>
   </div>
@@ -278,7 +313,7 @@
   </a>
 </nav>
 
-<script src="/assets/pipeline.js"></script>
 <script src="/assets/main.js"></script>
+<script src="/assets/pipeline.js"></script>
 </body>
 </html>

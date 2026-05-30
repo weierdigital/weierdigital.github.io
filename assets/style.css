@@ -2936,3 +2936,39 @@ h1 {
   font-size: 0.75rem;
   color: var(--text-muted);
 }
+
+/* ─── System-Tab Demo Layout (Terminal + KPI) ────────────────────────────── */
+
+.sys-demo {
+  padding: 8px 0 12px;
+}
+
+.sys-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.sys-terminal-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.sys-terminal-wrap .terminal {
+  margin: 0;
+  flex: 1;
+}
+
+.sys-kpi-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.sys-kpi-wrap .kpi-panel {
+  flex: 1;
+}
+
+@media (max-width: 860px) {
+  .sys-layout {
+    grid-template-columns: 1fr;
+  }
+}
