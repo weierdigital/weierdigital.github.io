@@ -89,7 +89,7 @@
   var UPIPE_PATH = 'M 80 240 L 80 100 C 80 78 98 60 120 60 L 280 60 C 302 60 320 78 320 100 L 320 240';
 
   function buildPipeSVG() {
-    return '<svg class="pipe-svg pipe-svg--upipe" viewBox="0 0 420 310" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+    return '<svg class="pipe-svg pipe-svg--upipe" width="100%" viewBox="0 0 420 310" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
       + '<path class="p-body"   d="' + UPIPE_PATH + '" stroke="#3d444d" stroke-width="24" stroke-linejoin="round" stroke-linecap="butt"/>'
       + '<path class="p-glow"   d="' + UPIPE_PATH + '" stroke="#6366f1" stroke-width="24" fill="none" stroke-linejoin="round" stroke-linecap="butt" opacity="0.08"/>'
       + '<path class="p-hollow" d="' + UPIPE_PATH + '" stroke="#0d1117" stroke-width="14" stroke-linejoin="round" stroke-linecap="butt"/>'
@@ -162,7 +162,7 @@
   ];
 
   function buildPlateSVG() {
-    var html = '<svg class="pipe-svg pipe-svg--plate" viewBox="0 0 290 208" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+    var html = '<svg class="pipe-svg pipe-svg--plate" width="100%" viewBox="0 0 290 208" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
       + '<defs><clipPath id="pc"><circle cx="' + CX + '" cy="' + CY + '" r="' + PRAD + '"/></clipPath></defs>'
       // plate
       + '<circle cx="' + CX + '" cy="' + CY + '" r="' + PRAD + '" fill="#161b22" stroke="#3d444d" stroke-width="2"/>'

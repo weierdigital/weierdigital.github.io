@@ -788,7 +788,7 @@ h1 {
 }
 
 /* Terminal line types */
-.tl         { display: block; white-space: pre-wrap; overflow-wrap: break-word; word-break: break-word; }
+.tl         { display: block; font-size: clamp(10px, 2.8vw, 13px); white-space: pre-wrap; overflow-wrap: break-word; word-break: break-word; }
 .tl-blank   { display: block; height: 5px; }
 .tl-cmd     { color: #e6edf3; font-weight: 600; }
 .tl-ok      { color: #3fb950; }
@@ -812,6 +812,9 @@ h1 {
 .tl-svg {
   display: block;
   margin: 14px 0 6px;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .pipe-svg {
@@ -1213,7 +1216,8 @@ h1 {
 /* ─── U-pipe SVG (wider than elbow) ───────────────────────────────────────── */
 
 .pipe-svg--upipe {
-  max-width: 420px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ─── About page ────────────────────────────────────────────────────────────── */
@@ -1494,7 +1498,8 @@ h1 {
 /* ─── Plate SVG ─────────────────────────────────────────────────────────────── */
 
 .pipe-svg--plate {
-  max-width: 370px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ─── Contact page ───────────────────────────────────────────────────────────── */
@@ -2970,7 +2975,6 @@ h1 {
   min-width: 0;
   max-width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .sys-kpi-wrap {
@@ -3003,6 +3007,21 @@ h1 {
     padding: 12px 14px 8px;
   }
 
+  .term-stepper {
+    padding: 8px 10px;
+  }
+
+  .ps-step {
+    font-size: 9px;
+    padding: 3px 5px;
+    letter-spacing: 0;
+  }
+
+  .ps-connector {
+    min-width: 6px;
+    max-width: 20px;
+  }
+
   .pipe-svg--upipe {
     max-width: 100%;
     height: auto;
@@ -3022,3 +3041,25 @@ h1 {
     gap: 20px;
   }
 }
+
+/* ─── Responsive safety-net: kein horizontaler Overflow ────────────────── */
+
+#tabSystem,
+.stab-panel,
+.sys-demo,
+.sys-layout {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#tabSystem  { overflow: hidden; }
+.sys-demo   { overflow: hidden; }
+
+.pipe-svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tl-svg svg,
+.tl-svg { max-width: 100%; }
