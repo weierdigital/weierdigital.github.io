@@ -52,13 +52,91 @@
 
 <main class="container">
 
-  <section class="hero">
-    <h1>Carsten Weier</h1>
-    <p class="lead"
-       data-de="Ich schaue mir Betriebsabläufe an und mache sie schneller, einfacher und zuverlässiger."
-       data-en="I look at business processes and make them faster, simpler and more reliable.">
-      Ich schaue mir Betriebsabläufe an und mache sie schneller, einfacher und zuverlässiger.
-    </p>
+  <section class="hero hero--split">
+    <div class="hero-text">
+      <span class="hero-eyebrow">Carsten Weier</span>
+      <h1 class="hero-tagline">
+        Maschinenbauer.<br>
+        <span class="hero-tagline-b">Systembauer.</span>
+      </h1>
+      <p class="hero-sub"
+         data-de="Betriebsabläufe analysieren, digitalisieren, verbinden."
+         data-en="Analysing, digitalising and connecting operations.">
+        Betriebsabläufe analysieren, digitalisieren, verbinden.
+      </p>
+    </div>
+    <div class="hero-vis" aria-hidden="true">
+      <svg class="blueprint-svg" viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="bp-g" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M20,0L0,0L0,20" fill="none" stroke="rgba(99,102,241,.15)" stroke-width=".5"/>
+          </pattern>
+        </defs>
+        <rect width="360" height="230" fill="url(#bp-g)" rx="10" opacity=".7"/>
+
+        <!-- U-Bracket (Maschinenbau) -->
+        <path class="bp-part"
+              d="M40,195 L40,48 L182,48 L182,195 L157,195 L157,128 L65,128 L65,195 Z"
+              fill="rgba(99,102,241,.05)" stroke="rgba(99,102,241,.75)" stroke-width="1.6"/>
+        <circle class="bp-hole bp-h1" cx="76"  cy="88" r="19" fill="none" stroke="rgba(99,102,241,.65)" stroke-width="1.5"/>
+        <circle class="bp-hole bp-h2" cx="150" cy="88" r="19" fill="none" stroke="rgba(99,102,241,.65)" stroke-width="1.5"/>
+        <!-- Centerlines -->
+        <line x1="76" y1="69" x2="76" y2="107"  stroke="rgba(99,102,241,.22)" stroke-width=".7" stroke-dasharray="3,2"/>
+        <line x1="57" y1="88" x2="95" y2="88"   stroke="rgba(99,102,241,.22)" stroke-width=".7" stroke-dasharray="3,2"/>
+        <line x1="150" y1="69" x2="150" y2="107" stroke="rgba(99,102,241,.22)" stroke-width=".7" stroke-dasharray="3,2"/>
+        <line x1="131" y1="88" x2="169" y2="88" stroke="rgba(99,102,241,.22)" stroke-width=".7" stroke-dasharray="3,2"/>
+        <!-- Dimensions -->
+        <g class="bp-dims">
+          <line x1="40" y1="210" x2="182" y2="210" stroke="rgba(99,102,241,.45)" stroke-width=".8"/>
+          <line x1="40"  y1="206" x2="40"  y2="214" stroke="rgba(99,102,241,.45)" stroke-width=".8"/>
+          <line x1="182" y1="206" x2="182" y2="214" stroke="rgba(99,102,241,.45)" stroke-width=".8"/>
+          <text x="111" y="222" fill="rgba(99,102,241,.6)" font-size="8" font-family="monospace" text-anchor="middle">142 mm</text>
+          <line x1="22" y1="48" x2="22" y2="195" stroke="rgba(99,102,241,.45)" stroke-width=".8"/>
+          <line x1="18" y1="48"  x2="26" y2="48"  stroke="rgba(99,102,241,.45)" stroke-width=".8"/>
+          <line x1="18" y1="195" x2="26" y2="195" stroke="rgba(99,102,241,.45)" stroke-width=".8"/>
+          <text x="13" y="124" fill="rgba(99,102,241,.6)" font-size="8" font-family="monospace" text-anchor="middle" transform="rotate(-90,13,124)">147 mm</text>
+        </g>
+        <text x="111" y="41" fill="rgba(99,102,241,.45)" font-size="7" font-family="monospace" text-anchor="middle">HALTERUNG-001 · REV.A</text>
+
+        <!-- Connection arc -->
+        <path class="bp-conn"
+              d="M187,122 C202,122 208,78 224,78"
+              stroke="rgba(99,102,241,.5)" stroke-width="1.4" stroke-dasharray="4,3" fill="none"/>
+
+        <!-- System (right) -->
+        <g class="bp-sys">
+          <rect x="228" y="48" width="118" height="138" rx="6" fill="rgba(99,102,241,.04)" stroke="rgba(99,102,241,.4)" stroke-width="1"/>
+          <!-- ERP -->
+          <rect x="236" y="60" width="102" height="23" rx="3" fill="rgba(99,102,241,.1)" stroke="rgba(99,102,241,.3)" stroke-width=".8"/>
+          <circle cx="245" cy="71.5" r="3" fill="#3fb950"/>
+          <text x="253" y="75" fill="rgba(99,102,241,.7)" font-size="8" font-family="monospace">ERP · Auftrag</text>
+          <line x1="287" y1="83" x2="287" y2="93" stroke="rgba(99,102,241,.28)" stroke-width=".8" stroke-dasharray="2,2"/>
+          <!-- PPS -->
+          <rect x="236" y="93" width="102" height="23" rx="3" fill="rgba(99,102,241,.1)" stroke="rgba(99,102,241,.3)" stroke-width=".8"/>
+          <circle cx="245" cy="104.5" r="3" fill="#3fb950"/>
+          <text x="253" y="108" fill="rgba(99,102,241,.7)" font-size="8" font-family="monospace">PPS · Fertigung</text>
+          <line x1="287" y1="116" x2="287" y2="126" stroke="rgba(99,102,241,.28)" stroke-width=".8" stroke-dasharray="2,2"/>
+          <!-- WaWi -->
+          <rect x="236" y="126" width="102" height="23" rx="3" fill="rgba(99,102,241,.1)" stroke="rgba(99,102,241,.3)" stroke-width=".8"/>
+          <circle cx="245" cy="137.5" r="3" fill="#d29922"/>
+          <text x="253" y="141" fill="rgba(99,102,241,.7)" font-size="8" font-family="monospace">WaWi · Beschaffg.</text>
+          <!-- Data flow -->
+          <rect class="bp-bar1" x="236" y="159" width="0" height="4" rx="2" fill="rgba(63,185,80,.65)"/>
+          <rect class="bp-bar2" x="236" y="166" width="0" height="4" rx="2" fill="rgba(63,185,80,.4)"/>
+          <text x="287" y="181" fill="rgba(99,102,241,.38)" font-size="7" font-family="monospace" text-anchor="middle">DATEN SYNCHRON</text>
+        </g>
+
+        <!-- Moving data packets -->
+        <circle r="3" fill="rgba(99,102,241,.85)">
+          <animateMotion dur="2.2s" begin="4.2s" repeatCount="indefinite" path="M187,122 C202,122 208,78 224,78"/>
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.82;1" dur="2.2s" begin="4.2s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="2.2" fill="rgba(63,185,80,.9)">
+          <animateMotion dur="2.2s" begin="5.8s" repeatCount="indefinite" path="M187,122 C202,122 208,78 224,78"/>
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.82;1" dur="2.2s" begin="5.8s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
   </section>
 
   <section class="grid" style="margin-top: 60px;">
@@ -128,6 +206,37 @@
         </div>
       </div>
     </a>
+  </section>
+
+  <!-- ── Gantt-Diagramm ────────────────────────────────────────────────────── -->
+  <section class="gantt-section">
+    <div class="gantt-head-row">
+      <div class="gantt-intro">
+        <h2 class="gantt-h"
+            data-de="Ohne Konzept: Fertigung stockt."
+            data-en="Without planning: production stalls.">Ohne Konzept: Fertigung stockt.</h2>
+        <p class="gantt-sub"
+           data-de="Vorlaufmaterial kommt zu spät — jeder Schritt danach verzögert sich."
+           data-en="Raw material arrives too late — every downstream step shifts.">
+          Vorlaufmaterial kommt zu spät — jeder Schritt danach verzögert sich.
+        </p>
+      </div>
+      <div class="gantt-toggle">
+        <button class="gantt-btn gantt-btn--on" id="gBtnChaos"
+                data-de="Ohne Planung" data-en="Without Planning">Ohne Planung</button>
+        <button class="gantt-btn" id="gBtnPlan"
+                data-de="Mit Planung" data-en="With Planning">Mit Planung</button>
+      </div>
+    </div>
+    <div class="gantt-wrap" id="ganttWrap"><!-- JS füllt hier ein --></div>
+    <div class="gantt-legend">
+      <span class="gl-item gl-plan"
+            data-de="Geplant" data-en="Planned">Geplant</span>
+      <span class="gl-item gl-ok"
+            data-de="Läuft planmäßig" data-en="On track">Läuft planmäßig</span>
+      <span class="gl-item gl-err"
+            data-de="Verzögert / blockiert" data-en="Delayed / blocked">Verzögert / blockiert</span>
+    </div>
   </section>
 
 </main>
