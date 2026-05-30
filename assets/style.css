@@ -2408,62 +2408,6 @@ h1 {
   .ha-split { grid-template-columns: 1fr; }
 }
 
-/* ─── Hamburger / Mobile nav ─────────────────────────────────────────────── */
-
-#navToggle { display: none; }
-
-@media (max-width: 768px) {
-  #navToggle {
-    display: inline-flex;
-    order: 2;
-  }
-
-  .navrow {
-    flex-wrap: nowrap;
-    position: relative;
-    padding: 10px 0;
-  }
-
-  /* Hide the menu by default, show as dropdown when toggled */
-  .menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 1px);
-    left: -24px;
-    right: -24px;
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow-lg);
-    z-index: 200;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    order: 0;
-    width: auto;
-    margin-top: 0;
-    padding: 4px 0;
-    justify-content: flex-start;
-  }
-
-  .menu.menu--open { display: flex; }
-
-  .menu a {
-    padding: 14px 24px;
-    border-radius: 0;
-    font-size: 15px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
-  }
-  .menu a:last-child { border-bottom: none; }
-
-  .btn.iconbtn {
-    width: 44px;
-    height: 44px;
-  }
-}
 
 /* ─── Global mobile / responsive refinements ─────────────────────────────── */
 
@@ -2598,68 +2542,6 @@ h1 {
 
 .card--sneak:hover .card-mehr { letter-spacing: 0.4px; }
 
-/* ─── Hamburger v2: opacity + transform (overrides earlier display:none) ─── */
-
-#navBackdrop {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.28);
-  z-index: 190;
-  opacity: 0;
-  transition: opacity 0.18s ease-out;
-}
-
-#navBackdrop.bd--open { opacity: 1; }
-
-@media (max-width: 768px) {
-  /* Always flex, controlled by opacity/pointer-events instead of display */
-  .menu {
-    display: flex !important;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-8px);
-    transition: opacity 0.18s ease-out, transform 0.18s ease-out;
-    /* positioning */
-    position: absolute;
-    top: calc(100% + 1px);
-    left: -24px;
-    right: -24px;
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    z-index: 200;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 2px;
-    padding: 6px 8px;
-    order: 0;
-    width: auto;
-    margin-top: 0;
-    justify-content: flex-start;
-  }
-
-  .menu.menu--open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .menu a {
-    padding: 11px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    border-bottom: none;
-  }
-
-  .menu a:hover,
-  .menu a.active { background: var(--bg); }
-}
 
 /* ─── Terminal mobile fixes ──────────────────────────────────────────────── */
 
@@ -2830,7 +2712,7 @@ h1 {
     box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
   }
 
-  .bottom-bar__item {
+  .bb-item {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -2847,17 +2729,17 @@ h1 {
     min-height: 44px;
   }
 
-  .bottom-bar__item svg {
+  .bb-item svg {
     width: 22px;
     height: 22px;
     flex-shrink: 0;
   }
 
-  .bottom-bar__item--active {
+  .bb-item--active {
     color: var(--primary);
   }
 
-  .bottom-bar__item:hover {
+  .bb-item:hover {
     color: var(--text);
   }
 
@@ -2884,36 +2766,3 @@ h1 {
   }
 }
 
-/* ─── Terminal mobile fixes (final clean version) ───────────────────────── */
-
-.ha-tl {
-  display: block;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-
-.ha-terminal,
-.ha-term-body,
-.ha-split,
-.ha-before,
-.ha-after {
-  min-width: 0;
-  max-width: 100%;
-}
-
-.ha-term-body { overflow-x: hidden; }
-
-.fp-term  { max-width: 100%; overflow-x: auto; }
-.fp-tline { white-space: pre-wrap; word-break: break-word; }
-
-@media (max-width: 680px) {
-  .ha-split { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-  .ha-term-body { font-size: 11px; }
-  /* Gantt horizontal scroll */
-  .gantt-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .gantt-row, .gantt-thead { min-width: 480px; }
-}

@@ -16,11 +16,11 @@
       <span>weier.digital</span>
     </a>
     <nav class="topnav" aria-label="Navigation">
-      <a class="topnav__link" href="/"
-         data-de="Start" data-en="Home">Start</a>
+      <a class="topnav__link" href="/" data-de="Start" data-en="Home">Start</a>
+      <a class="topnav__link" href="/about/" data-de="Über" data-en="About">Über</a>
       <a class="topnav__link topnav__link--active" href="/system.html">System</a>
-      <a class="topnav__link" href="/kontakt/"
-         data-de="Kontakt" data-en="Contact">Kontakt</a>
+      <a class="topnav__link" href="/blog/">Blog</a>
+      <a class="topnav__link" href="/kontakt/" data-de="Kontakt" data-en="Contact">Kontakt</a>
     </nav>
     <div class="actions">
       <button class="btn iconbtn" id="langToggle" type="button" aria-label="Language">
@@ -69,9 +69,9 @@
 
   <!-- ── Tab: System ── -->
   <div class="stab-panel" id="tabSystem" role="tabpanel" aria-labelledby="stabSystem">
-    <a href="/system/" class="fp-link">
+    <div class="fp-link">
       <div class="fp-content">
-        <span class="fp-tag" data-de="Live-Demo" data-en="Live demo">Live-Demo</span>
+        <span class="fp-tag" data-de="Praxisbeispiel" data-en="Real example">Praxisbeispiel</span>
         <h2 class="fp-title"
             data-de="ERP → Python → CAD: vollautomatisch."
             data-en="ERP → Python → CAD: fully automated.">ERP → Python → CAD: vollautomatisch.</h2>
@@ -80,7 +80,6 @@
            data-en="One order goes in, all systems are automatically updated, documents are generated, status is visible everywhere.">
           Ein Auftrag geht rein, alle Systeme werden automatisch befüllt, Dokumente entstehen, der Status ist überall sichtbar.
         </p>
-        <span class="fp-cta" data-de="Live-Demo öffnen →" data-en="Open live demo →">Live-Demo öffnen →</span>
       </div>
       <div class="fp-preview" aria-hidden="true">
         <div class="fp-term">
@@ -91,7 +90,7 @@
           <div class="fp-tline fp-muted">  Laufzeit: 4.1s</div>
         </div>
       </div>
-    </a>
+    </div>
   </div>
 
   <!-- ── Tab: Weniger Handarbeit ── -->
@@ -101,9 +100,9 @@
       <h2 class="ha-title"
           data-de="Weniger Handarbeit." data-en="Less manual work.">Weniger Handarbeit.</h2>
       <p class="ha-sub"
-         data-de="Ein Auftrag eingetragen — Stückliste, Fertigungsauftrag, Material und Lieferschein entstehen automatisch."
-         data-en="One order entered — BOM, production order, material and delivery note generated automatically.">
-        Ein Auftrag eingetragen — Stückliste, Fertigungsauftrag, Material und Lieferschein entstehen automatisch.
+         data-de="Ein Objekt eintragen — alle Portale werden automatisch befüllt, Preise synchronisiert, Fotos übertragen."
+         data-en="Enter a property once — all portals updated automatically, prices synced, photos transferred.">
+        Ein Objekt eintragen — alle Portale werden automatisch befüllt, Preise synchronisiert, Fotos übertragen.
       </p>
     </div>
     <div class="ha-split">
@@ -115,12 +114,12 @@
           <span data-de="Ohne Automatisierung" data-en="Without automation">Ohne Automatisierung</span>
         </div>
         <ul class="ha-steps" aria-label="Manuelle Schritte">
-          <li class="ha-step" data-de="Excel öffnen, neuen Auftrag eintragen" data-en="Open Excel, enter new order">Excel öffnen, neuen Auftrag eintragen</li>
-          <li class="ha-step" data-de="Stückliste manuell zusammenstellen" data-en="Manually compile bill of materials">Stückliste manuell zusammenstellen</li>
-          <li class="ha-step" data-de="Fertigungsauftrag per Hand anlegen" data-en="Create production order by hand">Fertigungsauftrag per Hand anlegen</li>
-          <li class="ha-step" data-de="Material im WaWi nachschlagen &amp; reservieren" data-en="Look up &amp; reserve material in WMS">Material im WaWi nachschlagen &amp; reservieren</li>
-          <li class="ha-step" data-de="Lieferschein in Word tippen, ausdrucken" data-en="Type delivery note in Word, print">Lieferschein in Word tippen, ausdrucken</li>
-          <li class="ha-step ha-step--total" data-de="⏱ ~45 Minuten · fehleranfällig" data-en="⏱ ~45 minutes · error-prone">⏱ ~45 Minuten · fehleranfällig</li>
+          <li class="ha-step" data-de="Objekt in CRM eingeben (~10 Min.)" data-en="Enter property in CRM (~10 min.)">Objekt in CRM eingeben (~10 Min.)</li>
+          <li class="ha-step" data-de="Nochmal in ImmobilienScout24 eintippen (~15 Min.)" data-en="Retype in ImmobilienScout24 (~15 min.)">Nochmal in ImmobilienScout24 eintippen (~15 Min.)</li>
+          <li class="ha-step" data-de="Nochmal in Immowelt eintippen (~15 Min.)" data-en="Retype in Immowelt (~15 min.)">Nochmal in Immowelt eintippen (~15 Min.)</li>
+          <li class="ha-step" data-de="Fotos in jedes Portal einzeln hochladen (~10 Min.)" data-en="Upload photos to each portal separately (~10 min.)">Fotos in jedes Portal einzeln hochladen (~10 Min.)</li>
+          <li class="ha-step" data-de="Bei Preisänderung: jedes Portal manuell (~10 Min.)" data-en="Price change: update each portal manually (~10 min.)">Bei Preisänderung: jedes Portal manuell (~10 Min.)</li>
+          <li class="ha-step ha-step--total" data-de="⏱ ~60 Min. pro Objekt · Tippfehler · veraltete Daten" data-en="⏱ ~60 min. per property · typos · outdated data">⏱ ~60 Min. pro Objekt · Tippfehler · veraltete Daten</li>
         </ul>
       </div>
       <div class="ha-after">
@@ -135,16 +134,16 @@
             <span class="term-dot term-dot--red"></span>
             <span class="term-dot term-dot--yellow"></span>
             <span class="term-dot term-dot--green"></span>
-            <span class="ha-term-title">auftrag-sync.py</span>
+            <span class="ha-term-title">objekt-sync.py</span>
           </div>
           <div class="ha-term-body" id="haTermBody">
             <span class="ha-tl ha-tl-muted">&gt; Bereit.</span>
           </div>
         </div>
         <div class="ha-total-ok"
-             data-de="⚡ ~8 Sekunden · fehlerfrei · einmal eintippen"
-             data-en="⚡ ~8 seconds · error-free · type once">
-          ⚡ ~8 Sekunden · fehlerfrei · einmal eintippen
+             data-de="⚡ ~4 Sekunden · einmal eingeben · überall aktuell"
+             data-en="⚡ ~4 seconds · enter once · everywhere current">
+          ⚡ ~4 Sekunden · einmal eingeben · überall aktuell
         </div>
       </div>
     </div>
@@ -202,22 +201,36 @@
   </div>
 </footer>
 
-<nav class="bottom-bar" aria-label="Navigation">
-  <a href="/" class="bottom-bar__item">
+<nav class="bottom-bar" aria-label="Mobile Navigation">
+  <a href="/" class="bb-item">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1z"/>
       <polyline points="9 21 9 12 15 12 15 21"/>
     </svg>
     <span data-de="Start" data-en="Home">Start</span>
   </a>
-  <a href="/system.html" class="bottom-bar__item bottom-bar__item--active" aria-current="page">
+  <a href="/about/" class="bb-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+    <span data-de="Über" data-en="About">Über</span>
+  </a>
+  <a href="/system.html" class="bb-item bb-item--active" aria-current="page">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <circle cx="12" cy="12" r="3"/>
       <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
     </svg>
     <span>System</span>
   </a>
-  <a href="/kontakt/" class="bottom-bar__item">
+  <a href="/blog/" class="bb-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 20h9"/>
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+    </svg>
+    <span>Blog</span>
+  </a>
+  <a href="/kontakt/" class="bb-item">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <rect x="2" y="4" width="20" height="16" rx="2"/>
       <polyline points="2 7 12 14 22 7"/>

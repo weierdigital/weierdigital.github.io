@@ -16,23 +16,27 @@
       <span>weier.digital</span>
     </a>
 
-    <nav class="menu" aria-label="Navigation">
-      <a href="/">Start</a>
-      <a href="/about/">Über</a>
-      <a href="/blog/">Blog</a>
-      <a href="/kontakt/">Kontakt</a>
+    <nav class="topnav" aria-label="Navigation">
+      <a class="topnav__link" href="/" data-de="Start" data-en="Home">Start</a>
+      <a class="topnav__link" href="/about/" data-de="Über" data-en="About">Über</a>
+      <a class="topnav__link" href="/system.html">System</a>
+      <a class="topnav__link" href="/blog/">Blog</a>
+      <a class="topnav__link" href="/kontakt/" data-de="Kontakt" data-en="Contact">Kontakt</a>
     </nav>
-
-    <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme wechseln">
-      <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
-        <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
+    <div class="actions">
+      <button class="btn iconbtn" id="langToggle" type="button" aria-label="Language">
+        <span class="lang-label">DE</span>
+      </button>
+      <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme">
+        <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+          <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -100,6 +104,44 @@
     </small>
   </div>
 </footer>
+
+<nav class="bottom-bar" aria-label="Mobile Navigation">
+  <a href="/" class="bb-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1z"/>
+      <polyline points="9 21 9 12 15 12 15 21"/>
+    </svg>
+    <span data-de="Start" data-en="Home">Start</span>
+  </a>
+  <a href="/about/" class="bb-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+    <span data-de="Über" data-en="About">Über</span>
+  </a>
+  <a href="/system.html" class="bb-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+    </svg>
+    <span>System</span>
+  </a>
+  <a href="/blog/" class="bb-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 20h9"/>
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+    </svg>
+    <span>Blog</span>
+  </a>
+  <a href="/kontakt/" class="bb-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <polyline points="2 7 12 14 22 7"/>
+    </svg>
+    <span data-de="Kontakt" data-en="Contact">Kontakt</span>
+  </a>
+</nav>
 
 <script src="/assets/main.js"></script>
 </body>
