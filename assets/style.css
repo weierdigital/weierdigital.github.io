@@ -756,6 +756,9 @@ h1 {
   padding: 16px 20px 8px;
   height: 460px;
   overflow-y: auto;
+  overflow-x: auto;
+  max-width: 100%;
+  box-sizing: border-box;
   font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
   font-size: 12.5px;
   line-height: 1.65;
@@ -785,7 +788,7 @@ h1 {
 }
 
 /* Terminal line types */
-.tl         { display: block; white-space: pre; }
+.tl         { display: block; white-space: pre-wrap; overflow-wrap: break-word; word-break: break-word; }
 .tl-blank   { display: block; height: 5px; }
 .tl-cmd     { color: #e6edf3; font-weight: 600; }
 .tl-ok      { color: #3fb950; }
@@ -1613,12 +1616,15 @@ h1 {
   display: flex;
   gap: 10px;
   align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-.plate-svg-col { flex-shrink: 0; }
-.pipe-svg--plate { max-width: 230px; display: block; }
+.plate-svg-col { flex-shrink: 0; max-width: 50%; }
+.pipe-svg--plate { max-width: 100%; height: auto; display: block; }
 
-.plate-nc-col { flex: 1; min-width: 0; }
+.plate-nc-col { flex: 1; min-width: 0; overflow: hidden; }
 
 .nc-scroll {
   background: #090d13;
@@ -2953,22 +2959,66 @@ h1 {
 .sys-terminal-wrap {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .sys-terminal-wrap .terminal {
   margin: 0;
   flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .sys-kpi-wrap {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .sys-kpi-wrap .kpi-panel {
   flex: 1;
 }
 
+@media (max-width: 768px) {
+  .sys-demo { padding: 4px 0 8px; }
+
+  .sys-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sys-terminal-wrap,
+  .sys-kpi-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .term-output {
+    height: 300px;
+    font-size: 11px;
+    padding: 12px 14px 8px;
+  }
+
+  .pipe-svg--upipe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .plate-split {
+    flex-direction: column;
+  }
+  .plate-svg-col { max-width: 100%; }
+  .pipe-svg--plate { max-width: 100%; }
+}
+
 @media (max-width: 860px) {
   .sys-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
