@@ -8,20 +8,20 @@
       label: 'Auftrag',
       lines: [
         { t: 'cmd',   s: '> lade_auftrag.py --fa FA-2024-0441', d: 0 },
-        { t: 'blank', s: '', d: 200 },
-        { t: 'muted', s: '  Fertigungsauftrag FA-2024-0441...', d: 380 },
-        { t: 'blank', s: '', d: 560 },
-        { t: 'head',  s: '  Variante: U-BOGEN-DN50-L320  (aus Variantenkonfigurator)', d: 660 },
-        { t: 'sep',   s: '  ' + '─'.repeat(52), d: 720 },
-        { t: 'muted', s: '  Typ           U-Rohrbogen', d: 920 },
-        { t: 'muted', s: '  Werkstoff     1.4301', d: 1120 },
-        { t: 'muted', s: '  Nennweite     DN50  (48,3 × 2,0 mm)', d: 1320 },
-        { t: 'muted', s: '  Schenkel      A = 320 mm  /  B = 320 mm', d: 1520 },
-        { t: 'muted', s: '  Stegbreite    580 mm', d: 1720 },
-        { t: 'muted', s: '  Biegeradius   76 mm  (1,5 × D)', d: 1920 },
-        { t: 'muted', s: '  Bohrung A/B   ø 52 mm  ·  Tiefe 22 mm', d: 2120 },
-        { t: 'blank', s: '', d: 2220 },
-        { t: 'ok',    s: '  → Parameter aus Variantentabelle geladen  ·  kein Eingriff nötig', d: 2420 }
+        { t: 'blank', s: '', d: 400 },
+        { t: 'muted', s: '  Fertigungsauftrag FA-2024-0441...', d: 760 },
+        { t: 'blank', s: '', d: 1120 },
+        { t: 'head',  s: '  Variante: U-BOGEN-DN50-L320  (aus Variantenkonfigurator)', d: 1320 },
+        { t: 'sep',   s: '  ' + '─'.repeat(52), d: 1440 },
+        { t: 'muted', s: '  Typ           U-Rohrbogen', d: 1840 },
+        { t: 'muted', s: '  Werkstoff     1.4301', d: 2240 },
+        { t: 'muted', s: '  Nennweite     DN50  (48,3 × 2,0 mm)', d: 2640 },
+        { t: 'muted', s: '  Schenkel      A = 320 mm  /  B = 320 mm', d: 3040 },
+        { t: 'muted', s: '  Stegbreite    580 mm', d: 3440 },
+        { t: 'muted', s: '  Biegeradius   76 mm  (1,5 × D)', d: 3840 },
+        { t: 'muted', s: '  Bohrung A/B   ø 52 mm  ·  Tiefe 22 mm', d: 4240 },
+        { t: 'blank', s: '', d: 4440 },
+        { t: 'ok',    s: '  → Parameter aus Variantentabelle geladen  ·  kein Eingriff nötig', d: 4840 }
       ]
     },
     {
@@ -29,17 +29,17 @@
       label: 'Rohrbogen',
       lines: [
         { t: 'cmd',   s: '> geo_calc.py --typ U-BOGEN --out koordinaten,rohrbild', d: 0 },
-        { t: 'blank', s: '', d: 200 },
-        { t: 'head',  s: '  PUNKT    X (mm)    Y (mm)    R (mm)    AKTION', d: 380 },
-        { t: 'sep',   s: '  ' + '─'.repeat(52), d: 440 },
-        { t: 'ok',    s: '  A         0,0        0,0       —        Bohrung ø 52', d: 650 },
-        { t: 'ok',    s: '  BP-1       0,0      320,0      76        90° Biegung', d: 870 },
-        { t: 'ok',    s: '  BP-2     580,0      320,0      76        90° Biegung', d: 1090 },
-        { t: 'ok',    s: '  B       580,0        0,0       —        Bohrung ø 52', d: 1310 },
-        { t: 'blank', s: '', d: 1410 },
-        { t: 'muted', s: '  Entwickelte Länge:   1.544,3 mm', d: 1590 },
-        { t: 'blank', s: '', d: 1690 },
-        { t: 'svg-pipe', s: '', d: 1880 }
+        { t: 'blank', s: '', d: 400 },
+        { t: 'head',  s: '  PUNKT    X (mm)    Y (mm)    R (mm)    AKTION', d: 760 },
+        { t: 'sep',   s: '  ' + '─'.repeat(52), d: 880 },
+        { t: 'ok',    s: '  A         0,0        0,0       —        Bohrung ø 52', d: 1300 },
+        { t: 'ok',    s: '  BP-1       0,0      320,0      76        90° Biegung', d: 1740 },
+        { t: 'ok',    s: '  BP-2     580,0      320,0      76        90° Biegung', d: 2180 },
+        { t: 'ok',    s: '  B       580,0        0,0       —        Bohrung ø 52', d: 2620 },
+        { t: 'blank', s: '', d: 2820 },
+        { t: 'muted', s: '  Entwickelte Länge:   1.544,3 mm', d: 3180 },
+        { t: 'blank', s: '', d: 3380 },
+        { t: 'svg-pipe', s: '', d: 3760 }
       ]
     },
     {
@@ -47,20 +47,20 @@
       label: 'Rohrplatte',
       lines: [
         { t: 'cmd',   s: '> nc_gen.py --typ ROHRPLATTE --raster 55x45 --n 12', d: 0 },
-        { t: 'blank', s: '', d: 200 },
-        { t: 'muted', s: '  Berechne Bohrungskoordinaten (Schlangenlauf)...', d: 380 },
-        { t: 'blank', s: '', d: 500 },
-        { t: 'head',  s: '  NR    X (mm)    Y (mm)    ø (mm)    T (mm)', d: 660 },
-        { t: 'sep',   s: '  ' + '─'.repeat(48), d: 720 },
-        { t: 'ok',    s: '  01      0,0       0,0      52,0      22,0', d: 920 },
-        { t: 'ok',    s: '  02     55,0       0,0      52,0      22,0', d: 1020 },
-        { t: 'ok',    s: '  03    110,0       0,0      52,0      22,0', d: 1120 },
-        { t: 'muted', s: '  ...', d: 1220 },
-        { t: 'ok',    s: '  12    165,0      90,0      52,0      22,0', d: 1320 },
-        { t: 'blank', s: '', d: 1420 },
-        { t: 'muted', s: '  12 Bohrungen  ·  NC-Programm generiert', d: 1520 },
-        { t: 'blank', s: '', d: 1620 },
-        { t: 'svg-plate', s: '', d: 1820 }
+        { t: 'blank', s: '', d: 400 },
+        { t: 'muted', s: '  Berechne Bohrungskoordinaten (Schlangenlauf)...', d: 760 },
+        { t: 'blank', s: '', d: 1000 },
+        { t: 'head',  s: '  NR    X (mm)    Y (mm)    ø (mm)    T (mm)', d: 1320 },
+        { t: 'sep',   s: '  ' + '─'.repeat(48), d: 1440 },
+        { t: 'ok',    s: '  01      0,0       0,0      52,0      22,0', d: 1840 },
+        { t: 'ok',    s: '  02     55,0       0,0      52,0      22,0', d: 2040 },
+        { t: 'ok',    s: '  03    110,0       0,0      52,0      22,0', d: 2240 },
+        { t: 'muted', s: '  ...', d: 2440 },
+        { t: 'ok',    s: '  12    165,0      90,0      52,0      22,0', d: 2640 },
+        { t: 'blank', s: '', d: 2840 },
+        { t: 'muted', s: '  12 Bohrungen  ·  NC-Programm generiert', d: 3040 },
+        { t: 'blank', s: '', d: 3240 },
+        { t: 'svg-plate', s: '', d: 3640 }
       ]
     },
     {
@@ -68,18 +68,18 @@
       label: 'Systeme',
       lines: [
         { t: 'cmd',   s: '> sync.py --fa FA-2024-0441 --targets all', d: 0 },
-        { t: 'blank', s: '', d: 200 },
-        { t: 'ok',    s: '  ✓ DXF Rohrbogen     →  RO-7731_v1.dxf', d: 450 },
-        { t: 'ok',    s: '  ✓ DXF Rohrplatte    →  RP-7731_v1.dxf', d: 750 },
-        { t: 'ok',    s: '  ✓ NC-Programm       →  BIEGE_7731.nc · BOHR_7731.nc', d: 1050 },
-        { t: 'ok',    s: '  ✓ Fertigungsauftrag →  FA-2024-0441: bereit', d: 1350 },
-        { t: 'blank', s: '', d: 1450 },
-        { t: 'ok',    s: '  5 Dokumente  ·  0 Doppeleingaben  ·  Konstruktion ✓', d: 1650 }
+        { t: 'blank', s: '', d: 400 },
+        { t: 'ok',    s: '  ✓ DXF Rohrbogen     →  RO-7731_v1.dxf', d: 900 },
+        { t: 'ok',    s: '  ✓ DXF Rohrplatte    →  RP-7731_v1.dxf', d: 1500 },
+        { t: 'ok',    s: '  ✓ NC-Programm       →  BIEGE_7731.nc · BOHR_7731.nc', d: 2100 },
+        { t: 'ok',    s: '  ✓ Fertigungsauftrag →  FA-2024-0441: bereit', d: 2700 },
+        { t: 'blank', s: '', d: 2900 },
+        { t: 'ok',    s: '  5 Dokumente  ·  0 Doppeleingaben  ·  Konstruktion ✓', d: 3300 }
       ]
     }
   ];
 
-  var PHASE_OFFSETS = [0, 3400, 6280, 9060];
+  var PHASE_OFFSETS = [0, 6800, 12560, 18120];
 
   // ─── U-PIPE SVG ──────────────────────────────────────────────────────────
   // Tangential cubic bezier (correct geometry):
@@ -134,15 +134,15 @@
     });
     svg.getBoundingClientRect();
     paths.forEach(function (p) {
-      p.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4,0,0.2,1)';
+      p.style.transition = 'stroke-dashoffset 3.6s cubic-bezier(0.4,0,0.2,1)';
       p.style.strokeDashoffset = '0';
     });
     setTimeout(function () {
       svg.querySelectorAll('.p-annot').forEach(function (el) {
-        el.style.transition = 'opacity 0.7s ease';
+        el.style.transition = 'opacity 1.4s ease';
         el.style.opacity = '1';
       });
-    }, 1500);
+    }, 3000);
   }
 
   // ─── ROHRPLATTE SVG + HEIDENHAIN NC ──────────────────────────────────────
@@ -242,7 +242,7 @@
             line.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
         }
-      }, i * 280);
+      }, i * 560);
     });
   }
 
@@ -267,10 +267,10 @@
   function kpiAfterPhase2() {
     setTimeout(function () {
       var bar = kpiEl('kpiBarAfter');
-      if (bar) { bar.style.transition = 'width 2s ease'; bar.style.width = '100%'; }
+      if (bar) { bar.style.transition = 'width 4s ease'; bar.style.width = '100%'; }
       var bpct = kpiEl('kpiBarAfterPct');
-      if (bpct) { var n = 0; var iv = setInterval(function () { n += 4; if (n >= 100) { n = 100; clearInterval(iv); } bpct.textContent = n + '%'; }, 50); }
-    }, PHASE_OFFSETS[2] + 1000);
+      if (bpct) { var n = 0; var iv = setInterval(function () { n += 4; if (n >= 100) { n = 100; clearInterval(iv); } bpct.textContent = n + '%'; }, 100); }
+    }, PHASE_OFFSETS[2] + 2000);
   }
 
   function kpiAfterPhase3() {
@@ -281,7 +281,7 @@
       var dc = kpiEl('kpiDupesChange'); if (dc) { dc.textContent = '↓ kein Transfer nötig'; dc.className = 'kpi-change kpi-change--ok'; }
       var tv = kpiEl('kpiTimeVal'); if (tv) tv.textContent = '4.1s';
       var tc = kpiEl('kpiTimeChange'); if (tc) { tc.textContent = '↑ vs. ~2h manuell'; tc.className = 'kpi-change kpi-change--ok'; }
-    }, PHASE_OFFSETS[3] + 400);
+    }, PHASE_OFFSETS[3] + 800);
 
     setTimeout(function () {
       var log = kpiEl('kpiLog');
@@ -291,9 +291,9 @@
         '<div class="kpi-log-item kpi-log-ok">✓ RO-7731_v1.dxf  ' + hh + ':' + mm + '</div>'
         + '<div class="kpi-log-item kpi-log-ok">✓ RP-7731_v1.dxf  Rohrplatte</div>'
         + '<div class="kpi-log-item kpi-log-ok">✓ BIEGE_7731.nc · BOHR_7731.nc</div>';
-    }, PHASE_OFFSETS[3] + 700);
+    }, PHASE_OFFSETS[3] + 1400);
 
-    setTimeout(function () { setWorkflow(3); }, PHASE_OFFSETS[3] + 1200); // Beschaffung active
+    setTimeout(function () { setWorkflow(3); }, PHASE_OFFSETS[3] + 2400); // Beschaffung active
   }
 
   function kpiDone() {
@@ -345,7 +345,7 @@
         + '<div class="plate-nc-col"><div class="nc-scroll">' + buildNcProg() + '</div></div>'
         + '</div>';
       output.appendChild(el);
-      setTimeout(function () { animatePlate(el); }, 30);
+      setTimeout(function () { animatePlate(el); }, 60);
     } else if (type === 'blank') {
       el.className = 'tl tl-blank'; output.appendChild(el);
     } else {
@@ -388,9 +388,9 @@
       var maxD = 0;
       phase.lines.forEach(function (line) {
         if (line.d > maxD) maxD = line.d;
-        sched(function () { appendLine(output, line.t, line.s); }, offset + 280 + line.d);
+        sched(function () { appendLine(output, line.t, line.s); }, offset + 560 + line.d);
       });
-      globalOffset += 280 + maxD + 700;
+      globalOffset += 560 + maxD + 1400;
     });
 
     sched(function () {
