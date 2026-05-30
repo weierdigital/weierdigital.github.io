@@ -58,6 +58,7 @@
 
   let _ganttInited      = false;
   let _handarbeitInited = false;
+  let _pipelineInited   = false;
 
   function activateTab(name){
     Object.entries(TAB_MAP).forEach(([key, {stab, panel}]) => {
@@ -77,6 +78,10 @@
     if(name === 'handarbeit' && !_handarbeitInited){
       _handarbeitInited = true;
       setTimeout(runHandarbeitAnim, 120);
+    }
+    if(name === 'system' && !_pipelineInited){
+      _pipelineInited = true;
+      setTimeout(function(){ if(typeof initPipelineDemo==='function') initPipelineDemo(); }, 80);
     }
   }
 
@@ -308,6 +313,11 @@
     if(document.getElementById('stabSystem')){
       initTabs();
       initGantt();
+      // Auto-start pipeline demo when system tab is the default visible tab
+      if(document.getElementById('pipeTermBody') && !_pipelineInited){
+        _pipelineInited = true;
+        setTimeout(function(){ if(typeof initPipelineDemo==='function') initPipelineDemo(); }, 400);
+      }
     }
   });
 

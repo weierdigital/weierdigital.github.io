@@ -69,25 +69,64 @@
 
   <!-- ── Tab: System ── -->
   <div class="stab-panel" id="tabSystem" role="tabpanel" aria-labelledby="stabSystem">
-    <div class="fp-link">
-      <div class="fp-content">
-        <span class="fp-tag" data-de="Praxisbeispiel" data-en="Real example">Praxisbeispiel</span>
-        <h2 class="fp-title"
-            data-de="ERP → Python → CAD: vollautomatisch."
-            data-en="ERP → Python → CAD: fully automated.">ERP → Python → CAD: vollautomatisch.</h2>
-        <p class="fp-desc"
-           data-de="Ein Auftrag geht rein, alle Systeme werden automatisch befüllt, Dokumente entstehen, der Status ist überall sichtbar."
-           data-en="One order goes in, all systems are automatically updated, documents are generated, status is visible everywhere.">
-          Ein Auftrag geht rein, alle Systeme werden automatisch befüllt, Dokumente entstehen, der Status ist überall sichtbar.
-        </p>
+    <div class="pipe-demo">
+      <p class="pipe-eyebrow">ERP → Python → CAD</p>
+
+      <div class="pipe-split">
+
+        <!-- SVG Rohrbogen (inline, animiert) -->
+        <div class="pipe-svg-wrap">
+          <svg class="pipe-svg" viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+            <line class="pipe-draw" x1="80" y1="20" x2="80" y2="120" stroke-dasharray="100" stroke-dashoffset="100"/>
+            <path class="pipe-draw" d="M80,120 Q80,200 160,200" stroke-dasharray="130" stroke-dashoffset="130"/>
+            <line class="pipe-draw" x1="160" y1="200" x2="280" y2="200" stroke-dasharray="120" stroke-dashoffset="120"/>
+
+            <g class="pipe-dims">
+              <line x1="80" y1="200" x2="160" y2="200" stroke-dasharray="4 3"/>
+              <text x="115" y="225" class="pipe-dim-text">R = 80</text>
+              <text x="100" y="165" class="pipe-dim-text">90°</text>
+              <line x1="55" y1="20" x2="55" y2="120"/>
+              <text x="20" y="75" class="pipe-dim-text">L1 = 100</text>
+              <line x1="160" y1="175" x2="280" y2="175"/>
+              <text x="195" y="168" class="pipe-dim-text">L2 = 120</text>
+            </g>
+
+            <g class="pipe-badge">
+              <rect x="170" y="30" width="130" height="52" rx="6"/>
+              <text x="182" y="50" class="pipe-badge-text">1.4301 · DN25</text>
+              <text x="182" y="68" class="pipe-badge-text">t = 2.0 mm</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Animiertes Terminal -->
+        <div class="pipe-term" id="pipeTerminal">
+          <div class="pipe-term-bar">
+            <span class="ptb-dot ptb-red"></span>
+            <span class="ptb-dot ptb-yellow"></span>
+            <span class="ptb-dot ptb-green"></span>
+            <span class="ptb-title">pipeline.py</span>
+          </div>
+          <div class="pipe-term-body" id="pipeTermBody">
+            <!-- wird per JS befüllt -->
+          </div>
+        </div>
+
       </div>
-      <div class="fp-preview" aria-hidden="true">
-        <div class="fp-term">
-          <div class="fp-tline fp-cmd">&gt; pipeline.py --fa 2024-0441</div>
-          <div class="fp-tline fp-ok">✓ ERP-Daten geladen</div>
-          <div class="fp-tline fp-ok">✓ CAD-Modell generiert</div>
-          <div class="fp-tline fp-ok">✓ Dokumente exportiert</div>
-          <div class="fp-tline fp-muted">  Laufzeit: 4.1s</div>
+
+      <!-- KPI-Badges -->
+      <div class="pipe-kpis">
+        <div class="pipe-kpi">
+          <span class="pkv">0</span>
+          <span class="pkl" data-de="Übertragungsfehler" data-en="Transfer errors">Übertragungsfehler</span>
+        </div>
+        <div class="pipe-kpi">
+          <span class="pkv">4.1s</span>
+          <span class="pkl" data-de="statt ~45 Min." data-en="vs. ~45 min.">statt ~45 Min.</span>
+        </div>
+        <div class="pipe-kpi">
+          <span class="pkv">100%</span>
+          <span class="pkl" data-de="reproduzierbar" data-en="reproducible">reproduzierbar</span>
         </div>
       </div>
     </div>
@@ -239,6 +278,7 @@
   </a>
 </nav>
 
+<script src="/assets/pipeline.js"></script>
 <script src="/assets/main.js"></script>
 </body>
 </html>
