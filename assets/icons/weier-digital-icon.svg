@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">weier.digital icon</title>
+  <desc id="desc">Minimalist weier.digital logo with double forward slash mark, horizontal parallel caps, and a small square accent.</desc>
+  
+  
+    <g id="signet">
+      <polygon points="213.370,151.600 251.650,151.600 161.170,360.400 122.890,360.400" fill="#111317"/>
+      <polygon points="312.550,151.600 350.830,151.600 260.350,360.400 222.070,360.400" fill="#111317"/>
+      <rect x="363.010" y="311.680" width="34.800" height="34.800" fill="#7E45C5"/>
+    </g>
+
+</svg>

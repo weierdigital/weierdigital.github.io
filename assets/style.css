@@ -110,10 +110,14 @@ a:hover {
 .mark {
   width: 32px;
   height: 32px;
-  border-radius: 8px;
-  background: var(--gradient);
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  flex-shrink: 0;
   transition: transform 0.2s;
+}
+
+.mark svg {
+  width: 32px;
+  height: 32px;
+  display: block;
 }
 
 .brand:hover .mark {
@@ -1856,15 +1860,16 @@ h1 {
 .hero-vis {
   display: flex;
   justify-content: center;
+  overflow-anchor: none;
 }
 
-.blueprint-svg {
+.flow-svg {
   width: 100%;
   max-width: 380px;
   height: auto;
   border-radius: 10px;
-  background: rgba(99,102,241,.04);
-  border: 1px solid rgba(99,102,241,.14);
+  background: rgba(99,102,241,.03);
+  border: 1px solid rgba(99,102,241,.12);
   box-shadow: 0 8px 32px rgba(99,102,241,.08);
 }
 
@@ -1878,37 +1883,28 @@ h1 {
   .hero-vis { display: none; }
 }
 
-/* Blueprint SVG draw animations */
-.bp-part {
-  stroke-dasharray: 750;
-  stroke-dashoffset: 750;
-  animation: bp-draw 2.6s ease-out 0.4s forwards;
-}
-.bp-hole {
-  stroke-dasharray: 125;
-  stroke-dashoffset: 125;
-  animation: bp-draw 1s ease-out forwards;
-}
-.bp-h1 { animation-delay: 1.9s; }
-.bp-h2 { animation-delay: 2.2s; }
-.bp-dims {
-  opacity: 0;
-  animation: bp-fade 0.7s ease-out 2.9s forwards;
-}
-.bp-conn {
-  opacity: 0;
-  animation: bp-fade 0.7s ease-out 3.3s forwards;
-}
-.bp-sys {
-  opacity: 0;
-  animation: bp-fade 0.6s ease-out 3.8s forwards;
-}
-.bp-bar1 { animation: bp-barw 1s ease-out 4.6s forwards; }
-.bp-bar2 { animation: bp-barw 1s ease-out 4.9s forwards; }
+/* Terminal Chat hero animation */
+.tc-panel { opacity: 0; }
+.tc-erp   { animation: tc-fade 0.5s ease-out 0.1s forwards; }
+.tc-pps   { animation: tc-fade 0.5s ease-out 0.5s forwards; }
+.tc-wawi  { animation: tc-fade 0.5s ease-out 0.9s forwards; }
 
-@keyframes bp-draw { to { stroke-dashoffset: 0; } }
-@keyframes bp-fade  { to { opacity: 1; } }
-@keyframes bp-barw  { to { width: 102px; } }
+.tc-conn    { opacity: 0; }
+.tc-conn-h  { animation: tc-fade 0.5s ease-out 2.0s forwards; }
+.tc-conn-d1 { animation: tc-fade 0.5s ease-out 2.3s forwards; }
+.tc-conn-d2 { animation: tc-fade 0.5s ease-out 2.5s forwards; }
+
+.tc-cursor-erp  { opacity: 0; animation: tc-blink 0.85s step-end 3.2s infinite; }
+.tc-cursor-pps  { opacity: 0; animation: tc-blink 0.85s step-end 3.5s infinite; }
+.tc-cursor-wawi { opacity: 0; animation: tc-blink 0.85s step-end 3.8s infinite; }
+
+@keyframes tc-fade  { to { opacity: 1; } }
+@keyframes tc-blink { from { opacity: 1; } 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .tc-panel, .tc-conn { opacity: 1; animation: none; }
+  .tc-cursor-erp, .tc-cursor-pps, .tc-cursor-wawi { opacity: 1; animation: none; }
+}
 
 /* ─── Gantt-Diagramm ─────────────────────────────────────────────────────── */
 

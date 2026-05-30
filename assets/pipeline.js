@@ -1,5 +1,7 @@
 (function () {
 
+  var SPD = 0.75; // speed multiplier — 0.75 = 25% faster than original
+
   // ─── DATA ─────────────────────────────────────────────────────────────────
 
   var PHASES = [
@@ -79,7 +81,7 @@
     }
   ];
 
-  var PHASE_OFFSETS = [0, 6800, 12560, 18120];
+  var PHASE_OFFSETS = [0, 6800, 12560, 18120].map(function(v){ return Math.round(v * SPD); });
 
   // ─── U-PIPE SVG ──────────────────────────────────────────────────────────
   // Tangential cubic bezier (correct geometry):
@@ -134,15 +136,15 @@
     });
     svg.getBoundingClientRect();
     paths.forEach(function (p) {
-      p.style.transition = 'stroke-dashoffset 3.6s cubic-bezier(0.4,0,0.2,1)';
+      p.style.transition = 'stroke-dashoffset ' + (3.6 * SPD).toFixed(2) + 's cubic-bezier(0.4,0,0.2,1)';
       p.style.strokeDashoffset = '0';
     });
     setTimeout(function () {
       svg.querySelectorAll('.p-annot').forEach(function (el) {
-        el.style.transition = 'opacity 1.4s ease';
+        el.style.transition = 'opacity ' + (1.4 * SPD).toFixed(2) + 's ease';
         el.style.opacity = '1';
       });
-    }, 3000);
+    }, Math.round(3000 * SPD));
   }
 
   // ─── ROHRPLATTE SVG + HEIDENHAIN NC ──────────────────────────────────────
@@ -242,7 +244,7 @@
             line.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
         }
-      }, i * 560);
+      }, Math.round(i * 560 * SPD));
     });
   }
 
@@ -267,10 +269,10 @@
   function kpiAfterPhase2() {
     setTimeout(function () {
       var bar = kpiEl('kpiBarAfter');
-      if (bar) { bar.style.transition = 'width 4s ease'; bar.style.width = '100%'; }
+      if (bar) { bar.style.transition = 'width ' + (4 * SPD).toFixed(2) + 's ease'; bar.style.width = '100%'; }
       var bpct = kpiEl('kpiBarAfterPct');
       if (bpct) { var n = 0; var iv = setInterval(function () { n += 4; if (n >= 100) { n = 100; clearInterval(iv); } bpct.textContent = n + '%'; }, 100); }
-    }, PHASE_OFFSETS[2] + 2000);
+    }, PHASE_OFFSETS[2] + Math.round(2000 * SPD));
   }
 
   function kpiAfterPhase3() {
@@ -281,7 +283,7 @@
       var dc = kpiEl('kpiDupesChange'); if (dc) { dc.textContent = '↓ kein Transfer nötig'; dc.className = 'kpi-change kpi-change--ok'; }
       var tv = kpiEl('kpiTimeVal'); if (tv) tv.textContent = '4.1s';
       var tc = kpiEl('kpiTimeChange'); if (tc) { tc.textContent = '↑ vs. ~2h manuell'; tc.className = 'kpi-change kpi-change--ok'; }
-    }, PHASE_OFFSETS[3] + 800);
+    }, PHASE_OFFSETS[3] + Math.round(800 * SPD));
 
     setTimeout(function () {
       var log = kpiEl('kpiLog');
@@ -291,9 +293,9 @@
         '<div class="kpi-log-item kpi-log-ok">✓ RO-7731_v1.dxf  ' + hh + ':' + mm + '</div>'
         + '<div class="kpi-log-item kpi-log-ok">✓ RP-7731_v1.dxf  Rohrplatte</div>'
         + '<div class="kpi-log-item kpi-log-ok">✓ BIEGE_7731.nc · BOHR_7731.nc</div>';
-    }, PHASE_OFFSETS[3] + 1400);
+    }, PHASE_OFFSETS[3] + Math.round(1400 * SPD));
 
-    setTimeout(function () { setWorkflow(3); }, PHASE_OFFSETS[3] + 2400); // Beschaffung active
+    setTimeout(function () { setWorkflow(3); }, PHASE_OFFSETS[3] + Math.round(2400 * SPD)); // Beschaffung active
   }
 
   function kpiDone() {
@@ -388,9 +390,9 @@
       var maxD = 0;
       phase.lines.forEach(function (line) {
         if (line.d > maxD) maxD = line.d;
-        sched(function () { appendLine(output, line.t, line.s); }, offset + 560 + line.d);
+        sched(function () { appendLine(output, line.t, line.s); }, offset + Math.round((560 + line.d) * SPD));
       });
-      globalOffset += 560 + maxD + 1400;
+      globalOffset += Math.round((560 + maxD + 1400) * SPD);
     });
 
     sched(function () {

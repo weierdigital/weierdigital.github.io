@@ -309,6 +309,14 @@
     const y = document.getElementById('y');
     if(y) y.textContent = new Date().getFullYear();
 
+    // Pause hero SVG animation when scrolled out of view
+    var _heroSvg = document.querySelector('.flow-svg');
+    if(_heroSvg && typeof IntersectionObserver !== 'undefined'){
+      new IntersectionObserver(function(entries){
+        _heroSvg[entries[0].isIntersecting ? 'unpauseAnimations' : 'pauseAnimations']();
+      }, { threshold: 0.1 }).observe(_heroSvg);
+    }
+
     // system.html only
     if(document.getElementById('stabSystem')){
       initTabs();
