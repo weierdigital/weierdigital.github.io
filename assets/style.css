@@ -2511,3 +2511,199 @@ h1 {
   /* Tabs */
   .stab { padding: 8px 12px; font-size: 13px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NEW: Clean landing + System-Bereich + Hamburger v2 + Terminal mobile fix
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── System-Bereich (revealed by card clicks) ───────────────────────────── */
+
+#system-bereich {
+  /* display:none set inline in HTML; JS switches to block then adds .sb--open */
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  margin-top: 48px;
+  padding-bottom: 12px;
+  scroll-margin-top: 80px;
+}
+
+#system-bereich.sb--open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sb-topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.sys-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.sys-back-btn:hover {
+  color: var(--text);
+  border-color: var(--primary);
+  background: var(--bg);
+}
+
+/* ─── Compact sneak-peek cards ───────────────────────────────────────────── */
+
+.card--sneak {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* reset padding-bottom that card--btn added */
+  padding-bottom: 20px;
+}
+
+.card--sneak h3 { margin-bottom: 2px; }
+
+.card--sneak p {
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.card-mehr {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  transition: letter-spacing 0.2s;
+}
+
+.card--sneak:hover,
+.card--sneak:focus-visible {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.card--sneak:hover .card-mehr { letter-spacing: 0.4px; }
+
+/* ─── Hamburger v2: opacity + transform (overrides earlier display:none) ─── */
+
+#navBackdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  z-index: 190;
+  opacity: 0;
+  transition: opacity 0.18s ease-out;
+}
+
+#navBackdrop.bd--open { opacity: 1; }
+
+@media (max-width: 768px) {
+  /* Always flex, controlled by opacity/pointer-events instead of display */
+  .menu {
+    display: flex !important;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+    /* positioning */
+    position: absolute;
+    top: calc(100% + 1px);
+    left: -24px;
+    right: -24px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    z-index: 200;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 6px 8px;
+    order: 0;
+    width: auto;
+    margin-top: 0;
+    justify-content: flex-start;
+  }
+
+  .menu.menu--open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .menu a {
+    padding: 11px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-bottom: none;
+  }
+
+  .menu a:hover,
+  .menu a.active { background: var(--bg); }
+}
+
+/* ─── Terminal mobile fixes ──────────────────────────────────────────────── */
+
+/* Lines wrap instead of causing horizontal overflow */
+.ha-tl {
+  display: block;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Prevent any terminal container from overflowing its parent */
+.ha-terminal,
+.ha-term-body,
+.ha-split,
+.ha-before,
+.ha-after {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ha-term-body { overflow-x: hidden; }
+
+/* fp-term (System tab terminal preview) */
+.fp-term    { max-width: 100%; overflow-x: auto; }
+.fp-tline   { white-space: pre-wrap; word-break: break-word; }
+
+/* ─── Responsive: System-Bereich ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  #system-bereich { margin-top: 32px; }
+  .sb-topbar      { margin-bottom: 10px; }
+
+  /* Stabs: 3 tabs, allow horizontal scroll on very small screens */
+  .stabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+  }
+  .stabs::-webkit-scrollbar { display: none; }
+  .stab { flex-shrink: 0; }
+}
+
+@media (max-width: 480px) {
+  .ha-term-body { font-size: 11px; min-height: 160px; }
+  .sys-back-btn { font-size: 12px; padding: 8px 12px; }
+}
