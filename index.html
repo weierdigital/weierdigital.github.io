@@ -16,7 +16,7 @@
       <span>weier.digital</span>
     </a>
 
-    <nav class="menu" aria-label="Navigation">
+    <nav class="menu" id="mainMenu" aria-label="Navigation">
       <a class="active" href="/">
         <span data-de="Start" data-en="Home">Start</span>
       </a>
@@ -31,6 +31,14 @@
     </nav>
 
     <div class="actions">
+      <button class="btn iconbtn" id="navToggle" type="button"
+              aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainMenu">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <line x1="3" y1="6"  x2="21" y2="6"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
       <button class="btn iconbtn" id="langToggle" type="button" aria-label="Language">
         <span class="lang-label">DE</span>
       </button>
@@ -139,8 +147,10 @@
     </div>
   </section>
 
-  <section class="grid" style="margin-top: 60px;">
-    <article class="card card--icon">
+  <section class="grid" id="features" style="margin-top: 52px;">
+    <article class="card card--icon card--btn"
+             data-target="system-section" data-tab="system"
+             role="button" tabindex="0">
       <div class="card-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
@@ -151,9 +161,12 @@
          data-en="Not just any reports, but the information that's actually needed day to day. For the team and for management.">
         Nicht irgendwelche Auswertungen, sondern die Informationen die im Tagesgeschäft wirklich gebraucht werden. Für den Betrieb und für die Geschäftsführung.
       </p>
+      <span class="card-cta" data-de="System ansehen →" data-en="See system →">System ansehen →</span>
     </article>
 
-    <article class="card card--icon">
+    <article class="card card--icon card--btn"
+             data-target="handarbeit-section"
+             role="button" tabindex="0">
       <div class="card-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <circle cx="12" cy="12" r="3"/>
@@ -165,9 +178,12 @@
          data-en="Automate recurring tasks, generate documents automatically, speed up workflows. So people can spend time on what matters.">
         Wiederkehrende Aufgaben automatisieren, Dokumente erzeugen lassen, Abläufe beschleunigen. Damit Leute ihre Zeit für das Wichtige haben.
       </p>
+      <span class="card-cta" data-de="Beispiel ansehen →" data-en="See example →">Beispiel ansehen →</span>
     </article>
 
-    <article class="card card--icon">
+    <article class="card card--icon card--btn"
+             data-target="system-section" data-tab="planung"
+             role="button" tabindex="0">
       <div class="card-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -179,63 +195,128 @@
          data-en="Anyone who enters data once should be able to use it in all systems. No retyping, no transfer errors, no wasted time.">
         Wer Daten einmal eingibt sollte sie in allen Systemen nutzen können. Kein nochmaliges Tippen, keine Übertragungsfehler, keine verlorene Zeit.
       </p>
+      <span class="card-cta" data-de="Fertigungsplanung →" data-en="Production planning →">Fertigungsplanung →</span>
     </article>
   </section>
 
-  <section class="featured-project">
-    <a href="/system/" class="fp-link">
-      <div class="fp-content">
-        <span class="fp-tag" data-de="Live-Demo" data-en="Live demo">Live-Demo</span>
-        <h3 class="fp-title"
-            data-de="Wie das in der Praxis aussieht."
-            data-en="What this looks like in practice.">Wie das in der Praxis aussieht.</h3>
-        <p class="fp-desc"
-           data-de="Ein Auftrag geht rein, alle Systeme werden automatisch befüllt, Dokumente entstehen, der Status ist überall sichtbar."
-           data-en="One order goes in, all systems are automatically updated, documents are generated, status is visible everywhere.">
-          Ein Auftrag geht rein, alle Systeme werden automatisch befüllt, Dokumente entstehen, der Status ist überall sichtbar.
-        </p>
-        <span class="fp-cta" data-de="Demo ansehen →" data-en="View demo →">Demo ansehen →</span>
-      </div>
-      <div class="fp-preview" aria-hidden="true">
-        <div class="fp-term">
-          <div class="fp-tline fp-cmd">&gt; sync.py --fa 2024-0441</div>
-          <div class="fp-tline fp-ok">✓ System 1 aktualisiert</div>
-          <div class="fp-tline fp-ok">✓ System 2 aktualisiert</div>
-          <div class="fp-tline fp-ok">✓ Dokumente generiert</div>
-          <div class="fp-tline fp-muted">  Laufzeit: 4.1s</div>
+  <!-- ── System + Planung Tabs ────────────────────────────────────────────── -->
+  <section class="sys-tabs-wrap" id="system-section">
+    <div class="stabs" role="tablist">
+      <button class="stab stab--on" id="stabSystem" role="tab"
+              aria-selected="true" aria-controls="tabSystem"
+              data-de="System" data-en="System">System</button>
+      <button class="stab" id="stabPlanung" role="tab"
+              aria-selected="false" aria-controls="tabPlanung"
+              data-de="Planung" data-en="Planning">Planung</button>
+    </div>
+
+    <!-- Tab 1: System (ERP-Demo) -->
+    <div class="stab-panel" id="tabSystem" role="tabpanel" aria-labelledby="stabSystem">
+      <a href="/system/" class="fp-link">
+        <div class="fp-content">
+          <span class="fp-tag" data-de="Live-Demo" data-en="Live demo">Live-Demo</span>
+          <h3 class="fp-title"
+              data-de="Wie das in der Praxis aussieht."
+              data-en="What this looks like in practice.">Wie das in der Praxis aussieht.</h3>
+          <p class="fp-desc"
+             data-de="Ein Auftrag geht rein, alle Systeme werden automatisch befüllt, Dokumente entstehen, der Status ist überall sichtbar."
+             data-en="One order goes in, all systems are automatically updated, documents are generated, status is visible everywhere.">
+            Ein Auftrag geht rein, alle Systeme werden automatisch befüllt, Dokumente entstehen, der Status ist überall sichtbar.
+          </p>
+          <span class="fp-cta" data-de="Demo ansehen →" data-en="View demo →">Demo ansehen →</span>
+        </div>
+        <div class="fp-preview" aria-hidden="true">
+          <div class="fp-term">
+            <div class="fp-tline fp-cmd">&gt; sync.py --fa 2024-0441</div>
+            <div class="fp-tline fp-ok">✓ System 1 aktualisiert</div>
+            <div class="fp-tline fp-ok">✓ System 2 aktualisiert</div>
+            <div class="fp-tline fp-ok">✓ Dokumente generiert</div>
+            <div class="fp-tline fp-muted">  Laufzeit: 4.1s</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Tab 2: Planung (Gantt) -->
+    <div class="stab-panel stab-panel--hidden" id="tabPlanung" role="tabpanel" aria-labelledby="stabPlanung">
+      <div class="gantt-head-row">
+        <div class="gantt-intro">
+          <h3 class="gantt-h"
+              data-de="Ohne Konzept: Fertigung stockt."
+              data-en="Without planning: production stalls.">Ohne Konzept: Fertigung stockt.</h3>
+          <p class="gantt-sub"
+             data-de="Vorlaufmaterial kommt zu spät — jeder Schritt danach verzögert sich."
+             data-en="Raw material arrives too late — every downstream step shifts.">
+            Vorlaufmaterial kommt zu spät — jeder Schritt danach verzögert sich.
+          </p>
+        </div>
+        <div class="gantt-toggle">
+          <button class="gantt-btn gantt-btn--on" id="gBtnChaos"
+                  data-de="Ohne Planung" data-en="Without Planning">Ohne Planung</button>
+          <button class="gantt-btn" id="gBtnPlan"
+                  data-de="Mit Planung" data-en="With Planning">Mit Planung</button>
         </div>
       </div>
-    </a>
-  </section>
-
-  <!-- ── Gantt-Diagramm ────────────────────────────────────────────────────── -->
-  <section class="gantt-section">
-    <div class="gantt-head-row">
-      <div class="gantt-intro">
-        <h2 class="gantt-h"
-            data-de="Ohne Konzept: Fertigung stockt."
-            data-en="Without planning: production stalls.">Ohne Konzept: Fertigung stockt.</h2>
-        <p class="gantt-sub"
-           data-de="Vorlaufmaterial kommt zu spät — jeder Schritt danach verzögert sich."
-           data-en="Raw material arrives too late — every downstream step shifts.">
-          Vorlaufmaterial kommt zu spät — jeder Schritt danach verzögert sich.
-        </p>
-      </div>
-      <div class="gantt-toggle">
-        <button class="gantt-btn gantt-btn--on" id="gBtnChaos"
-                data-de="Ohne Planung" data-en="Without Planning">Ohne Planung</button>
-        <button class="gantt-btn" id="gBtnPlan"
-                data-de="Mit Planung" data-en="With Planning">Mit Planung</button>
+      <div class="gantt-wrap" id="ganttWrap"><!-- JS --></div>
+      <div class="gantt-legend">
+        <span class="gl-item gl-plan" data-de="Geplant" data-en="Planned">Geplant</span>
+        <span class="gl-item gl-ok"   data-de="Läuft planmäßig" data-en="On track">Läuft planmäßig</span>
+        <span class="gl-item gl-err"  data-de="Verzögert / blockiert" data-en="Delayed / blocked">Verzögert / blockiert</span>
       </div>
     </div>
-    <div class="gantt-wrap" id="ganttWrap"><!-- JS füllt hier ein --></div>
-    <div class="gantt-legend">
-      <span class="gl-item gl-plan"
-            data-de="Geplant" data-en="Planned">Geplant</span>
-      <span class="gl-item gl-ok"
-            data-de="Läuft planmäßig" data-en="On track">Läuft planmäßig</span>
-      <span class="gl-item gl-err"
-            data-de="Verzögert / blockiert" data-en="Delayed / blocked">Verzögert / blockiert</span>
+  </section>
+
+  <!-- ── Weniger Handarbeit ─────────────────────────────────────────────────── -->
+  <section class="ha-section" id="handarbeit-section">
+    <div class="ha-header">
+      <span class="ha-eyebrow" data-de="Praxisbeispiel" data-en="Real example">Praxisbeispiel</span>
+      <h2 class="ha-title"
+          data-de="Weniger Handarbeit." data-en="Less manual work.">Weniger Handarbeit.</h2>
+      <p class="ha-sub"
+         data-de="Ein Auftrag eingetragen — Stückliste, Fertigungsauftrag, Material und Lieferschein entstehen automatisch."
+         data-en="One order entered — BOM, production order, material and delivery note generated automatically.">
+        Ein Auftrag eingetragen — Stückliste, Fertigungsauftrag, Material und Lieferschein entstehen automatisch.
+      </p>
+    </div>
+    <div class="ha-split">
+      <!-- Vorher -->
+      <div class="ha-before">
+        <div class="ha-card-label ha-card-label--bad">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <span data-de="Ohne Automatisierung" data-en="Without automation">Ohne Automatisierung</span>
+        </div>
+        <ul class="ha-steps" aria-label="Manuelle Schritte">
+          <li class="ha-step" data-de="Excel öffnen, neuen Auftrag eintragen" data-en="Open Excel, enter new order">Excel öffnen, neuen Auftrag eintragen</li>
+          <li class="ha-step" data-de="Stückliste manuell zusammenstellen" data-en="Manually compile bill of materials">Stückliste manuell zusammenstellen</li>
+          <li class="ha-step" data-de="Fertigungsauftrag per Hand anlegen" data-en="Create production order by hand">Fertigungsauftrag per Hand anlegen</li>
+          <li class="ha-step" data-de="Material im WaWi nachschlagen &amp; reservieren" data-en="Look up &amp; reserve material in WMS">Material im WaWi nachschlagen &amp; reservieren</li>
+          <li class="ha-step" data-de="Lieferschein in Word tippen, ausdrucken" data-en="Type delivery note in Word, print">Lieferschein in Word tippen, ausdrucken</li>
+          <li class="ha-step ha-step--total" data-de="⏱ ~45 Minuten · fehleranfällig" data-en="⏱ ~45 minutes · error-prone">⏱ ~45 Minuten · fehleranfällig</li>
+        </ul>
+      </div>
+      <!-- Nachher -->
+      <div class="ha-after">
+        <div class="ha-card-label ha-card-label--good">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-de="Mit Automatisierung" data-en="With automation">Mit Automatisierung</span>
+        </div>
+        <div class="ha-terminal" id="haTerminal">
+          <div class="ha-term-bar">
+            <span class="term-dot term-dot--red"></span>
+            <span class="term-dot term-dot--yellow"></span>
+            <span class="term-dot term-dot--green"></span>
+            <span class="ha-term-title">auftrag-sync.py</span>
+          </div>
+          <div class="ha-term-body" id="haTermBody">
+            <span class="ha-tl ha-tl-muted">&gt; Bereit.</span>
+          </div>
+        </div>
+        <div class="ha-total-ok"
+             data-de="⚡ ~8 Sekunden · fehlerfrei · einmal eintippen"
+             data-en="⚡ ~8 seconds · error-free · type once">
+          ⚡ ~8 Sekunden · fehlerfrei · einmal eintippen
+        </div>
+      </div>
     </div>
   </section>
 
