@@ -71,6 +71,17 @@
 
   <!-- ── Tab: System ── -->
   <div class="stab-panel" id="tabSystem" role="tabpanel" aria-labelledby="stabSystem">
+    <div class="ha-header">
+      <span class="ha-eyebrow" data-de="Praxisbeispiel" data-en="Real example">Praxisbeispiel</span>
+      <h2 class="ha-title"
+          data-de="Einmal eingeben. Alle Systeme aktuell."
+          data-en="Enter once. All systems current.">Einmal eingeben. Alle Systeme aktuell.</h2>
+      <p class="ha-sub"
+         data-de="Fertigungsauftrag kommt rein — Python berechnet Geometrie, generiert NC-Programm und CAD-Daten, übergibt alles an ERP und Fertigung. Was vorher ~2 Stunden und drei Doppeleingaben brauchte: 4 Sekunden, null Übertragungsfehler."
+         data-en="Production order comes in — Python calculates geometry, generates NC programme and CAD data, passes everything to ERP and production. What used to take ~2 hours and three re-entries: 4 seconds, zero transfer errors.">
+        Fertigungsauftrag kommt rein — Python berechnet Geometrie, generiert NC-Programm und CAD-Daten, übergibt alles an ERP und Fertigung. Was vorher ~2 Stunden und drei Doppeleingaben brauchte: 4 Sekunden, null Übertragungsfehler.
+      </p>
+    </div>
     <div class="sys-demo">
       <div class="sys-layout">
 
@@ -225,101 +236,34 @@
     </div>
   </div>
 
-  <!-- ── Tab: Planung · Dashboard & Reporting ── -->
+  <!-- ── Tab: Planung (Gantt) ── -->
   <div class="stab-panel stab-panel--hidden" id="tabPlanung" role="tabpanel" aria-labelledby="stabPlanung">
 
     <div class="ha-header">
-      <span class="ha-eyebrow" data-de="Live-Monitoring" data-en="Live Monitoring">Live-Monitoring</span>
+      <span class="ha-eyebrow" data-de="Praxisbeispiel" data-en="Real example">Praxisbeispiel</span>
       <h2 class="ha-title"
-          data-de="Alles im Blick. Automatisch."
-          data-en="Full visibility. Automatically.">Alles im Blick. Automatisch.</h2>
+          data-de="Planung die Probleme sichtbar macht."
+          data-en="Planning that makes problems visible.">Planung die Probleme sichtbar macht.</h2>
       <p class="ha-sub"
-         data-de="Dashboards die sich selbst aktualisieren. Trigger die sofort warnen. Reports die automatisch generiert werden — ohne manuelles Zusammensuchen."
-         data-en="Dashboards that update themselves. Triggers that alert instantly. Reports generated automatically — no manual digging.">
-        Dashboards die sich selbst aktualisieren. Trigger die sofort warnen. Reports die automatisch generiert werden — ohne manuelles Zusammensuchen.
+         data-de="Rohstoff kommt zu spät — und alles danach verschiebt sich. Hier sieht man den Unterschied zwischen unabgestimmter und koordinierter Fertigung."
+         data-en="Raw material arrives late — and everything after shifts. Here you see the difference between uncoordinated and properly planned production.">
+        Rohstoff kommt zu spät — und alles danach verschiebt sich. Hier sieht man den Unterschied zwischen unabgestimmter und koordinierter Fertigung.
       </p>
     </div>
 
-    <div class="pl-split">
-
-      <div class="pl-left">
-        <div class="pl-section-head">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg>
-          <span data-de="Dashboard · Echtzeit-KPIs" data-en="Dashboard · Live KPIs">Dashboard · Echtzeit-KPIs</span>
-        </div>
-        <div class="pl-kpi-grid">
-          <div class="pl-kpi">
-            <span class="pl-kpi-name" data-de="Offene Aufträge" data-en="Open Orders">Offene Aufträge</span>
-            <span class="pl-kpi-val">12</span>
-            <span class="pl-kpi-delta pl-kpi-delta--ok">+3 heute</span>
-          </div>
-          <div class="pl-kpi">
-            <span class="pl-kpi-name" data-de="Liefertreue" data-en="On-Time Delivery">Liefertreue</span>
-            <span class="pl-kpi-val">94%</span>
-            <span class="pl-kpi-delta pl-kpi-delta--ok">↑ Vorwoche</span>
-          </div>
-          <div class="pl-kpi pl-kpi--warn">
-            <span class="pl-kpi-name" data-de="Lagerreichweite" data-en="Stock Coverage">Lagerreichweite</span>
-            <span class="pl-kpi-val">8 Tage</span>
-            <span class="pl-kpi-delta pl-kpi-delta--warn">⚠ Nachbestellen</span>
-          </div>
-          <div class="pl-kpi">
-            <span class="pl-kpi-name" data-de="Maschinenauslastung" data-en="Machine Utilisation">Maschinenauslastung</span>
-            <span class="pl-kpi-val">78%</span>
-            <span class="pl-kpi-delta pl-kpi-delta--ok">✓ Optimal</span>
-          </div>
-        </div>
+    <div class="gantt-head-row">
+      <div class="gantt-toggle">
+        <button class="gantt-btn gantt-btn--on" id="gBtnChaos"
+                data-de="Ohne Planung" data-en="Without Planning">Ohne Planung</button>
+        <button class="gantt-btn" id="gBtnPlan"
+                data-de="Mit Planung" data-en="With Planning">Mit Planung</button>
       </div>
-
-      <div class="pl-right">
-        <div class="pl-section">
-          <div class="pl-section-head">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13" aria-hidden="true"><polygon points="8,1 10,6 15,6 11,10 13,15 8,12 3,15 5,10 1,6 6,6"/></svg>
-            <span data-de="Trigger &amp; Alerts" data-en="Triggers &amp; Alerts">Trigger &amp; Alerts</span>
-          </div>
-          <div class="pl-trigger-list">
-            <div class="pl-trigger">
-              <span class="pl-trigger-cond" data-de="Bestand &lt; 5 Stk" data-en="Stock &lt; 5 units">Bestand &lt; 5 Stk</span>
-              <span class="pl-trigger-arrow">→</span>
-              <span class="pl-trigger-action">E-Mail + Teams</span>
-            </div>
-            <div class="pl-trigger">
-              <span class="pl-trigger-cond" data-de="Lieferung &gt; 2 Tage überfällig" data-en="Delivery &gt; 2 days overdue">Lieferung &gt; 2 Tage überfällig</span>
-              <span class="pl-trigger-arrow">→</span>
-              <span class="pl-trigger-action" data-de="Eskalation EK" data-en="Escalation Purchasing">Eskalation EK</span>
-            </div>
-            <div class="pl-trigger">
-              <span class="pl-trigger-cond" data-de="Abweichung &gt; 15%" data-en="Deviation &gt; 15%">Abweichung &gt; 15%</span>
-              <span class="pl-trigger-arrow">→</span>
-              <span class="pl-trigger-action" data-de="Analyse-Report + Alert" data-en="Analysis Report + Alert">Analyse-Report + Alert</span>
-            </div>
-          </div>
-        </div>
-        <div class="pl-section" style="margin-top: 16px">
-          <div class="pl-section-head">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><path d="M5 5h6M5 8h4M5 11h3"/></svg>
-            <span>Reports</span>
-          </div>
-          <div class="pl-report-list">
-            <div class="pl-report">
-              <span class="pl-report-schedule">Mo 07:00</span>
-              <span class="pl-report-name" data-de="Wochen-KPIs" data-en="Weekly KPIs">Wochen-KPIs</span>
-              <span class="pl-report-fmt">PDF → E-Mail</span>
-            </div>
-            <div class="pl-report">
-              <span class="pl-report-schedule" data-de="täglich" data-en="daily">täglich</span>
-              <span class="pl-report-name" data-de="Auftragsübersicht" data-en="Order Overview">Auftragsübersicht</span>
-              <span class="pl-report-fmt">Excel → Teams</span>
-            </div>
-            <div class="pl-report">
-              <span class="pl-report-schedule">live</span>
-              <span class="pl-report-name" data-de="Lager-Dashboard" data-en="Stock Dashboard">Lager-Dashboard</span>
-              <span class="pl-report-fmt">Browser</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    </div>
+    <div class="gantt-wrap" id="ganttWrap"><!-- JS --></div>
+    <div class="gantt-legend">
+      <span class="gl-item gl-plan" data-de="Geplant" data-en="Planned">Geplant</span>
+      <span class="gl-item gl-ok"   data-de="Läuft planmäßig" data-en="On track">Läuft planmäßig</span>
+      <span class="gl-item gl-err"  data-de="Verzögert / blockiert" data-en="Delayed / blocked">Verzögert / blockiert</span>
     </div>
 
   </div>
