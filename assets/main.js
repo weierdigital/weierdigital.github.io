@@ -49,70 +49,15 @@
     updateLangLabel(lang);
   }
 
-  // ── Hamburger (opacity + transform + backdrop) ────────────────────────────────
-  function initHamburger(){
-    const toggle   = document.getElementById('navToggle');
-    const menu     = document.getElementById('mainMenu');
-    const backdrop = document.getElementById('navBackdrop');
-    if(!toggle || !menu) return;
-
-    function openMenu(){
-      menu.classList.add('menu--open');
-      toggle.setAttribute('aria-expanded', 'true');
-      if(backdrop){
-        backdrop.style.display = 'block';
-        requestAnimationFrame(() => backdrop.classList.add('bd--open'));
-      }
-    }
-    function closeMenu(){
-      menu.classList.remove('menu--open');
-      toggle.setAttribute('aria-expanded', 'false');
-      if(backdrop){
-        backdrop.classList.remove('bd--open');
-        setTimeout(() => {
-          if(!backdrop.classList.contains('bd--open')) backdrop.style.display = 'none';
-        }, 200);
-      }
-    }
-
-    toggle.addEventListener('click', e => {
-      e.stopPropagation();
-      menu.classList.contains('menu--open') ? closeMenu() : openMenu();
-    });
-    if(backdrop) backdrop.addEventListener('click', closeMenu);
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-  }
-
-  // ── System-Bereich: open / close ──────────────────────────────────────────────
-  function openSystemBereich(tabName){
-    const sb = document.getElementById('system-bereich');
-    if(!sb) return;
-    activateTab(tabName);
-    sb.style.display = 'block';
-    // setTimeout instead of rAF: rAF may not fire in unfocused iframes/tabs
-    setTimeout(() => sb.classList.add('sb--open'), 20);
-    setTimeout(() => sb.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
-  }
-
-  function closeSystemBereich(){
-    const sb = document.getElementById('system-bereich');
-    if(!sb) return;
-    sb.classList.remove('sb--open');
-    setTimeout(() => {
-      if(!sb.classList.contains('sb--open')) sb.style.display = 'none';
-    }, 380);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // ── Tabs (3-tab: system | handarbeit | planung) ───────────────────────────────
-  let _ganttInited      = false;
-  let _handarbeitInited = false;
-
+  // ── Tabs (system.html only) ───────────────────────────────────────────────────
   const TAB_MAP = {
     system:     { stab: 'stabSystem',     panel: 'tabSystem'     },
     handarbeit: { stab: 'stabHandarbeit', panel: 'tabHandarbeit' },
     planung:    { stab: 'stabPlanung',    panel: 'tabPlanung'    },
   };
+
+  let _ganttInited      = false;
+  let _handarbeitInited = false;
 
   function activateTab(name){
     Object.entries(TAB_MAP).forEach(([key, {stab, panel}]) => {
@@ -125,7 +70,6 @@
       }
       if(panelEl) panelEl.classList.toggle('stab-panel--hidden', !active);
     });
-
     if(name === 'planung' && !_ganttInited){
       _ganttInited = true;
       setTimeout(triggerGanttAnim, 80);
@@ -141,23 +85,9 @@
       const stabEl = document.getElementById(stab);
       if(stabEl) stabEl.addEventListener('click', () => activateTab(key));
     });
-    const backBtn = document.getElementById('sysBack');
-    if(backBtn) backBtn.addEventListener('click', closeSystemBereich);
-  }
-
-  // ── Sneak-peek card → open System-Bereich ─────────────────────────────────────
-  function initCardLinks(){
-    document.querySelectorAll('.card--sneak').forEach(card => {
-      const tabName = card.dataset.tab;
-      if(!tabName) return;
-      function go(){
-        openSystemBereich(tabName);
-      }
-      card.addEventListener('click', go);
-      card.addEventListener('keydown', e => {
-        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); }
-      });
-    });
+    // Read ?tab= from URL
+    const tab = new URLSearchParams(location.search).get('tab');
+    if(tab && TAB_MAP[tab]) activateTab(tab);
   }
 
   // ── Handarbeit terminal ───────────────────────────────────────────────────────
@@ -374,10 +304,11 @@
     const y = document.getElementById('y');
     if(y) y.textContent = new Date().getFullYear();
 
-    initHamburger();
-    initTabs();
-    initCardLinks();
-    initGantt();
+    // system.html only
+    if(document.getElementById('stabSystem')){
+      initTabs();
+      initGantt();
+    }
   });
 
 })();

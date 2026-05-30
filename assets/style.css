@@ -2707,3 +2707,213 @@ h1 {
   .ha-term-body { font-size: 11px; min-height: 160px; }
   .sys-back-btn { font-size: 12px; padding: 8px 12px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Desktop topnav + Mobile bottom bar + Card links + system.html styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Desktop topnav (replaces .menu on index + system pages) ───────────── */
+
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topnav__link {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.topnav__link:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.topnav__link--active {
+  color: var(--text);
+  background: var(--surface);
+}
+
+/* ─── Card links (pure <a> on index) ────────────────────────────────────── */
+
+.card--link {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.card--link:hover,
+.card--link:focus-visible {
+  border-color: var(--primary);
+  color: var(--text);
+  outline: none;
+}
+
+.card--link .card-mehr {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  transition: letter-spacing 0.2s;
+}
+
+.card--link:hover .card-mehr { letter-spacing: 0.4px; }
+
+.card--link h3 { margin-bottom: 2px; }
+.card--link p  { font-size: 14px; line-height: 1.5; flex: 1; }
+
+/* ─── system.html page header ───────────────────────────────────────────── */
+
+.sys-page-header {
+  padding: 24px 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sys-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  width: fit-content;
+}
+
+.sys-back-link:hover { color: var(--primary); }
+
+.sys-page-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ─── Bottom bar (mobile navigation) ────────────────────────────────────── */
+
+.bottom-bar {
+  display: none; /* shown only on mobile via media query */
+}
+
+@media (max-width: 767px) {
+  /* Hide desktop topnav on mobile */
+  .topnav { display: none; }
+
+  /* Show bottom bar */
+  .bottom-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(56px + env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    z-index: 100;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .bottom-bar__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: color 0.2s;
+    padding: 8px 4px;
+    min-height: 44px;
+  }
+
+  .bottom-bar__item svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  .bottom-bar__item--active {
+    color: var(--primary);
+  }
+
+  .bottom-bar__item:hover {
+    color: var(--text);
+  }
+
+  /* Give body room for bottom bar */
+  body {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  }
+
+  /* Hide actions on mobile (lang/theme) — keep space clean */
+  .actions {
+    gap: 4px;
+  }
+
+  .btn.iconbtn {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* navrow compact on mobile */
+  .navrow {
+    padding: 10px 0;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+/* ─── Terminal mobile fixes (final clean version) ───────────────────────── */
+
+.ha-tl {
+  display: block;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.ha-terminal,
+.ha-term-body,
+.ha-split,
+.ha-before,
+.ha-after {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ha-term-body { overflow-x: hidden; }
+
+.fp-term  { max-width: 100%; overflow-x: auto; }
+.fp-tline { white-space: pre-wrap; word-break: break-word; }
+
+@media (max-width: 680px) {
+  .ha-split { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .ha-term-body { font-size: 11px; }
+  /* Gantt horizontal scroll */
+  .gantt-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .gantt-row, .gantt-thead { min-width: 480px; }
+}

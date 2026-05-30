@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>System – weier.digital</title>
+  <meta name="description" content="Carsten Weier – ERP-Demo, Automatisierung, Fertigungsplanung" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container navrow">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>weier.digital</span>
+    </a>
+    <nav class="topnav" aria-label="Navigation">
+      <a class="topnav__link" href="/"
+         data-de="Start" data-en="Home">Start</a>
+      <a class="topnav__link topnav__link--active" href="/system.html">System</a>
+      <a class="topnav__link" href="/kontakt/"
+         data-de="Kontakt" data-en="Contact">Kontakt</a>
+    </nav>
+    <div class="actions">
+      <button class="btn iconbtn" id="langToggle" type="button" aria-label="Language">
+        <span class="lang-label">DE</span>
+      </button>
+      <button class="btn iconbtn" id="themeToggle" type="button" aria-label="Theme">
+        <svg class="icon" data-ic="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 13.3A8.3 8.3 0 0 1 10.7 3a7.5 7.5 0 1 0 10.3 10.3Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon" data-ic="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+          <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="sys-page-header">
+    <a href="/" class="sys-back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      <span data-de="Zurück" data-en="Back">Zurück</span>
+    </a>
+    <h1 class="sys-page-title"
+        data-de="So läuft das in der Praxis."
+        data-en="This is how it works in practice.">So läuft das in der Praxis.</h1>
+  </div>
+
+  <div class="stabs" role="tablist">
+    <button class="stab stab--on" id="stabSystem" role="tab"
+            aria-selected="true" aria-controls="tabSystem"
+            data-de="System" data-en="System">System</button>
+    <button class="stab" id="stabHandarbeit" role="tab"
+            aria-selected="false" aria-controls="tabHandarbeit"
+            data-de="Weniger Handarbeit" data-en="Less Manual Work">Weniger Handarbeit</button>
+    <button class="stab" id="stabPlanung" role="tab"
+            aria-selected="false" aria-controls="tabPlanung"
+            data-de="Planung" data-en="Planning">Planung</button>
+  </div>
+
+  <!-- ── Tab: System ── -->
+  <div class="stab-panel" id="tabSystem" role="tabpanel" aria-labelledby="stabSystem">
+    <a href="/system/" class="fp-link">
+      <div class="fp-content">
+        <span class="fp-tag" data-de="Live-Demo" data-en="Live demo">Live-Demo</span>
+        <h2 class="fp-title"
+            data-de="ERP → Python → CAD: vollautomatisch."
+            data-en="ERP → Python → CAD: fully automated.">ERP → Python → CAD: vollautomatisch.</h2>
+        <p class="fp-desc"
+           data-de="Ein Auftrag geht rein, alle Systeme werden automatisch befüllt, Dokumente entstehen, der Status ist überall sichtbar."
+           data-en="One order goes in, all systems are automatically updated, documents are generated, status is visible everywhere.">
+          Ein Auftrag geht rein, alle Systeme werden automatisch befüllt, Dokumente entstehen, der Status ist überall sichtbar.
+        </p>
+        <span class="fp-cta" data-de="Live-Demo öffnen →" data-en="Open live demo →">Live-Demo öffnen →</span>
+      </div>
+      <div class="fp-preview" aria-hidden="true">
+        <div class="fp-term">
+          <div class="fp-tline fp-cmd">&gt; pipeline.py --fa 2024-0441</div>
+          <div class="fp-tline fp-ok">✓ ERP-Daten geladen</div>
+          <div class="fp-tline fp-ok">✓ CAD-Modell generiert</div>
+          <div class="fp-tline fp-ok">✓ Dokumente exportiert</div>
+          <div class="fp-tline fp-muted">  Laufzeit: 4.1s</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ── Tab: Weniger Handarbeit ── -->
+  <div class="stab-panel stab-panel--hidden" id="tabHandarbeit" role="tabpanel" aria-labelledby="stabHandarbeit">
+    <div class="ha-header">
+      <span class="ha-eyebrow" data-de="Praxisbeispiel" data-en="Real example">Praxisbeispiel</span>
+      <h2 class="ha-title"
+          data-de="Weniger Handarbeit." data-en="Less manual work.">Weniger Handarbeit.</h2>
+      <p class="ha-sub"
+         data-de="Ein Auftrag eingetragen — Stückliste, Fertigungsauftrag, Material und Lieferschein entstehen automatisch."
+         data-en="One order entered — BOM, production order, material and delivery note generated automatically.">
+        Ein Auftrag eingetragen — Stückliste, Fertigungsauftrag, Material und Lieferschein entstehen automatisch.
+      </p>
+    </div>
+    <div class="ha-split">
+      <div class="ha-before">
+        <div class="ha-card-label ha-card-label--bad">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+          <span data-de="Ohne Automatisierung" data-en="Without automation">Ohne Automatisierung</span>
+        </div>
+        <ul class="ha-steps" aria-label="Manuelle Schritte">
+          <li class="ha-step" data-de="Excel öffnen, neuen Auftrag eintragen" data-en="Open Excel, enter new order">Excel öffnen, neuen Auftrag eintragen</li>
+          <li class="ha-step" data-de="Stückliste manuell zusammenstellen" data-en="Manually compile bill of materials">Stückliste manuell zusammenstellen</li>
+          <li class="ha-step" data-de="Fertigungsauftrag per Hand anlegen" data-en="Create production order by hand">Fertigungsauftrag per Hand anlegen</li>
+          <li class="ha-step" data-de="Material im WaWi nachschlagen &amp; reservieren" data-en="Look up &amp; reserve material in WMS">Material im WaWi nachschlagen &amp; reservieren</li>
+          <li class="ha-step" data-de="Lieferschein in Word tippen, ausdrucken" data-en="Type delivery note in Word, print">Lieferschein in Word tippen, ausdrucken</li>
+          <li class="ha-step ha-step--total" data-de="⏱ ~45 Minuten · fehleranfällig" data-en="⏱ ~45 minutes · error-prone">⏱ ~45 Minuten · fehleranfällig</li>
+        </ul>
+      </div>
+      <div class="ha-after">
+        <div class="ha-card-label ha-card-label--good">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span data-de="Mit Automatisierung" data-en="With automation">Mit Automatisierung</span>
+        </div>
+        <div class="ha-terminal" id="haTerminal">
+          <div class="ha-term-bar">
+            <span class="term-dot term-dot--red"></span>
+            <span class="term-dot term-dot--yellow"></span>
+            <span class="term-dot term-dot--green"></span>
+            <span class="ha-term-title">auftrag-sync.py</span>
+          </div>
+          <div class="ha-term-body" id="haTermBody">
+            <span class="ha-tl ha-tl-muted">&gt; Bereit.</span>
+          </div>
+        </div>
+        <div class="ha-total-ok"
+             data-de="⚡ ~8 Sekunden · fehlerfrei · einmal eintippen"
+             data-en="⚡ ~8 seconds · error-free · type once">
+          ⚡ ~8 Sekunden · fehlerfrei · einmal eintippen
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Tab: Planung (Gantt) ── -->
+  <div class="stab-panel stab-panel--hidden" id="tabPlanung" role="tabpanel" aria-labelledby="stabPlanung">
+    <div class="gantt-head-row">
+      <div class="gantt-intro">
+        <h2 class="gantt-h"
+            data-de="Ohne Konzept: Fertigung stockt."
+            data-en="Without planning: production stalls.">Ohne Konzept: Fertigung stockt.</h2>
+        <p class="gantt-sub"
+           data-de="Vorlaufmaterial kommt zu spät — jeder Schritt danach verzögert sich."
+           data-en="Raw material arrives too late — every downstream step shifts.">
+          Vorlaufmaterial kommt zu spät — jeder Schritt danach verzögert sich.
+        </p>
+      </div>
+      <div class="gantt-toggle">
+        <button class="gantt-btn gantt-btn--on" id="gBtnChaos"
+                data-de="Ohne Planung" data-en="Without Planning">Ohne Planung</button>
+        <button class="gantt-btn" id="gBtnPlan"
+                data-de="Mit Planung" data-en="With Planning">Mit Planung</button>
+      </div>
+    </div>
+    <div class="gantt-wrap" id="ganttWrap"><!-- JS --></div>
+    <div class="gantt-legend">
+      <span class="gl-item gl-plan" data-de="Geplant" data-en="Planned">Geplant</span>
+      <span class="gl-item gl-ok"   data-de="Läuft planmäßig" data-en="On track">Läuft planmäßig</span>
+      <span class="gl-item gl-err"  data-de="Verzögert / blockiert" data-en="Delayed / blocked">Verzögert / blockiert</span>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container footrow">
+    <small>© <span id="y"></span> Carsten Weier</small>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/carsten-weier-a241001a2/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="footer-social-icon">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+      <a href="https://www.xing.com/profile/Carsten_Weier3/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Xing">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="footer-social-icon">
+          <path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/>
+        </svg>
+      </a>
+    </div>
+    <small>
+      <a href="/impressum/"><span data-de="Impressum" data-en="Legal Notice">Impressum</span></a> ·
+      <a href="/datenschutz/"><span data-de="Datenschutz" data-en="Privacy">Datenschutz</span></a>
+    </small>
+  </div>
+</footer>
+
+<nav class="bottom-bar" aria-label="Navigation">
+  <a href="/" class="bottom-bar__item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1z"/>
+      <polyline points="9 21 9 12 15 12 15 21"/>
+    </svg>
+    <span data-de="Start" data-en="Home">Start</span>
+  </a>
+  <a href="/system.html" class="bottom-bar__item bottom-bar__item--active" aria-current="page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+    </svg>
+    <span>System</span>
+  </a>
+  <a href="/kontakt/" class="bottom-bar__item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <polyline points="2 7 12 14 22 7"/>
+    </svg>
+    <span data-de="Kontakt" data-en="Contact">Kontakt</span>
+  </a>
+</nav>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>
