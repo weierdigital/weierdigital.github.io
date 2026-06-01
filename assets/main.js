@@ -68,6 +68,7 @@
       if(stabEl){
         stabEl.className = 'stab' + (active ? ' stab--on' : '');
         stabEl.setAttribute('aria-selected', String(active));
+        stabEl.setAttribute('tabindex', active ? '0' : '-1');
       }
       if(panelEl) panelEl.classList.toggle('stab-panel--hidden', !active);
     });
@@ -86,9 +87,32 @@
   }
 
   function initTabs(){
+    const tabKeys = Object.keys(TAB_MAP);
     Object.entries(TAB_MAP).forEach(([key, {stab}]) => {
       const stabEl = document.getElementById(stab);
-      if(stabEl) stabEl.addEventListener('click', () => activateTab(key));
+      if(!stabEl) return;
+      stabEl.addEventListener('click', () => activateTab(key));
+      stabEl.addEventListener('keydown', (e) => {
+        const idx = tabKeys.indexOf(key);
+        let target = null;
+        if(e.key === 'ArrowRight' || e.key === 'ArrowDown'){
+          e.preventDefault();
+          target = tabKeys[(idx + 1) % tabKeys.length];
+        } else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){
+          e.preventDefault();
+          target = tabKeys[(idx - 1 + tabKeys.length) % tabKeys.length];
+        } else if(e.key === 'Home'){
+          e.preventDefault();
+          target = tabKeys[0];
+        } else if(e.key === 'End'){
+          e.preventDefault();
+          target = tabKeys[tabKeys.length - 1];
+        }
+        if(target){
+          activateTab(target);
+          document.getElementById(TAB_MAP[target].stab)?.focus();
+        }
+      });
     });
     // Read ?tab= from URL
     const tab = new URLSearchParams(location.search).get('tab');

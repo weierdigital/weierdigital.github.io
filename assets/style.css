@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
-
 /* Moderne Farbpalette 2025/2026 */
 :root {
   --bg: #fafbfc;
@@ -2271,6 +2269,11 @@ h1 {
   background: var(--bg);
 }
 
+.stab:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 .stab--on {
   background: var(--primary);
   color: #fff;
@@ -3213,3 +3216,12 @@ h1 {
 
 .tl-svg svg,
 .tl-svg { max-width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

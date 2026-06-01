@@ -9,9 +9,11 @@ Static personal website for **weier.digital** (Carsten Weier), hosted on GitHub 
 ## Structure
 
 - `index.html` — homepage
-- `about/`, `blog/`, `kontakt/`, `impressum/`, `datenschutz/` — each a folder with its own `index.html`
+- `system.html` — live demo tabs (ERP · Python · CAD pipeline)
+- `about/`, `blog/`, `contact/`, `impressum/`, `datenschutz/` — each a folder with its own `index.html`
+- `kontakt/` — German URL alias; meta-refresh redirects to `/contact/` (canonical)
 - `assets/style.css` — single global stylesheet
-- `assets/main.js` — single JS file (theme toggle, language toggle, footer year)
+- `assets/main.js` — single JS file (theme toggle, language toggle, footer year, demo animations)
 - `CNAME` — GitHub Pages custom domain (`weier.digital`)
 
 ## Key Conventions
@@ -27,6 +29,12 @@ Static personal website for **weier.digital** (Carsten Weier), hosted on GitHub 
 **Active nav link:** Add `class="active"` to the `<a>` matching the current page in every page's `<nav>`.
 
 **No build tooling** — edit files directly and push. The site deploys automatically via GitHub Pages on push to `main`.
+
+**Header/footer duplication:** Every page carries its own copy of the `<header>` and `<footer>`. This is intentional — no build step, no server-side includes. When updating shared markup (nav links, footer links, social URLs) you must edit all HTML files.
+
+**Contact path:** `/contact/` is the canonical URL. `/kontakt/` is a DE-language URL alias with a meta-refresh redirect to `/contact/`. All navigation links (top nav and bottom bar) use `/contact/`.
+
+**Font loading:** Google Fonts (Inter + Space Grotesk) are loaded via `<link rel="preconnect">` and `<link rel="stylesheet">` in each HTML file's `<head>`, not via CSS `@import`. This avoids a render-blocking CSS import. Do not re-add `@import` to `style.css`.
 
 ## Projektkontext: weier.digital
 
