@@ -126,33 +126,29 @@
     if(!body) return;
     const lang = localStorage.getItem(langKey) || 'de';
     const lines = lang === 'en' ? [
-      { c:'ha-tl-cmd',   t:'$ objekt-sync --id WD-2024-112' },
-      { c:'ha-tl-info',  t:'→ Reading property data from CRM...' },
-      { c:'ha-tl-ok',    t:'✓ Property WD-2024-112 loaded' },
-      { c:'ha-tl-info',  t:'→ Push → ImmobilienScout24...' },
-      { c:'ha-tl-ok',    t:'✓ Published' },
-      { c:'ha-tl-info',  t:'→ Push → Immowelt...' },
-      { c:'ha-tl-ok',    t:'✓ Published' },
-      { c:'ha-tl-info',  t:'→ Syncing photos (12 files)...' },
-      { c:'ha-tl-ok',    t:'✓ Photos transferred to all portals' },
-      { c:'ha-tl-info',  t:'→ Distributing price update...' },
-      { c:'ha-tl-ok',    t:'✓ All portals current' },
+      { c:'ha-tl-cmd',   t:'$ status-sync --source erp,fs,feed' },
+      { c:'ha-tl-info',  t:'→ Reading orders from ERP...' },
+      { c:'ha-tl-ok',    t:'✓ 47 open orders loaded' },
+      { c:'ha-tl-info',  t:'→ Matching project folders...' },
+      { c:'ha-tl-ok',    t:'✓ 44 of 47 matched' },
+      { c:'ha-tl-info',  t:'→ Pulling status feed...' },
+      { c:'ha-tl-ok',    t:'✓ 12 status updates applied' },
+      { c:'ha-tl-info',  t:'→ Flagging missing documents...' },
+      { c:'ha-tl-ok',    t:'✓ 3 orders flagged for follow-up' },
       { c:'ha-tl-sep',   t:'─────────────────────────────' },
-      { c:'ha-tl-total', t:'✓ Done in 4.2s — 3 portals current' },
+      { c:'ha-tl-total', t:'✓ Done in 2.8s. One view, all sources current.' },
     ] : [
-      { c:'ha-tl-cmd',   t:'$ objekt-sync --id WD-2024-112' },
-      { c:'ha-tl-info',  t:'→ Lese Objektdaten aus CRM...' },
-      { c:'ha-tl-ok',    t:'✓ Objekt WD-2024-112 geladen' },
-      { c:'ha-tl-info',  t:'→ Push → ImmobilienScout24...' },
-      { c:'ha-tl-ok',    t:'✓ Veröffentlicht' },
-      { c:'ha-tl-info',  t:'→ Push → Immowelt...' },
-      { c:'ha-tl-ok',    t:'✓ Veröffentlicht' },
-      { c:'ha-tl-info',  t:'→ Fotos synchronisiert (12 Stück)...' },
-      { c:'ha-tl-ok',    t:'✓ Fotos in alle Portale übertragen' },
-      { c:'ha-tl-info',  t:'→ Preisänderung verteilen...' },
-      { c:'ha-tl-ok',    t:'✓ Alle Portale aktuell' },
+      { c:'ha-tl-cmd',   t:'$ status-sync --source erp,fs,feed' },
+      { c:'ha-tl-info',  t:'→ Lese Aufträge aus ERP...' },
+      { c:'ha-tl-ok',    t:'✓ 47 offene Aufträge geladen' },
+      { c:'ha-tl-info',  t:'→ Projektordner zuordnen...' },
+      { c:'ha-tl-ok',    t:'✓ 44 von 47 zugeordnet' },
+      { c:'ha-tl-info',  t:'→ Status-Feed einlesen...' },
+      { c:'ha-tl-ok',    t:'✓ 12 Statusänderungen übernommen' },
+      { c:'ha-tl-info',  t:'→ Fehlende Unterlagen markieren...' },
+      { c:'ha-tl-ok',    t:'✓ 3 Aufträge zur Nachverfolgung markiert' },
       { c:'ha-tl-sep',   t:'─────────────────────────────' },
-      { c:'ha-tl-total', t:'✓ Fertig in 4.2s — 3 Portale aktuell' },
+      { c:'ha-tl-total', t:'✓ Fertig in 2.8s. Eine Ansicht, alle Quellen aktuell.' },
     ];
     body.innerHTML = '';
     let delay = 0;
@@ -203,13 +199,13 @@
     if(m === 'chaos'){
       if(sd) sd.className = 'gantt-status gantt-status--err';
       if(st) st.textContent = lang === 'en'
-        ? '⏱  Delivery delayed +3 weeks — machine idle, schedule cascades'
-        : '⏱  Lieferung verzögert sich um +3 Wochen — Maschine steht, alles verschiebt sich';
+        ? '⏱  Delivery delayed +3 weeks. Machine idle, schedule cascades.'
+        : '⏱  Lieferung verzögert sich um +3 Wochen. Maschine steht, alles verschiebt sich.';
     } else {
       if(sd) sd.className = 'gantt-status gantt-status--ok';
       if(st) st.textContent = lang === 'en'
-        ? '✓  All steps coordinated — on time, no idle capacity'
-        : '✓  Alle Schritte abgestimmt — pünktlich, keine Leerlaufzeiten';
+        ? '✓  All steps coordinated. On time, no idle capacity.'
+        : '✓  Alle Schritte abgestimmt. Pünktlich, keine Leerlaufzeiten.';
     }
     GANTT_TASKS.forEach((t, i) => {
       const act    = document.getElementById('gact-' + i);
@@ -281,8 +277,8 @@
     sd.className = 'gantt-status gantt-status--err'; sd.id = 'ganttStatus';
     sd.innerHTML = '<span class="gantt-status-icon">⚠</span><span id="ganttStatusText">'
       + (lang === 'en'
-          ? '⏱  Delivery delayed +3 weeks — machine idle, schedule cascades'
-          : '⏱  Lieferung verzögert sich um +3 Wochen — Maschine steht, alles verschiebt sich')
+          ? '⏱  Delivery delayed +3 weeks. Machine idle, schedule cascades.'
+          : '⏱  Lieferung verzögert sich um +3 Wochen. Maschine steht, alles verschiebt sich.')
       + '</span>';
     wrap.appendChild(sd);
     const thead = document.createElement('div'); thead.className = 'gantt-thead';
@@ -334,6 +330,42 @@
 
     const y = document.getElementById('y');
     if(y) y.textContent = new Date().getFullYear();
+
+    // Scroll-reveal for new home-page sections
+    var tagsWrap     = document.querySelector('.tags-wrap');
+    var branchenGrid = document.querySelector('.branchen-grid');
+    var stepsSection = document.querySelector('.steps-section');
+    if(tagsWrap || branchenGrid || stepsSection){
+      if(reduceMotion || typeof IntersectionObserver === 'undefined'){
+        if(tagsWrap)     tagsWrap.classList.add('tags-visible');
+        if(branchenGrid) branchenGrid.classList.add('branchen-visible');
+        if(stepsSection) stepsSection.classList.add('steps-visible');
+      } else {
+        var revObs = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(!e.isIntersecting) return;
+            var el = e.target;
+            if(el === tagsWrap){
+              el.querySelectorAll('.tech-tag').forEach(function(t, i){
+                t.style.transitionDelay = (i * 55) + 'ms';
+              });
+              el.classList.add('tags-visible');
+            } else if(el === branchenGrid){
+              el.querySelectorAll('.branchen-card').forEach(function(c, i){
+                c.style.transitionDelay = (i * 80) + 'ms';
+              });
+              el.classList.add('branchen-visible');
+            } else if(el === stepsSection){
+              el.classList.add('steps-visible');
+            }
+            revObs.unobserve(el);
+          });
+        }, { threshold: 0.15 });
+        if(tagsWrap)     revObs.observe(tagsWrap);
+        if(branchenGrid) revObs.observe(branchenGrid);
+        if(stepsSection) revObs.observe(stepsSection);
+      }
+    }
 
     // Pause hero SVG animation when scrolled out of view
     var _heroSvg = document.querySelector('.flow-svg');

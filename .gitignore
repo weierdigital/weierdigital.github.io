@@ -16,3 +16,6 @@ desktop.ini
 # Node (falls mal Tools genutzt werden)
 node_modules/
 npm-debug.log*
+
+# Interne Arbeitsdokumentation (nicht öffentlich)
+private_docs/
