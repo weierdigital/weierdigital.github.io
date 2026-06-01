@@ -13,8 +13,7 @@ index.html              — Landing page
 system.html             — Live demo tabs (ERP · Python · CAD pipeline)
 about/index.html        — Über mich / About
 blog/index.html         — Praxisberichte / Notes
-contact/index.html      — Contact (canonical URL)
-kontakt/index.html      — DE alias — meta-refresh redirects to /contact/
+contact/index.html      — Contact
 impressum/index.html    — Impressum / Legal notice
 datenschutz/index.html  — Datenschutz / Privacy policy
 
@@ -41,3 +40,9 @@ Then open `http://localhost:8000`.
 ## Deployment
 
 Push to `main` → GitHub Pages deploys automatically. Custom domain configured via `CNAME` → `weier.digital`.
+
+## Maintenance notes
+
+This is a no-build static site. Shared layout parts — header, footer, bottom navigation, social links, and font/meta tags — are duplicated across pages intentionally. When changing navigation or footer content, update all HTML entry points:
+
+`index.html`, `system.html`, `about/index.html`, `blog/index.html`, `contact/index.html`, `impressum/index.html`, `datenschutz/index.html`

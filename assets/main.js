@@ -1,7 +1,8 @@
 (function(){
-  const root     = document.documentElement;
-  const themeKey = 'weier_theme';
-  const langKey  = 'weier_lang';
+  const root        = document.documentElement;
+  const themeKey    = 'weier_theme';
+  const langKey     = 'weier_lang';
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ── Theme ────────────────────────────────────────────────────────────────────
   function updateThemeIcon(t){
@@ -163,7 +164,7 @@
         s.textContent = line.t;
         body.appendChild(s);
         body.scrollTop = body.scrollHeight;
-      }, delay);
+      }, reduceMotion ? 0 : delay);
     });
   }
 
@@ -246,6 +247,7 @@
   }
 
   function startGanttCycle(){
+    if(reduceMotion) return;
     clearInterval(_ganttTimer);
     _ganttTimer = setInterval(() => applyGanttMode(_ganttMode === 'chaos' ? 'plan' : 'chaos'), 5000);
   }
@@ -346,7 +348,7 @@
       initTabs();
       initGantt();
       // Auto-start pipeline demo when system tab is the default visible tab
-      if(document.getElementById('termOutput') && !_pipelineInited){
+      if(document.getElementById('termOutput') && !_pipelineInited && !reduceMotion){
         _pipelineInited = true;
         setTimeout(function(){ if(typeof window.pipelineRun==='function') window.pipelineRun(); }, 400);
       }
