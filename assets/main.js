@@ -331,39 +331,21 @@
     const y = document.getElementById('y');
     if(y) y.textContent = new Date().getFullYear();
 
-    // Scroll-reveal for new home-page sections
-    var tagsWrap     = document.querySelector('.tags-wrap');
-    var branchenGrid = document.querySelector('.branchen-grid');
-    var stepsSection = document.querySelector('.steps-section');
-    if(tagsWrap || branchenGrid || stepsSection){
+    // Scroll-reveal — einheitliches, ruhiges Einblenden pro Sektion
+    var revealEls = document.querySelectorAll('.bp-hero, .home-section, .cta-block');
+    if(revealEls.length){
       if(reduceMotion || typeof IntersectionObserver === 'undefined'){
-        if(tagsWrap)     tagsWrap.classList.add('tags-visible');
-        if(branchenGrid) branchenGrid.classList.add('branchen-visible');
-        if(stepsSection) stepsSection.classList.add('steps-visible');
+        revealEls.forEach(function(el){ el.classList.add('reveal', 'reveal-in'); });
       } else {
+        revealEls.forEach(function(el){ el.classList.add('reveal'); });
         var revObs = new IntersectionObserver(function(entries){
           entries.forEach(function(e){
             if(!e.isIntersecting) return;
-            var el = e.target;
-            if(el === tagsWrap){
-              el.querySelectorAll('.tech-tag').forEach(function(t, i){
-                t.style.transitionDelay = (i * 55) + 'ms';
-              });
-              el.classList.add('tags-visible');
-            } else if(el === branchenGrid){
-              el.querySelectorAll('.branchen-card').forEach(function(c, i){
-                c.style.transitionDelay = (i * 80) + 'ms';
-              });
-              el.classList.add('branchen-visible');
-            } else if(el === stepsSection){
-              el.classList.add('steps-visible');
-            }
-            revObs.unobserve(el);
+            e.target.classList.add('reveal-in');
+            revObs.unobserve(e.target);
           });
-        }, { threshold: 0.15 });
-        if(tagsWrap)     revObs.observe(tagsWrap);
-        if(branchenGrid) revObs.observe(branchenGrid);
-        if(stepsSection) revObs.observe(stepsSection);
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function(el){ revObs.observe(el); });
       }
     }
 

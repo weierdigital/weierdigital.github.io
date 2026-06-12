@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://weier.digital/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=Source+Serif+4:wght@500;600&display=swap" />
   <link rel="stylesheet" href="/assets/style.css" />
   <script type="application/ld+json">
   {
@@ -31,7 +31,10 @@
       "addressCountry": "DE"
     },
     "knowsAbout": ["ERP-Integration", "CAD-Automatisierung", "Python", "Maschinenbau", "Fertigungsoptimierung", "Prozessautomatisierung", "Heidenhain NC", "SolidWorks"],
-    "sameAs": []
+    "sameAs": [
+      "https://www.linkedin.com/in/carsten-weier-a241001a2/",
+      "https://www.xing.com/profile/Carsten_Weier3/"
+    ]
   }
   </script>
   <link rel="icon" href="/assets/icons/weier-digital-icon.svg" type="image/svg+xml" />
@@ -49,7 +52,7 @@
       <a class="topnav__link topnav__link--active" href="/" data-de="Start" data-en="Home">Start</a>
       <a class="topnav__link" href="/about/" data-de="Über" data-en="About">Über</a>
       <a class="topnav__link" href="/system.html">System</a>
-      <a class="topnav__link" href="/blog/">Blog</a>
+      <a class="topnav__link" href="/projekte/" data-de="Projekte" data-en="Projects">Projekte</a>
       <a class="topnav__link" href="/contact/" data-de="Kontakt" data-en="Contact">Kontakt</a>
     </nav>
     <div class="actions">
@@ -73,171 +76,83 @@
 
 <main class="container">
 
-  <section class="hero hero--split">
-    <div class="hero-text">
-      <span class="hero-eyebrow">Carsten Weier</span>
-      <h1 class="hero-tagline">
-        Software für die Stellen,<br>
-        <span class="hero-tagline-b">an denen Arbeit hängen bleibt.</span>
-      </h1>
-      <p class="hero-sub"
-         data-de="Ich analysiere gewachsene Abläufe, finde Medienbrüche und baue pragmatische interne Tools. Für die Stellen, an denen Systeme, Dateien und Menschen noch nicht zusammenarbeiten."
-         data-en="I analyse established processes, identify friction points and build pragmatic internal tools. For the places where systems, files and people don't yet work together.">
-        Ich analysiere gewachsene Abläufe, finde Medienbrüche und baue pragmatische interne Tools. Für die Stellen, an denen Systeme, Dateien und Menschen noch nicht zusammenarbeiten.
-      </p>
-    </div>
-    <div class="hero-vis">
-      <svg class="flow-svg" viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Drei Systeme die Daten miteinander austauschen">
-        <defs>
-          <pattern id="tc-dots" width="16" height="16" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="0.8" fill="rgba(99,102,241,.11)"/>
-          </pattern>
-          <linearGradient id="bar-main" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.85"/>
-            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.1"/>
-          </linearGradient>
-          <linearGradient id="bar-mid" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#6366f1" stop-opacity="0.05"/>
-          </linearGradient>
-          <linearGradient id="bar-accent" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.7"/>
-            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.08"/>
-          </linearGradient>
-          <linearGradient id="bar-new" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#3fb950" stop-opacity="0.9"/>
-            <stop offset="100%" stop-color="#3fb950" stop-opacity="0.1"/>
-          </linearGradient>
-          <linearGradient id="bar-hdr" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"/>
-            <stop offset="100%" stop-color="#6366f1" stop-opacity="0.0"/>
-          </linearGradient>
-        </defs>
+  <!-- ── Hero: Zeichenblatt ── -->
+  <section class="bp-hero">
+    <div class="bp-frame">
+      <span class="bp-reg tl" aria-hidden="true"></span>
+      <span class="bp-reg tr" aria-hidden="true"></span>
+      <span class="bp-reg bl" aria-hidden="true"></span>
+      <span class="bp-reg br" aria-hidden="true"></span>
 
-        <rect width="360" height="230" fill="url(#tc-dots)" rx="10" opacity=".55"/>
+      <div class="bp-grid">
+        <div class="bp-head">
+          <span class="hero-eyebrow">C. Weier · Siegerland/NRW</span>
+          <h1 class="bp-tagline">
+            Software für die Stellen,<br>
+            <b>an denen Arbeit hängen bleibt.</b>
+          </h1>
+          <div class="dimline" aria-hidden="true"><span class="dimline-label">1 Person · M 1:1</span></div>
+          <p class="bp-sub"
+             data-de="Ich finde, wo zwischen Systemen, Dateien und Menschen Arbeit hängen bleibt – und baue das passende Werkzeug dafür."
+             data-en="I find where work gets stuck between systems, files and people – and build the right tool for it.">
+            Ich finde, wo zwischen Systemen, Dateien und Menschen Arbeit hängen bleibt – und baue das passende Werkzeug dafür.
+          </p>
+          <div class="bp-cta-row">
+            <a class="btn-cta" href="/contact/" data-de="Schreib mir, wo es hakt →" data-en="Tell me where it's stuck →">Schreib mir, wo es hakt →</a>
+            <a class="btn-ghost" href="/system.html" data-de="System ansehen" data-en="See the system">System ansehen</a>
+          </div>
+          <p class="bp-microtrust"
+             data-de="Kostenlos und unverbindlich. Du schreibst direkt mir, nicht einem Postfach."
+             data-en="Free and non-binding. You write directly to me, not to an inbox.">
+            Kostenlos und unverbindlich. Du schreibst direkt mir, nicht einem Postfach.
+          </p>
+        </div>
 
-        <!-- ── Panel A (links) ── -->
-        <rect x="8" y="8" width="152" height="82" rx="6" fill="rgba(99,102,241,.06)" stroke="rgba(99,102,241,.30)" stroke-width="1"/>
-        <!-- Empfangs-Puls -->
-        <rect x="8" y="8" width="152" height="82" rx="6" fill="none" stroke="rgba(99,102,241,1)" stroke-width="1.5" opacity="0">
-          <animate attributeName="opacity" values="0;0.55;0" keyTimes="0;0.3;1" dur="1s" begin="8.5s" repeatCount="indefinite"/>
-        </rect>
-        <line x1="8" y1="24" x2="160" y2="24" stroke="rgba(99,102,241,.18)" stroke-width=".7"/>
-        <!-- Header-Balken (kein Text) -->
-        <circle cx="19" cy="16" r="3" fill="rgba(63,185,80,.9)"/>
-        <rect x="28" y="12.5" width="56" height="7" rx="3.5" fill="url(#bar-hdr)"/>
-        <rect x="88" y="12.5" width="28" height="7" rx="3.5" fill="rgba(99,102,241,.12)"/>
-        <!-- Daten-Zeilen Panel A -->
-        <rect x="20" y="30" width="0" height="7" rx="3.5" fill="url(#bar-main)">
-          <animate attributeName="width" from="0" to="102" dur="0.5s" begin="0.4s" fill="freeze"/>
-        </rect>
-        <rect x="20" y="43" width="0" height="7" rx="3.5" fill="url(#bar-mid)">
-          <animate attributeName="width" from="0" to="70" dur="0.4s" begin="0.8s" fill="freeze"/>
-        </rect>
-        <rect x="20" y="56" width="0" height="7" rx="3.5" fill="url(#bar-accent)">
-          <animate attributeName="width" from="0" to="118" dur="0.55s" begin="1.2s" fill="freeze"/>
-        </rect>
-        <!-- Neue Einträge in Panel A (pulsierend) -->
-        <rect x="20" y="69" width="0" height="7" rx="3.5" fill="url(#bar-new)">
-          <animate attributeName="width" values="0;82;82;0" keyTimes="0;0.12;0.78;1" dur="8s" begin="2.2s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.8;1" dur="8s" begin="2.2s" repeatCount="indefinite"/>
-        </rect>
+        <div class="bp-vis">
+          <div class="bom" role="img" aria-label="Stückliste eines Datenflusses mit einem Medienbruch an Position 3">
+            <div class="bom-head" data-de="Stückliste — Datenfluss" data-en="Parts list — data flow">Stückliste — Datenfluss</div>
+            <div class="bom-body">
+              <div class="bom-row">
+                <span class="bom-pos">POS.01</span>
+                <span class="bom-name">ERP</span>
+                <span class="bom-tag" data-de="Auftrag" data-en="Order">Auftrag</span>
+              </div>
+              <div class="bom-row">
+                <span class="bom-pos">POS.02</span>
+                <span class="bom-name">Excel</span>
+                <span class="bom-tag" data-de="Stückliste" data-en="BOM">Stückliste</span>
+              </div>
+              <div class="bom-row bom-row--break">
+                <span class="bom-pos">POS.03</span>
+                <span class="bom-name" data-de="— Medienbruch" data-en="— Media break">— Medienbruch</span>
+                <span class="bom-badge" data-de="Bruch" data-en="Break">Bruch</span>
+              </div>
+              <div class="bom-row">
+                <span class="bom-pos">POS.04</span>
+                <span class="bom-name">CAD / NC</span>
+                <span class="bom-tag" data-de="Programm" data-en="Program">Programm</span>
+              </div>
+              <div class="bom-row">
+                <span class="bom-pos">POS.05</span>
+                <span class="bom-name" data-de="Fertigung" data-en="Production">Fertigung</span>
+                <span class="bom-tag" data-de="Status" data-en="Status">Status</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <!-- ── Panel B (rechts) ── -->
-        <rect x="200" y="8" width="152" height="82" rx="6" fill="rgba(99,102,241,.06)" stroke="rgba(99,102,241,.30)" stroke-width="1"/>
-        <!-- Empfangs-Puls -->
-        <rect x="200" y="8" width="152" height="82" rx="6" fill="none" stroke="rgba(99,102,241,1)" stroke-width="1.5" opacity="0">
-          <animate attributeName="opacity" values="0;0.55;0" keyTimes="0;0.3;1" dur="1s" begin="4.6s" repeatCount="indefinite"/>
-        </rect>
-        <line x1="200" y1="24" x2="352" y2="24" stroke="rgba(99,102,241,.18)" stroke-width=".7"/>
-        <circle cx="211" cy="16" r="3" fill="rgba(63,185,80,.9)"/>
-        <rect x="220" y="12.5" width="46" height="7" rx="3.5" fill="url(#bar-hdr)"/>
-        <rect x="270" y="12.5" width="32" height="7" rx="3.5" fill="rgba(99,102,241,.12)"/>
-        <!-- Daten-Zeilen Panel B -->
-        <rect x="212" y="30" width="0" height="7" rx="3.5" fill="url(#bar-main)">
-          <animate attributeName="width" from="0" to="84" dur="0.5s" begin="0.6s" fill="freeze"/>
-        </rect>
-        <rect x="212" y="43" width="0" height="7" rx="3.5" fill="url(#bar-accent)">
-          <animate attributeName="width" from="0" to="108" dur="0.5s" begin="1.0s" fill="freeze"/>
-        </rect>
-        <rect x="212" y="56" width="0" height="7" rx="3.5" fill="url(#bar-mid)">
-          <animate attributeName="width" from="0" to="54" dur="0.4s" begin="1.5s" fill="freeze"/>
-        </rect>
-        <!-- Neue Einträge von A -->
-        <rect x="212" y="69" width="0" height="7" rx="3.5" fill="url(#bar-new)">
-          <animate attributeName="width" values="0;90;90;0" keyTimes="0;0.12;0.78;1" dur="8s" begin="4.6s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.8;1" dur="8s" begin="4.6s" repeatCount="indefinite"/>
-        </rect>
-
-        <!-- ── Panel C (unten, Mitte) ── -->
-        <rect x="96" y="130" width="168" height="88" rx="6" fill="rgba(99,102,241,.06)" stroke="rgba(99,102,241,.30)" stroke-width="1"/>
-        <!-- Empfangs-Puls -->
-        <rect x="96" y="130" width="168" height="88" rx="6" fill="none" stroke="rgba(63,185,80,1)" stroke-width="1.5" opacity="0">
-          <animate attributeName="opacity" values="0;0.45;0" keyTimes="0;0.3;1" dur="1s" begin="5.8s" repeatCount="indefinite"/>
-        </rect>
-        <line x1="96" y1="147" x2="264" y2="147" stroke="rgba(99,102,241,.18)" stroke-width=".7"/>
-        <circle cx="107" cy="138.5" r="3" fill="rgba(209,154,34,.9)"/>
-        <rect x="116" y="135" width="62" height="7" rx="3.5" fill="url(#bar-hdr)"/>
-        <rect x="182" y="135" width="34" height="7" rx="3.5" fill="rgba(99,102,241,.12)"/>
-        <!-- Daten-Zeilen Panel C -->
-        <rect x="108" y="152" width="0" height="7" rx="3.5" fill="url(#bar-main)">
-          <animate attributeName="width" from="0" to="112" dur="0.6s" begin="0.9s" fill="freeze"/>
-        </rect>
-        <rect x="108" y="165" width="0" height="7" rx="3.5" fill="url(#bar-mid)">
-          <animate attributeName="width" from="0" to="76" dur="0.5s" begin="1.4s" fill="freeze"/>
-        </rect>
-        <rect x="108" y="178" width="0" height="7" rx="3.5" fill="url(#bar-accent)">
-          <animate attributeName="width" from="0" to="138" dur="0.6s" begin="1.9s" fill="freeze"/>
-        </rect>
-        <!-- Neue Einträge von A und B -->
-        <rect x="108" y="191" width="0" height="7" rx="3.5" fill="url(#bar-new)">
-          <animate attributeName="width" values="0;96;96;0" keyTimes="0;0.12;0.78;1" dur="8s" begin="5.8s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.8;1" dur="8s" begin="5.8s" repeatCount="indefinite"/>
-        </rect>
-        <rect x="108" y="204" width="0" height="7" rx="3.5" fill="url(#bar-new)">
-          <animate attributeName="width" values="0;68;68;0" keyTimes="0;0.12;0.78;1" dur="8s" begin="7.2s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.08;0.8;1" dur="8s" begin="7.2s" repeatCount="indefinite"/>
-        </rect>
-
-        <!-- ── Verbindungslinien ── -->
-        <path d="M160,49 L200,49" fill="none" stroke="rgba(99,102,241,.38)" stroke-width="1.2" stroke-dasharray="3,2.5"/>
-        <path d="M84,90 C84,110 180,110 180,130" fill="none" stroke="rgba(99,102,241,.30)" stroke-width="1.2" stroke-dasharray="3,2.5"/>
-        <path d="M276,90 C276,110 180,110 180,130" fill="none" stroke="rgba(99,102,241,.30)" stroke-width="1.2" stroke-dasharray="3,2.5"/>
-
-        <!-- ── Datenpakete A → B ── -->
-        <circle r="3.5" fill="rgba(99,102,241,.95)">
-          <animateMotion dur="1.1s" begin="3.5s" repeatCount="indefinite" path="M160,49 L200,49"/>
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.88;1" dur="1.1s" begin="3.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle r="2.5" fill="rgba(139,92,246,.9)">
-          <animateMotion dur="1.1s" begin="6.8s" repeatCount="indefinite" path="M160,49 L200,49"/>
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.88;1" dur="1.1s" begin="6.8s" repeatCount="indefinite"/>
-        </circle>
-
-        <!-- ── Datenpakete A → C ── -->
-        <circle r="3" fill="rgba(99,102,241,.9)">
-          <animateMotion dur="1.5s" begin="4.3s" repeatCount="indefinite" path="M84,90 C84,110 180,110 180,130"/>
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.88;1" dur="1.5s" begin="4.3s" repeatCount="indefinite"/>
-        </circle>
-        <circle r="2" fill="rgba(99,102,241,.65)">
-          <animateMotion dur="1.5s" begin="9.0s" repeatCount="indefinite" path="M84,90 C84,110 180,110 180,130"/>
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.88;1" dur="1.5s" begin="9.0s" repeatCount="indefinite"/>
-        </circle>
-
-        <!-- ── Datenpakete B → C ── -->
-        <circle r="3" fill="rgba(63,185,80,.88)">
-          <animateMotion dur="1.5s" begin="5.8s" repeatCount="indefinite" path="M276,90 C276,110 180,110 180,130"/>
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.88;1" dur="1.5s" begin="5.8s" repeatCount="indefinite"/>
-        </circle>
-        <circle r="2.2" fill="rgba(139,92,246,.8)">
-          <animateMotion dur="1.5s" begin="7.8s" repeatCount="indefinite" path="M276,90 C276,110 180,110 180,130"/>
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.88;1" dur="1.5s" begin="7.8s" repeatCount="indefinite"/>
-        </circle>
-      </svg>
+      <div class="bp-titleblock">
+        <span>weier.digital</span>
+        <span data-de="Entw. C. Weier" data-en="Eng. C. Weier">Entw. C. Weier</span>
+        <span data-de="Stand 2026" data-en="Rev. 2026">Stand 2026</span>
+        <span data-de="Blatt 01" data-en="Sheet 01">Blatt 01</span>
+      </div>
     </div>
   </section>
 
-  <section class="grid" id="features" style="margin-top: 52px;">
+  <!-- ── Problem-Cards ── -->
+  <section class="grid" id="features" style="margin-top: 40px;">
     <a class="card card--icon card--link" href="/system.html?tab=system">
       <div class="card-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -283,52 +198,9 @@
     </a>
   </section>
 
-  <!-- Was ich baue -->
-  <section class="home-section">
-    <h2 class="section-h" data-de="Was ich baue" data-en="What I build">Was ich baue</h2>
-    <div class="tags-wrap">
-      <span class="tech-tag" data-de="Interne Web-Tools" data-en="Internal web tools">Interne Web-Tools</span>
-      <span class="tech-tag" data-de="Desktop-Anwendungen" data-en="Desktop applications">Desktop-Anwendungen</span>
-      <span class="tech-tag" data-de="Schnittstellen" data-en="Interfaces">Schnittstellen</span>
-      <span class="tech-tag" data-de="Dashboards" data-en="Dashboards">Dashboards</span>
-      <span class="tech-tag" data-de="PDF-/Excel-/XML-Exporte" data-en="PDF/Excel/XML exports">PDF-/Excel-/XML-Exporte</span>
-      <span class="tech-tag" data-de="Automatische Reports" data-en="Automated reports">Automatische Reports</span>
-      <span class="tech-tag" data-de="CAD-/ERP-Anbindungen" data-en="CAD/ERP integrations">CAD-/ERP-Anbindungen</span>
-      <span class="tech-tag" data-de="Prozess-Apps" data-en="Process apps">Prozess-Apps</span>
-      <span class="tech-tag" data-de="Datenmigrationen" data-en="Data migrations">Datenmigrationen</span>
-    </div>
-  </section>
-
-  <!-- Das kenne ich aus der Praxis -->
-  <section class="home-section">
-    <h2 class="section-h" data-de="Das kenne ich aus der Praxis" data-en="From real-world experience">Das kenne ich aus der Praxis</h2>
-    <div class="branchen-grid">
-      <div class="branchen-card">
-        <span class="branchen-label" data-de="Fertigung &amp; Arbeitsvorbereitung" data-en="Manufacturing &amp; planning">Fertigung &amp; Arbeitsvorbereitung</span>
-        <h3 data-de="Fertigungsauftrag im ERP, Stückliste in Excel, NC-Programm von Hand." data-en="Production order in ERP, BOM in Excel, NC programme by hand.">Fertigungsauftrag im ERP, Stückliste in Excel, NC-Programm von Hand.</h3>
-        <p data-de="Drei Übergaben, drei Fehlerquellen. Jede davon lösbar." data-en="Three handovers, three error sources. Each of them solvable.">Drei Übergaben, drei Fehlerquellen. Jede davon lösbar.</p>
-      </div>
-      <div class="branchen-card">
-        <span class="branchen-label" data-de="Qualität &amp; Prüfwesen" data-en="Quality &amp; inspection">Qualität &amp; Prüfwesen</span>
-        <h3 data-de="Prüfprotokolle in Word, Chargenrückverfolgung manuell, Freigaben per Mail." data-en="Inspection records in Word, batch traceability manual, approvals by email.">Prüfprotokolle in Word, Chargenrückverfolgung manuell, Freigaben per Mail.</h3>
-        <p data-de="Keine nachvollziehbare Historie, keine Auswertung über Zeit." data-en="No traceable history, no evaluation over time.">Keine nachvollziehbare Historie, keine Auswertung über Zeit.</p>
-      </div>
-      <div class="branchen-card">
-        <span class="branchen-label" data-de="Verwaltung &amp; Arbeitsvorbereitung" data-en="Administration &amp; planning">Verwaltung &amp; Arbeitsvorbereitung</span>
-        <h3 data-de="Viele Zwischenschritte, viele Ausnahmen, viel Kontextwissen." data-en="Many intermediate steps, many exceptions, much contextual knowledge.">Viele Zwischenschritte, viele Ausnahmen, viel Kontextwissen.</h3>
-        <p data-de="Und kein System, das das verlässlich abbildet." data-en="And no system that maps it reliably.">Und kein System, das das verlässlich abbildet.</p>
-      </div>
-      <div class="branchen-card">
-        <span class="branchen-label" data-de="Handwerk &amp; Dienstleister" data-en="Trades &amp; service providers">Handwerk &amp; Dienstleister</span>
-        <h3 data-de="Aufträge per Mail, Kalkulation in Excel, Liefertermin im Kopf des Einkäufers." data-en="Orders by email, calculations in Excel, delivery date in the buyer's head.">Aufträge per Mail, Kalkulation in Excel, Liefertermin im Kopf des Einkäufers.</h3>
-        <p data-de="Und keine saubere Übergabe wenn jemand fehlt." data-en="And no clean handover when someone is absent.">Und keine saubere Übergabe wenn jemand fehlt.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Wie ich arbeite -->
+  <!-- ── Wie ich arbeite (vorgezogen) ── -->
   <section class="home-section steps-section">
-    <h2 class="section-h" data-de="Wie ich arbeite" data-en="How I work">Wie ich arbeite</h2>
+    <h2 class="section-h" data-idx="01" data-de="Wie ich arbeite" data-en="How I work">Wie ich arbeite</h2>
     <div class="steps-wrap">
       <div class="step-item">
         <div class="step-num">1</div>
@@ -353,14 +225,185 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ── Live ansehen (Demos-Teaser) ── -->
+  <section class="home-section">
+    <h2 class="section-h" data-idx="02" data-de="Live ansehen" data-en="See it live">Live ansehen</h2>
+    <div class="teaser-row">
+      <a class="teaser-chip" href="/system.html?tab=system">Pipeline: ERP → Python → CAD</a>
+      <a class="teaser-chip" href="/system.html?tab=handarbeit" data-de="Vorher / Nachher: Status-Sync" data-en="Before / after: status sync">Vorher / Nachher: Status-Sync</a>
+      <a class="teaser-chip" href="/system.html?tab=planung" data-de="Planung: Engpässe sehen" data-en="Planning: spot bottlenecks">Planung: Engpässe sehen</a>
+    </div>
+  </section>
+
+  <!-- ── Was ich selbst gebaut habe (Projekte-Teaser) ── -->
+  <section class="home-section">
+    <h2 class="section-h" data-idx="03" data-de="Was ich selbst gebaut habe" data-en="What I've built myself">Was ich selbst gebaut habe</h2>
+    <p class="section-lead"
+       data-de="Noch keine Kundenstimmen – aber echte Systeme, die ich selbst gebaut habe."
+       data-en="No client quotes yet – but real systems I built myself.">
+      Noch keine Kundenstimmen – aber echte Systeme, die ich selbst gebaut habe.
+    </p>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <span class="proj-badge" data-de="Eigenbau" data-en="Self-built">Eigenbau</span>
+        <h3 data-de="ERP-Web-App" data-en="ERP web app">ERP-Web-App</h3>
+        <p class="proj-problem" data-de="Aufträge, Stücklisten und Status lagen in Excel und Ordnern verstreut."
+           data-en="Orders, BOMs and status scattered across Excel and folders.">Aufträge, Stücklisten und Status lagen in Excel und Ordnern verstreut.</p>
+        <p class="proj-what" data-de="Eine interne Web-App auf Terminal-Server mit MySQL – ein Ort, ein Stand."
+           data-en="An internal web app on a terminal server with MySQL – one place, one truth.">Eine interne Web-App auf Terminal-Server mit MySQL – ein Ort, ein Stand.</p>
+        <div class="proj-stack"><span>Python</span><span>MySQL</span><span>Flask</span></div>
+      </div>
+      <div class="proj-card">
+        <span class="proj-badge" data-de="Eigenbau" data-en="Self-built">Eigenbau</span>
+        <h3 data-de="Geometrie → NC-Programm" data-en="Geometry → NC program">Geometrie → NC-Programm</h3>
+        <p class="proj-problem" data-de="NC-Programme für wiederkehrende Teile wurden von Hand geschrieben."
+           data-en="NC programs for recurring parts were written by hand.">NC-Programme für wiederkehrende Teile wurden von Hand geschrieben.</p>
+        <p class="proj-what" data-de="Eine Pipeline berechnet die Geometrie und erzeugt das Heidenhain-Programm automatisch."
+           data-en="A pipeline computes the geometry and generates the Heidenhain program automatically.">Eine Pipeline berechnet die Geometrie und erzeugt das Heidenhain-Programm automatisch.</p>
+        <div class="proj-stack"><span>Python</span><span>Heidenhain NC</span><span>CAD-API</span></div>
+      </div>
+      <div class="proj-card">
+        <span class="proj-badge" data-de="Eigenbau" data-en="Self-built">Eigenbau</span>
+        <h3 data-de="Planungs-Werkzeug" data-en="Planning tool">Planungs-Werkzeug</h3>
+        <p class="proj-problem" data-de="Termine und Engpässe wurden per Zuruf und Excel-Liste geklärt."
+           data-en="Deadlines and bottlenecks were sorted out by phone and Excel lists.">Termine und Engpässe wurden per Zuruf und Excel-Liste geklärt.</p>
+        <p class="proj-what" data-de="Ein Werkzeug, das Abhängigkeiten abbildet und Verzögerungen früh sichtbar macht."
+           data-en="A tool that maps dependencies and surfaces delays early.">Ein Werkzeug, das Abhängigkeiten abbildet und Verzögerungen früh sichtbar macht.</p>
+        <div class="proj-stack"><span>Python</span><span>Gantt</span><span>ERP-Daten</span></div>
+      </div>
+    </div>
+    <a class="proj-cta" href="/projekte/" data-de="Alle Projekte ansehen →" data-en="See all projects →">Alle Projekte ansehen →</a>
+  </section>
+
+  <!-- ── Wer dahinter steht ── -->
+  <section class="home-section">
+    <h2 class="section-h" data-idx="04" data-de="Wer dahinter steht" data-en="Who's behind it">Wer dahinter steht</h2>
+    <p class="who-text"
+       data-de="Ich komme aus dem Maschinenbau – Werkzeugmechaniker, dann Techniker. Ich habe gesehen, wie viel Zeit schlechte Abläufe kosten – also baue ich heute Werkzeuge, die diese Lücken schließen. Eine Person, kein Sales-Funnel."
+       data-en="I come from mechanical engineering – toolmaker, then technician. I saw how much time poor processes cost – so today I build tools that close those gaps. One person, no sales funnel.">
+      Ich komme aus dem Maschinenbau – Werkzeugmechaniker, dann Techniker. Ich habe gesehen, wie viel Zeit schlechte Abläufe kosten – also baue ich heute Werkzeuge, die diese Lücken schließen. Eine Person, kein Sales-Funnel.
+    </p>
+    <a class="proj-cta" href="/about/" data-de="Mehr über mich →" data-en="More about me →">Mehr über mich →</a>
+  </section>
+
+  <!-- ── Was ich baue (Tags) ── -->
+  <section class="home-section">
+    <h2 class="section-h" data-idx="05" data-de="Was ich baue" data-en="What I build">Was ich baue</h2>
+    <div class="tags-wrap">
+      <span class="tech-tag" data-de="Interne Web-Tools" data-en="Internal web tools">Interne Web-Tools</span>
+      <span class="tech-tag" data-de="Desktop-Anwendungen" data-en="Desktop applications">Desktop-Anwendungen</span>
+      <span class="tech-tag" data-de="Schnittstellen" data-en="Interfaces">Schnittstellen</span>
+      <span class="tech-tag" data-de="Dashboards" data-en="Dashboards">Dashboards</span>
+      <span class="tech-tag" data-de="PDF-/Excel-/XML-Exporte" data-en="PDF/Excel/XML exports">PDF-/Excel-/XML-Exporte</span>
+      <span class="tech-tag" data-de="Automatische Reports" data-en="Automated reports">Automatische Reports</span>
+      <span class="tech-tag" data-de="CAD-/ERP-Anbindungen" data-en="CAD/ERP integrations">CAD-/ERP-Anbindungen</span>
+      <span class="tech-tag" data-de="Prozess-Apps" data-en="Process apps">Prozess-Apps</span>
+      <span class="tech-tag" data-de="Datenmigrationen" data-en="Data migrations">Datenmigrationen</span>
+    </div>
+  </section>
+
+  <!-- ── Aus der Praxis (Branchen) ── -->
+  <section class="home-section">
+    <h2 class="section-h" data-idx="06" data-de="Das kenne ich aus der Praxis" data-en="From real-world experience">Das kenne ich aus der Praxis</h2>
+    <div class="branchen-grid">
+      <div class="branchen-card">
+        <span class="branchen-label" data-de="Fertigung &amp; Arbeitsvorbereitung" data-en="Manufacturing &amp; planning">Fertigung &amp; Arbeitsvorbereitung</span>
+        <h3 data-de="Fertigungsauftrag im ERP, Stückliste in Excel, NC-Programm von Hand." data-en="Production order in ERP, BOM in Excel, NC programme by hand.">Fertigungsauftrag im ERP, Stückliste in Excel, NC-Programm von Hand.</h3>
+        <p data-de="Drei Übergaben, drei Fehlerquellen. Jede davon lösbar." data-en="Three handovers, three error sources. Each of them solvable.">Drei Übergaben, drei Fehlerquellen. Jede davon lösbar.</p>
+      </div>
+      <div class="branchen-card">
+        <span class="branchen-label" data-de="Qualität &amp; Prüfwesen" data-en="Quality &amp; inspection">Qualität &amp; Prüfwesen</span>
+        <h3 data-de="Prüfprotokolle in Word, Chargenrückverfolgung manuell, Freigaben per Mail." data-en="Inspection records in Word, batch traceability manual, approvals by email.">Prüfprotokolle in Word, Chargenrückverfolgung manuell, Freigaben per Mail.</h3>
+        <p data-de="Keine nachvollziehbare Historie, keine Auswertung über Zeit." data-en="No traceable history, no evaluation over time.">Keine nachvollziehbare Historie, keine Auswertung über Zeit.</p>
+      </div>
+      <div class="branchen-card">
+        <span class="branchen-label" data-de="Verwaltung &amp; Arbeitsvorbereitung" data-en="Administration &amp; planning">Verwaltung &amp; Arbeitsvorbereitung</span>
+        <h3 data-de="Viele Zwischenschritte, viele Ausnahmen, viel Kontextwissen." data-en="Many intermediate steps, many exceptions, much contextual knowledge.">Viele Zwischenschritte, viele Ausnahmen, viel Kontextwissen.</h3>
+        <p data-de="Und kein System, das das verlässlich abbildet." data-en="And no system that maps it reliably.">Und kein System, das das verlässlich abbildet.</p>
+      </div>
+      <div class="branchen-card">
+        <span class="branchen-label" data-de="Handwerk &amp; Dienstleister" data-en="Trades &amp; service providers">Handwerk &amp; Dienstleister</span>
+        <h3 data-de="Aufträge per Mail, Kalkulation in Excel, Liefertermin im Kopf des Einkäufers." data-en="Orders by email, calculations in Excel, delivery date in the buyer's head.">Aufträge per Mail, Kalkulation in Excel, Liefertermin im Kopf des Einkäufers.</h3>
+        <p data-de="Und keine saubere Übergabe wenn jemand fehlt." data-en="And no clean handover when someone is absent.">Und keine saubere Übergabe wenn jemand fehlt.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Risiko-Senker-Streifen ── -->
+  <section class="home-section">
+    <div class="assure">
+      <div class="assure-item">
+        <h3><span class="assure-tick" aria-hidden="true">✓</span> <span data-de="Kostenlos &amp; unverbindlich" data-en="Free &amp; non-binding">Kostenlos &amp; unverbindlich</span></h3>
+        <p data-de="Das Erstgespräch kostet nichts. Wenn ich nicht helfen kann, sage ich das ehrlich." data-en="The first conversation is free. If I can't help, I'll say so honestly.">Das Erstgespräch kostet nichts. Wenn ich nicht helfen kann, sage ich das ehrlich.</p>
+      </div>
+      <div class="assure-item">
+        <h3><span class="assure-tick" aria-hidden="true">✓</span> <span data-de="Persönliche Antwort" data-en="Personal reply">Persönliche Antwort</span></h3>
+        <p data-de="Du schreibst direkt mir, nicht einem Postfach. Antwort meist am selben Tag." data-en="You write directly to me, not an inbox. Usually a reply the same day.">Du schreibst direkt mir, nicht einem Postfach. Antwort meist am selben Tag.</p>
+      </div>
+      <div class="assure-item">
+        <h3><span class="assure-tick" aria-hidden="true">✓</span> <span data-de="Klein anfangen" data-en="Start small">Klein anfangen</span></h3>
+        <p data-de="Wir starten mit der einen Stelle, die am meisten weh tut. Kein Big-Bang." data-en="We start with the one spot that hurts most. No big bang.">Wir starten mit der einen Stelle, die am meisten weh tut. Kein Big-Bang.</p>
+      </div>
+      <div class="assure-item">
+        <h3><span class="assure-tick" aria-hidden="true">✓</span> <span data-de="Eure Daten bleiben bei euch" data-en="Your data stays with you">Eure Daten bleiben bei euch</span></h3>
+        <p data-de="Tools laufen auf eurer Infrastruktur, keine fremde Cloud. NDA selbstverständlich." data-en="Tools run on your infrastructure, no external cloud. NDA a given.">Tools laufen auf eurer Infrastruktur, keine fremde Cloud. NDA selbstverständlich.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Mini-FAQ ── -->
+  <section class="home-section">
+    <h2 class="section-h" data-idx="07" data-de="Häufige Fragen" data-en="Common questions">Häufige Fragen</h2>
+    <div class="faq">
+      <details class="faq-item">
+        <summary><span data-de="Sie sind nur eine Person – was, wenn Sie ausfallen?" data-en="You're just one person – what if you're unavailable?">Sie sind nur eine Person – was, wenn Sie ausfallen?</span></summary>
+        <p data-de="Deshalb baue ich bewusst klein und dokumentiert – Tools, die euer Team selbst bedient. Ihr bekommt Quellcode und Doku, seid also nie eingesperrt."
+           data-en="That's why I build deliberately small and documented – tools your team runs itself. You get the source and docs, so you're never locked in.">Deshalb baue ich bewusst klein und dokumentiert – Tools, die euer Team selbst bedient. Ihr bekommt Quellcode und Doku, seid also nie eingesperrt.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span data-de="Was kostet das? Ich will keine bösen Überraschungen." data-en="What does it cost? I don't want surprises.">Was kostet das? Ich will keine bösen Überraschungen.</span></summary>
+        <p data-de="Das Erstgespräch ist kostenlos. Danach nenne ich vorab eine Aufwands-Spanne für einen klar abgegrenzten ersten Schritt – kein laufender Zähler."
+           data-en="The first conversation is free. After that I give you an effort range for a clearly scoped first step up front – no running meter.">Das Erstgespräch ist kostenlos. Danach nenne ich vorab eine Aufwands-Spanne für einen klar abgegrenzten ersten Schritt – kein laufender Zähler.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span data-de="Was ist mit unseren Daten und der Vertraulichkeit?" data-en="What about our data and confidentiality?">Was ist mit unseren Daten und der Vertraulichkeit?</span></summary>
+        <p data-de="Eure Daten bleiben bei euch: Tools laufen auf eurer Infrastruktur, kein fremder Cloud-Dienst. NDA vorab selbstverständlich."
+           data-en="Your data stays with you: tools run on your infrastructure, no external cloud. NDA up front a given.">Eure Daten bleiben bei euch: Tools laufen auf eurer Infrastruktur, kein fremder Cloud-Dienst. NDA vorab selbstverständlich.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span data-de="Sie zeigen keine Kundenreferenzen – kann ich Ihnen trotzdem trauen?" data-en="You show no client references – can I still trust you?">Sie zeigen keine Kundenreferenzen – kann ich Ihnen trotzdem trauen?</span></summary>
+        <p data-de="Ehrlich: noch keine. Statt Logos zeige ich echte Systeme, die ich selbst gebaut habe, und anklickbare Demos. Der erste Schritt ist klein und unverbindlich."
+           data-en="Honestly: none yet. Instead of logos I show real systems I built myself and clickable demos. The first step is small and non-binding.">Ehrlich: noch keine. Statt Logos zeige ich echte Systeme, die ich selbst gebaut habe, und anklickbare Demos. Der erste Schritt ist klein und unverbindlich.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ── Abschluss-CTA + Was danach passiert ── -->
   <div class="cta-block">
-    <h2 data-de="Schreib mir, wo es hakt." data-en="Write to me where it's stuck.">Schreib mir, wo es hakt.</h2>
+    <h2 data-de="Erzähl mir von der einen Stelle, die am meisten nervt." data-en="Tell me about the one spot that bugs you most.">Erzähl mir von der einen Stelle, die am meisten nervt.</h2>
     <p data-de="Schreib mir kurz, welcher Ablauf bei euch regelmäßig Zeit kostet. Ich schaue mir gerne an, ob und wie ich helfen kann."
        data-en="Drop me a note about which process regularly costs you time. I'm happy to look at whether and how I can help.">
       Schreib mir kurz, welcher Ablauf bei euch regelmäßig Zeit kostet. Ich schaue mir gerne an, ob und wie ich helfen kann.
     </p>
     <a href="/contact/" class="btn-cta" data-de="Jetzt schreiben →" data-en="Write now →">Jetzt schreiben →</a>
+
+    <div class="next-steps">
+      <div class="next-step">
+        <span class="next-step-n">01</span>
+        <p data-de="Ich antworte persönlich, meist am selben Tag – mit ein, zwei konkreten Rückfragen."
+           data-en="I reply personally, usually the same day – with one or two concrete questions.">Ich antworte persönlich, meist am selben Tag – mit ein, zwei konkreten Rückfragen.</p>
+      </div>
+      <div class="next-step">
+        <span class="next-step-n">02</span>
+        <p data-de="Wir telefonieren kurz oder schreiben. Du erklärst den Ablauf, ich sage ehrlich, ob es sich lösen lässt."
+           data-en="We talk briefly or write. You explain the process, I tell you honestly whether it's solvable.">Wir telefonieren kurz oder schreiben. Du erklärst den Ablauf, ich sage ehrlich, ob es sich lösen lässt.</p>
+      </div>
+      <div class="next-step">
+        <span class="next-step-n">03</span>
+        <p data-de="Wenn es passt, machen wir einen kleinen, klar abgegrenzten ersten Schritt aus. Wenn nicht, hast du trotzdem eine ehrliche Einschätzung."
+           data-en="If it fits, we agree on a small, clearly scoped first step. If not, you still have an honest assessment.">Wenn es passt, machen wir einen kleinen, klar abgegrenzten ersten Schritt aus. Wenn nicht, hast du trotzdem eine ehrliche Einschätzung.</p>
+      </div>
+    </div>
   </div>
 
 </main>
@@ -409,12 +452,11 @@
     </svg>
     <span>System</span>
   </a>
-  <a href="/blog/" class="bb-item">
+  <a href="/projekte/" class="bb-item">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M12 20h9"/>
-      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+      <path d="M3 7h18M3 12h18M3 17h18"/>
     </svg>
-    <span>Blog</span>
+    <span data-de="Projekte" data-en="Projects">Projekte</span>
   </a>
   <a href="/contact/" class="bb-item">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

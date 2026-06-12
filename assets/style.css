@@ -1,39 +1,68 @@
-/* Moderne Farbpalette 2025/2026 */
+/* Werkstatt-Blueprint × Editorial — Relaunch 2026
+   Warmes Zeichenpapier, ein Maschinen-Akzent, Haarlinien statt Schatten. */
 :root {
-  --bg: #fafbfc;
-  --surface: #ffffff;
-  --text: #1a1f36;
-  --text-muted: #5e6c84;
-  --border: #e4e7eb;
+  --bg: #f4f1ea;          /* Zeichenpapier */
+  --surface: #ffffff;     /* Zeichenblatt — reinweiß, hebt sich vom Papier ab */
+  --surface-2: #f1ede3;   /* eingelassene Wanne (Header-Bar, Tracks) */
+  --text: #211c16;        /* Tusche */
+  --text-muted: #6b6357;  /* Bemaßungstext, Captions */
+  --border: #ddd5c6;      /* Haarlinie */
+  --border-strong: #c3bba9; /* Zeichnungsrahmen, innere Trenner */
+  --grid: rgba(150,140,120,.16);     /* feines Raster (20px) */
+  --grid-bold: rgba(150,140,120,.26);/* grobes Raster (100px) */
 
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --accent: #cb5328;      /* EIN warmer Maschinen-Akzent */
+  --accent-hover: #b1481f;
+  --accent-ink: #ffffff;  /* Text auf Akzent */
+  --accent-soft: rgba(203,83,40,.08);
+  --ok: #3f7d4e;          /* gemessenes Grün (Demo „nachher/ok") */
+  --warn: #b67708;
+
+  /* Legacy-Aliase: bestehende var(--primary)/var(--gradient)-Regeln übernehmen den Akzent */
+  --primary: #cb5328;
+  --primary-hover: #b1481f;
+  --gradient: linear-gradient(135deg, #cb5328 0%, #d98a3a 100%);
 
   --linkedin: #0077b5;
   --xing: #006567;
 
-  --radius: 12px;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --mono: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
+
+  --radius: 3px;          /* Zeichenblatt-Ecken statt 12px-Pillen */
+  --radius-pill: 999px;
+  --shadow: 0 1px 0 rgba(33,28,22,.05);   /* fast flach — Tiefe kommt aus Linien */
+  --shadow-lg: 0 2px 0 rgba(33,28,22,.06);
 }
 
 :root[data-theme="dark"] {
-  --bg: #0d1117;
-  --surface: #161b22;
-  --text: #e6edf3;
-  --text-muted: #8b949e;
-  --border: #30363d;
+  --bg: #14110d;          /* warmes Graphit */
+  --surface: #1d1813;
+  --surface-2: #241d15;
+  --text: #ece5d8;
+  --text-muted: #a99f8d;
+  --border: #332b21;
+  --border-strong: #463b2d;
+  --grid: rgba(160,150,130,.10);
+  --grid-bold: rgba(160,150,130,.16);
 
-  --primary: #818cf8;
-  --primary-hover: #6366f1;
-  --gradient: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  --accent: #e0875f;      /* heller/wärmer für Kontrast auf dunkel */
+  --accent-hover: #eda681;
+  --accent-ink: #1a0e07;
+  --accent-soft: rgba(224,135,95,.13);
+  --ok: #5fae6e;
+  --warn: #d29922;
+
+  --primary: #e0875f;
+  --primary-hover: #eda681;
+  --gradient: linear-gradient(135deg, #e0875f 0%, #e8a06a 100%);
 
   --linkedin: #0a66c2;
   --xing: #007575;
 
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow: 0 1px 0 rgba(0,0,0,.35);
+  --shadow-lg: 0 2px 0 rgba(0,0,0,.45);
 }
 
 /* Reset & Base */
@@ -3510,3 +3539,253 @@ h1 {
     scroll-behavior: auto !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════════════
+   RELAUNCH 2026 — Werkstatt-Blueprint × Editorial  (Schicht über Bestand)
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* — Zeichenpapier-Raster hinter der ganzen Seite — */
+body {
+  background-color: var(--bg);
+  background-image:
+    repeating-linear-gradient(to right,  transparent 0 19px, var(--grid) 19px 20px),
+    repeating-linear-gradient(to bottom, transparent 0 19px, var(--grid) 19px 20px),
+    repeating-linear-gradient(to right,  transparent 0 99px, var(--grid-bold) 99px 100px),
+    repeating-linear-gradient(to bottom, transparent 0 99px, var(--grid-bold) 99px 100px);
+}
+@media (max-width: 640px) {
+  body {
+    background-image: repeating-linear-gradient(to bottom, transparent 0 99px, var(--grid-bold) 99px 100px);
+  }
+}
+
+/* — Serif-Schlagzeilen (Editorial-Wärme) — */
+h1, .hero-tagline, .page-header h1, .blog-hero h1, .about-hero h1,
+.contact-hero h1, .section-h, .cta-block h2, .sys-page-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+/* — Mono-Stempel: Eyebrows & Labels — */
+.hero-eyebrow, .branchen-label {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.section-h[data-idx]::before {
+  content: attr(data-idx) "  ·  ";
+  font-family: var(--mono);
+  font-size: 0.58em;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  vertical-align: middle;
+}
+
+/* — Tech-Tags → Part-Number-Chips — */
+.tech-tag {
+  font-family: var(--mono);
+  border-radius: 2px;
+  text-transform: none;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* — Karten = Haarlinien-Blätter, Akzent-Kante bei Hover — */
+.card, .branchen-card { box-shadow: none; }
+.card--link { position: relative; overflow: hidden; }
+.card--link::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--accent); transform: scaleY(0); transform-origin: top;
+  transition: transform 0.25s ease;
+}
+.card--link:hover::before, .card--link:focus-visible::before { transform: scaleY(1); }
+.card-mehr { font-family: var(--mono); font-weight: 400; text-transform: none; letter-spacing: 0.2px; }
+
+/* — Sticky Header in Papierfarbe + Akzent-Tick für aktiven Link — */
+.topbar { background: rgba(246, 242, 234, 0.82); }
+:root[data-theme="dark"] .topbar { background: rgba(20, 17, 13, 0.82); }
+.topnav__link:hover { background: transparent; color: var(--text); }
+.topnav__link--active {
+  background: transparent; color: var(--text); border-radius: 0;
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/* — Primärer CTA: massiver Maschinen-Akzent, eckig — */
+.btn-cta {
+  background: var(--accent); color: var(--accent-ink);
+  border-radius: var(--radius); font-family: var(--sans); font-weight: 600;
+}
+.btn-cta:hover { background: var(--accent-hover); color: var(--accent-ink); opacity: 1; }
+
+/* — Alte Indigo-Hero-Box neutralisieren — */
+.flow-svg { background: var(--surface); border-color: var(--border); box-shadow: none; }
+
+/* ── Drawing-Sheet Hero ─────────────────────────────────────────────── */
+.bp-hero { padding: 40px 0 8px; }
+.bp-frame {
+  position: relative;
+  border: 1px solid var(--border-strong);
+  padding: 30px 28px 16px;
+}
+.bp-reg {
+  position: absolute; width: 9px; height: 9px;
+  border: 1px solid var(--border-strong); border-radius: 50%; background: var(--bg);
+}
+.bp-reg.tl { top: -5px; left: -5px; }  .bp-reg.tr { top: -5px; right: -5px; }
+.bp-reg.bl { bottom: -5px; left: -5px; } .bp-reg.br { bottom: -5px; right: -5px; }
+.bp-grid {
+  display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 28px; align-items: center;
+}
+.bp-tagline {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(28px, 4.4vw, 44px); line-height: 1.08; letter-spacing: -0.015em;
+  color: var(--text); margin: 10px 0 0;
+}
+.bp-tagline b { color: var(--accent); font-weight: 600; }
+/* Bemaßungslinie unter der Schlagzeile (reines CSS, theme-fest) */
+.dimline { position: relative; height: 1px; background: var(--accent); margin: 20px 0 2px; }
+.dimline::before, .dimline::after {
+  content: ""; position: absolute; top: -3px; width: 0; height: 0;
+  border-top: 3.5px solid transparent; border-bottom: 3.5px solid transparent;
+}
+.dimline::before { left: 0; border-right: 8px solid var(--accent); }
+.dimline::after  { right: 0; border-left: 8px solid var(--accent); }
+.dimline-label {
+  position: absolute; left: 50%; top: -9px; transform: translateX(-50%);
+  background: var(--bg); padding: 0 8px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 1px;
+  color: var(--text-muted); white-space: nowrap; text-transform: uppercase;
+}
+.bp-sub { font-size: 15px; line-height: 1.6; color: var(--text-muted); margin: 14px 0 0; max-width: 44ch; }
+.bp-cta-row { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--border-strong); color: var(--text);
+  border-radius: var(--radius); padding: 11px 18px; font-weight: 500; font-size: 14px;
+  font-family: var(--sans); text-decoration: none; transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.bp-titleblock {
+  display: flex; gap: 18px; flex-wrap: wrap; margin-top: 18px;
+  border-top: 1px solid var(--border-strong); padding-top: 8px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 1px; color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Stückliste / BOM */
+.bom { background: var(--surface); border: 1px solid var(--border); border-radius: 2px; }
+.bom-head {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; color: var(--text-muted);
+  padding: 9px 12px; border-bottom: 1px solid var(--border); text-transform: uppercase;
+}
+.bom-body { padding: 2px 12px 8px; }
+.bom-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.bom-row:last-child { border-bottom: none; }
+.bom-pos { font-family: var(--mono); font-size: 11px; color: var(--text-muted); width: 48px; flex-shrink: 0; }
+.bom-name { font-size: 14px; color: var(--text); flex: 1; }
+.bom-tag { font-family: var(--mono); font-size: 10px; color: var(--text-muted); }
+.bom-row--break { background: var(--accent-soft); outline: 1px solid var(--accent); outline-offset: -1px; }
+.bom-row--break .bom-pos, .bom-row--break .bom-name { color: var(--accent); }
+.bom-badge { font-family: var(--mono); font-size: 10px; color: var(--accent-ink); background: var(--accent); padding: 2px 7px; border-radius: 2px; text-transform: uppercase; }
+
+@media (max-width: 760px) {
+  .bp-grid { grid-template-columns: 1fr; gap: 22px; }
+  .bp-frame { padding: 24px 18px 14px; }
+}
+
+/* ── Hero-Spalten, Section-Lead, Teaser, Bio ────────────────────────── */
+.bp-vis { display: flex; align-items: center; }
+.bp-microtrust { font-size: 12.5px; color: var(--text-muted); margin: 12px 0 0; }
+.section-lead { color: var(--text-muted); font-size: 16px; line-height: 1.6; max-width: 62ch; margin: -8px 0 18px; }
+.teaser-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.teaser-chip {
+  font-family: var(--mono); font-size: 13px; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-radius: 2px;
+  padding: 10px 14px; text-decoration: none; transition: border-color 0.2s, color 0.2s;
+}
+.teaser-chip:hover { border-color: var(--accent); color: var(--accent); }
+.who-text { color: var(--text-muted); font-size: 16px; line-height: 1.7; max-width: 68ch; margin: 0 0 16px; }
+.home-section > .proj-cta { display: inline-block; margin-top: 18px; }
+
+/* ── Einheitliches, ruhiges Reveal (ersetzt die Einzel-Stagger) ─────── */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal.reveal-in { opacity: 1; transform: none; }
+.tags-wrap .tech-tag { opacity: 1; transform: none; transition: none; }
+.branchen-card { opacity: 1; transform: none; }
+.reveal-in .steps-wrap::after { width: 80%; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ── Risiko-Senker-Streifen ─────────────────────────────────────────── */
+.assure {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px;
+  background: var(--border); border: 1px solid var(--border); border-radius: 2px; overflow: hidden;
+}
+.assure-item { background: var(--bg); padding: 18px 20px; }
+.assure-item h3 { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--text); margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+.assure-item p { font-size: 13px; line-height: 1.5; color: var(--text-muted); margin: 0; }
+.assure-tick { color: var(--accent); font-family: var(--mono); }
+
+/* ── FAQ (details/summary) ──────────────────────────────────────────── */
+.faq { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item summary {
+  list-style: none; cursor: pointer; padding: 16px 0; font-weight: 500; font-size: 16px; color: var(--text);
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: var(--sans);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-family: var(--mono); color: var(--accent); font-size: 20px; flex-shrink: 0; }
+.faq-item[open] summary::after { content: "\2013"; }
+.faq-item p { color: var(--text-muted); font-size: 15px; line-height: 1.65; margin: 0 0 16px; max-width: 64ch; }
+
+/* ── „Was danach passiert" ──────────────────────────────────────────── */
+.next-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 20px; }
+.next-step { display: flex; gap: 12px; }
+.next-step-n { font-family: var(--mono); font-size: 13px; color: var(--accent); flex-shrink: 0; padding-top: 2px; }
+.next-step p { font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0; }
+
+/* ── Projekte-Seite ─────────────────────────────────────────────────── */
+.proj-disclaimer {
+  border-left: 3px solid var(--accent); background: var(--accent-soft);
+  padding: 14px 18px; border-radius: 0 2px 2px 0; margin: 0 0 32px;
+  font-size: 15px; line-height: 1.6; color: var(--text); max-width: 70ch;
+}
+.proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.proj-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 2px;
+  padding: 22px; display: flex; flex-direction: column; gap: 10px;
+}
+.proj-badge {
+  align-self: flex-start; font-family: var(--mono); font-size: 10px; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent);
+  border-radius: 2px; padding: 3px 8px;
+}
+.proj-card h3 { font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--text); margin: 0; letter-spacing: -0.01em; }
+.proj-problem { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+.proj-what { font-size: 14px; color: var(--text); line-height: 1.55; }
+.proj-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.proj-stack span { font-family: var(--mono); font-size: 11px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 2px; padding: 2px 7px; }
+.proj-tricky { font-size: 13px; color: var(--text-muted); line-height: 1.55; border-top: 1px solid var(--border); padding-top: 10px; margin-top: auto; }
+.proj-tricky b { color: var(--text); font-weight: 600; }
+.proj-cta { font-family: var(--mono); font-size: 13px; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); align-self: flex-start; padding-bottom: 1px; }
+
+/* ── Kontakt: Kopier-Button ─────────────────────────────────────────── */
+.copy-btn {
+  font-family: var(--mono); font-size: 13px; color: var(--text-muted);
+  background: var(--surface); border: 1px solid var(--border); border-radius: 2px;
+  padding: 8px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+.copy-btn.copied { color: var(--ok); border-color: var(--ok); }
