@@ -19,3 +19,8 @@ npm-debug.log*
 
 # Interne Arbeitsdokumentation (nicht öffentlich)
 private_docs/
+
+# AI-Skills (lokal, nicht deployen)
+.agents/
+.claude/skills/
+skills-lock.json

@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-13T00:00:00.000Z",
+  "title": "Design System: weier.digital",
+  "extensions": {
+    "colorMeta": {
+      "accent-machine": {
+        "role": "primary",
+        "displayName": "Machine Orange",
+        "canonical": "oklch(58% 0.15 41)",
+        "darkVariant": "#e0875f",
+        "tonalRamp": ["oklch(20% 0.06 41)", "oklch(30% 0.10 41)", "oklch(40% 0.13 41)", "oklch(50% 0.15 41)", "oklch(58% 0.15 41)", "oklch(68% 0.13 41)", "oklch(80% 0.09 41)", "oklch(92% 0.04 41)"]
+      },
+      "paper-bg": {
+        "role": "neutral",
+        "displayName": "Drawing Paper",
+        "canonical": "oklch(95% 0.012 80)",
+        "darkVariant": "#14110d",
+        "tonalRamp": ["oklch(20% 0.012 80)", "oklch(30% 0.012 80)", "oklch(42% 0.012 80)", "oklch(55% 0.012 80)", "oklch(68% 0.012 80)", "oklch(80% 0.012 80)", "oklch(90% 0.012 80)", "oklch(95% 0.012 80)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(24% 0.012 60)",
+        "darkVariant": "#ece5d8",
+        "tonalRamp": ["oklch(18% 0.012 60)", "oklch(24% 0.012 60)", "oklch(34% 0.012 60)", "oklch(45% 0.012 60)", "oklch(56% 0.012 60)", "oklch(68% 0.012 60)", "oklch(80% 0.012 60)", "oklch(92% 0.012 60)"]
+      },
+      "dimension-muted": {
+        "role": "neutral",
+        "displayName": "Dimension Muted",
+        "canonical": "oklch(48% 0.015 70)",
+        "darkVariant": "#a99f8d",
+        "tonalRamp": ["oklch(28% 0.015 70)", "oklch(38% 0.015 70)", "oklch(48% 0.015 70)", "oklch(58% 0.015 70)", "oklch(68% 0.015 70)", "oklch(78% 0.015 70)", "oklch(86% 0.015 70)", "oklch(93% 0.015 70)"]
+      },
+      "measured-green": {
+        "role": "tertiary",
+        "displayName": "Measured Green",
+        "canonical": "oklch(54% 0.11 150)",
+        "darkVariant": "#5fae6e",
+        "tonalRamp": ["oklch(24% 0.06 150)", "oklch(34% 0.09 150)", "oklch(44% 0.11 150)", "oklch(54% 0.11 150)", "oklch(64% 0.10 150)", "oklch(74% 0.08 150)", "oklch(85% 0.05 150)", "oklch(93% 0.03 150)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Serif", "purpose": "Hero tagline and page h1 — Source Serif 4, accent words in <b>." },
+      "headline": { "displayName": "Section Serif", "purpose": "Section titles; optional mono index prefix only on real sequences." },
+      "label": { "displayName": "Mono Stamp", "purpose": "Eyebrows, POS marks, title block, badges. Uppercase lives here only." }
+    },
+    "shadows": [
+      { "name": "sheet-rest", "value": "0 1px 0 rgba(33,28,22,.05)", "purpose": "1px tonal seam under a sheet at rest — most cards override to none." },
+      { "name": "sheet-raised", "value": "0 2px 0 rgba(33,28,22,.06)", "purpose": "BOM / KPI panel only. A seam, not a float." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default easing for state and bar transitions." },
+      { "name": "reveal", "value": "opacity 0.55s ease, transform 0.55s ease", "purpose": "One calm scroll-in fade + 16px rise; reduced-motion shows content instantly." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "640px" },
+      { "name": "tablet", "value": "760px" },
+      { "name": "dual", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid machine-accent CTA — the one place the orange becomes a field.",
+      "html": "<a class=\"ds-btn-cta\" href=\"#\">Anfrage schreiben<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--accent, #cb5328); color: var(--accent-ink, #fff); font-family: var(--sans, 'Inter', sans-serif); font-weight: 600; font-size: 15px; border-radius: var(--radius, 3px); text-decoration: none; transition: background 0.2s, transform 0.2s; } .ds-btn-cta:hover { background: var(--accent-hover, #b1481f); transform: translateY(-1px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline-bordered secondary action; border and text shift to accent on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">System ansehen</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border: 1px solid var(--border-strong, #c3bba9); color: var(--text, #211c16); background: transparent; font-family: var(--sans, 'Inter', sans-serif); font-weight: 500; font-size: 14px; border-radius: var(--radius, 3px); text-decoration: none; transition: border-color 0.2s, color 0.2s; } .ds-btn-ghost:hover { border-color: var(--accent, #cb5328); color: var(--accent, #cb5328); }"
+    },
+    {
+      "name": "Part-Number Chip",
+      "kind": "chip",
+      "refersTo": "chip-part-number",
+      "description": "Squared mono tag for tech-stack labels — never a pill, never accent-filled.",
+      "html": "<span class=\"ds-chip\">Python</span>",
+      "css": ".ds-chip { display: inline-block; font-family: var(--mono, 'SF Mono', monospace); font-size: 12px; letter-spacing: 0.2px; color: var(--text-muted, #6b6357); background: var(--surface, #fff); border: 1px solid var(--border, #ddd5c6); border-radius: 2px; padding: 4px 9px; }"
+    },
+    {
+      "name": "Sheet Card (link)",
+      "kind": "card",
+      "refersTo": "card-sheet",
+      "description": "Flat hairline sheet; a 3px accent edge scales in on hover/focus as the interaction affordance.",
+      "html": "<a class=\"ds-card\" href=\"#\"><h3>ERP-Web-App</h3><p>Liest ein gewachsenes ERP aus und macht Maschinendaten per API bearbeitbar.</p><span class=\"ds-card-mehr\">Mehr ansehen →</span></a>",
+      "css": ".ds-card { position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 8px; background: var(--surface, #fff); border: 1px solid var(--border, #ddd5c6); border-radius: var(--radius, 3px); padding: 22px; color: var(--text, #211c16); text-decoration: none; } .ds-card::before { content: \"\"; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent, #cb5328); transform: scaleY(0); transform-origin: top; transition: transform 0.25s ease; } .ds-card:hover::before, .ds-card:focus-visible::before { transform: scaleY(1); } .ds-card h3 { font-family: var(--serif, 'Source Serif 4', serif); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; margin: 0; } .ds-card p { font-size: 15px; line-height: 1.55; color: var(--text-muted, #6b6357); margin: 0; } .ds-card-mehr { font-family: var(--mono, monospace); font-size: 13px; color: var(--accent, #cb5328); }"
+    },
+    {
+      "name": "Active Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link-active",
+      "description": "Active topnav link marked by an accent under-tick — no fill, no radius.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Über</a><a href=\"#\" class=\"is-active\">System</a><a href=\"#\">Projekte</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 4px; } .ds-nav a { padding: 7px 14px; font-family: var(--sans, 'Inter', sans-serif); font-size: 15px; font-weight: 600; color: var(--text-muted, #6b6357); text-decoration: none; transition: color 0.2s; } .ds-nav a:hover { color: var(--text, #211c16); } .ds-nav a.is-active { color: var(--text, #211c16); box-shadow: inset 0 -2px 0 var(--accent, #cb5328); }"
+    },
+    {
+      "name": "Dimension Line",
+      "kind": "custom",
+      "refersTo": "dimline",
+      "description": "Signature: 1px accent rule with CSS arrowheads and a centered mono measurement label, set under the hero headline.",
+      "html": "<div class=\"ds-dimline\"><span class=\"ds-dimline-label\">M 1:1</span></div>",
+      "css": ".ds-dimline { position: relative; height: 1px; background: var(--accent, #cb5328); margin: 20px 0 2px; } .ds-dimline::before, .ds-dimline::after { content: \"\"; position: absolute; top: -3px; width: 0; height: 0; border-top: 3.5px solid transparent; border-bottom: 3.5px solid transparent; } .ds-dimline::before { left: 0; border-right: 8px solid var(--accent, #cb5328); } .ds-dimline::after { right: 0; border-left: 8px solid var(--accent, #cb5328); } .ds-dimline-label { position: absolute; left: 50%; top: -9px; transform: translateX(-50%); background: var(--bg, #f4f1ea); padding: 0 8px; font-family: var(--mono, monospace); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted, #6b6357); white-space: nowrap; }"
+    },
+    {
+      "name": "BOM Break Row",
+      "kind": "custom",
+      "refersTo": "bom-break",
+      "description": "Signature: a parts-list row marking the Medienbruch — the one place the accent names a problem.",
+      "html": "<div class=\"ds-bom\"><div class=\"ds-bom-head\">Stückliste — Datenfluss</div><div class=\"ds-bom-row\"><span class=\"ds-bom-pos\">POS.01</span><span class=\"ds-bom-name\">ERP-Export</span></div><div class=\"ds-bom-row ds-bom-break\"><span class=\"ds-bom-pos\">POS.03</span><span class=\"ds-bom-name\">Medienbruch</span><span class=\"ds-bom-badge\">Bruch</span></div><div class=\"ds-bom-row\"><span class=\"ds-bom-pos\">POS.05</span><span class=\"ds-bom-name\">Fertigung</span></div></div>",
+      "css": ".ds-bom { background: var(--surface, #fff); border: 1px solid var(--border, #ddd5c6); border-radius: 2px; } .ds-bom-head { font-family: var(--mono, monospace); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted, #6b6357); padding: 9px 12px; border-bottom: 1px solid var(--border, #ddd5c6); } .ds-bom-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-bottom: 1px solid var(--border, #ddd5c6); } .ds-bom-row:last-child { border-bottom: none; } .ds-bom-pos { font-family: var(--mono, monospace); font-size: 11px; color: var(--text-muted, #6b6357); width: 48px; flex-shrink: 0; } .ds-bom-name { font-size: 14px; color: var(--text, #211c16); flex: 1; } .ds-bom-break { background: var(--accent-soft, rgba(203,83,40,.08)); outline: 1px solid var(--accent, #cb5328); outline-offset: -1px; } .ds-bom-break .ds-bom-pos, .ds-bom-break .ds-bom-name { color: var(--accent, #cb5328); } .ds-bom-badge { font-family: var(--mono, monospace); font-size: 10px; text-transform: uppercase; color: var(--accent-ink, #fff); background: var(--accent, #cb5328); padding: 2px 7px; border-radius: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Das Zeichenblatt (The Drawing Sheet)",
+    "overview": "Every surface behaves like a sheet of engineering drawing paper on a workshop desk: a faint engineering grid behind the page, content inside a hairline frame with corner registration marks, a headline underscored by a real dimension line, a mono title block anchoring the hero. Warmth is Siegerland-editorial (serif headline voice, warm ink on warm paper); discipline is the machine shop (precise, measured, nothing decorative that isn't functional). The system rejects the cool GitHub-dark palette it came from, the cream/sand AI-default, fake-KPI dashboards, gradient text, glass cards, and drop-shadow depth. Depth comes from line weight, identity from one accent, trust from real labelled own-builds.",
+    "keyCharacteristics": [
+      "Warm drawing-paper background (#f4f1ea) under a 20px/100px engineering grid, never a flat fill.",
+      "Exactly one machine accent (#cb5328) — CTA, active-nav tick, dimension arrows, Bruch marker.",
+      "Three voices: Source Serif 4 (display), Inter (body), mono (technical stamps).",
+      "Flat by default — hairline borders carry structure; shadows are near-zero seams.",
+      "Squared corners (2-3px), not rounded pills. A card is a sheet, not a bubble."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "There is exactly one accent, #cb5328. Never a large fill field — only line, edge, arrowhead, tick, or ≤8%-alpha wash. Its rarity is what makes a CTA read as 'press here.'", "section": "colors" },
+      { "name": "The Warmth-Is-Earned Rule", "body": "Warmth lives in the accent and the serif type, never the background. #f4f1ea is the ceiling; cream/sand/parchment near-whites are forbidden.", "section": "colors" },
+      { "name": "The Migration-Debt Rule", "body": "system.html demo internals are still hardcoded GitHub-indigo (#818cf8, rgba(99,102,241,...), #161b22). Legacy, not part of this palette — new work uses the warm tokens.", "section": "colors" },
+      { "name": "The Stamp-Case Rule", "body": "Uppercase appears only in the mono technical layer (eyebrows, POS marks, title block, badges). Prose and headlines are always sentence case.", "section": "typography" },
+      { "name": "The Legacy-Sans Rule", "body": "Space Grotesk still styles a few un-migrated sub-headings (.card h3, .sys-card h3, .kpi-val). Source Serif 4 is canonical; the holdouts are migration debt, not a second display face.", "section": "typography" },
+      { "name": "The No-Float Rule", "body": "No blurred drop-shadows, ever. A raised surface gets a #ffffff sheet fill on the paper bg plus a hairline border. The failure tell: a card that looks like it's hovering.", "section": "elevation" },
+      { "name": "The Edge-On-Intent Rule", "body": "Cards are inert at rest. Interaction is signalled by a 3px accent edge that scales in on hover/focus, not by lifting or shadowing the whole card.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the engineering grid behind every page (20px / 100px); the paper is never a flat fill.",
+      "Do reserve #cb5328 for line, edge, tick, arrowhead, badge, and ≤8%-alpha wash. One accent, sparingly.",
+      "Do convey depth with hairline borders and tonal layering (paper → sunken → sheet), never blurred shadows.",
+      "Do set headlines in Source Serif 4, sentence case, with text-wrap: balance; cap prose at 62-70ch.",
+      "Do keep uppercase to the mono technical stamps (eyebrows, POS marks, title block, badges).",
+      "Do show only real, 'Eigenbau'-labelled own-builds; verify body contrast ≥7:1 (AAA target), AA as the floor.",
+      "Do migrate any new system.html work onto the warm tokens."
+    ],
+    "donts": [
+      "Don't reintroduce the cool GitHub-dark palette or any cream/sand/parchment warm-neutral background.",
+      "Don't build glowing fake-KPI dashboards or any 'Werkbank-OS' hero that implies a running client system. No manufactured proof.",
+      "Don't use gradient text, glassmorphism as decoration, or the hero-metric template (big number + small label + gradient).",
+      "Don't use blurred drop-shadows or pill radii on primary actions; corners are 2-3px and surfaces are flat.",
+      "Don't add an uppercase tracked eyebrow or 01/02/03 numbered marker over every section; numbers earn their place only in a real ordered sequence.",
+      "Don't use border-left/right > 1px as a decorative colored stripe (the .proj-disclaimer 3px edge is a known exception to retire).",
+      "Don't let a single accent be the sole carrier of state — demo status must also read via label/text (colour-blind safe)."
+    ]
+  }
+}

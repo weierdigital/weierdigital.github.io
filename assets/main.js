@@ -19,7 +19,7 @@
   function getPreferredTheme(){
     const s = localStorage.getItem(themeKey);
     if(s === 'light' || s === 'dark') return s;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'dark'; // Dark Premium ist Standard; Toggle merkt eine abweichende Wahl
   }
   function setTheme(t){
     root.setAttribute('data-theme', t);

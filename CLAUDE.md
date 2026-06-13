@@ -43,3 +43,13 @@ Static personal website for **weier.digital** (Carsten Weier), hosted on GitHub 
 - **Seiten:** index.html (Landing), system.html (Demo-Tabs), about/, blog/, contact/, impressum/, datenschutz/
 - **Mobile-first:** Primär Mobile (Bottom Navigation Bar), sekundär Desktop (Topnav Text-Links)
 - **Analytics:** Noch nicht eingerichtet (bewusste Entscheidung, ggf. später Google Analytics G-ID einbauen)
+
+## Design Context
+
+Strategic design direction lives in **`PRODUCT.md`** (root) — register, users,
+brand personality, anti-references, and design principles. Visual system (tokens,
+typography, components) lives in **`DESIGN.md`**. Read both before design work.
+Register is `product` (hybrid: marketing/portfolio surface whose credibility
+rests on the working `system.html` demos). Core principles: Echtheit über
+Hochglanz · Practice what you preach · Show, don't tell · Speak the shop floor ·
+Werkstatt-Präzision als Sprache.

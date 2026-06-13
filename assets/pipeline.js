@@ -93,12 +93,12 @@
   function buildPipeSVG() {
     return '<svg class="pipe-svg pipe-svg--upipe" width="100%" viewBox="0 0 420 310" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
       + '<path class="p-body"   d="' + UPIPE_PATH + '" stroke="#3d444d" stroke-width="24" stroke-linejoin="round" stroke-linecap="butt"/>'
-      + '<path class="p-glow"   d="' + UPIPE_PATH + '" stroke="#6366f1" stroke-width="24" fill="none" stroke-linejoin="round" stroke-linecap="butt" opacity="0.08"/>'
+      + '<path class="p-glow"   d="' + UPIPE_PATH + '" stroke="#f56a35" stroke-width="24" fill="none" stroke-linejoin="round" stroke-linecap="butt" opacity="0.08"/>'
       + '<path class="p-hollow" d="' + UPIPE_PATH + '" stroke="#0d1117" stroke-width="14" stroke-linejoin="round" stroke-linecap="butt"/>'
       + '<line class="p-annot" x1="68"  y1="240" x2="92"  y2="240" stroke="#4b5563" stroke-width="2.5"/>'
       + '<line class="p-annot" x1="308" y1="240" x2="332" y2="240" stroke="#4b5563" stroke-width="2.5"/>'
-      + '<circle class="p-annot" cx="80"  cy="240" r="20" stroke="#6366f1" stroke-width="1" stroke-dasharray="4 3"/>'
-      + '<circle class="p-annot" cx="320" cy="240" r="20" stroke="#6366f1" stroke-width="1" stroke-dasharray="4 3"/>'
+      + '<circle class="p-annot" cx="80"  cy="240" r="20" stroke="#f56a35" stroke-width="1" stroke-dasharray="4 3"/>'
+      + '<circle class="p-annot" cx="320" cy="240" r="20" stroke="#f56a35" stroke-width="1" stroke-dasharray="4 3"/>'
       + '<line class="p-annot" x1="80"  y1="224" x2="80"  y2="256" stroke="#484f58" stroke-width="1"/>'
       + '<line class="p-annot" x1="64"  y1="240" x2="96"  y2="240" stroke="#484f58" stroke-width="1"/>'
       + '<line class="p-annot" x1="320" y1="224" x2="320" y2="256" stroke="#484f58" stroke-width="1"/>'
@@ -116,8 +116,8 @@
       + '<line class="p-annot" x1="320" y1="293" x2="320" y2="301" stroke="#484f58" stroke-width="1"/>'
       + '<text class="p-annot" x="200" y="308" fill="#6e7681" font-size="8" font-family="monospace" text-anchor="middle">W = 580</text>'
       + '<text class="p-annot" x="107" y="78"  fill="#6e7681" font-size="8" font-family="monospace">R 76</text>'
-      + '<circle class="p-annot" cx="80"  cy="100" r="3" fill="#6366f1" opacity="0.6"/>'
-      + '<circle class="p-annot" cx="320" cy="100" r="3" fill="#6366f1" opacity="0.6"/>'
+      + '<circle class="p-annot" cx="80"  cy="100" r="3" fill="#f56a35" opacity="0.6"/>'
+      + '<circle class="p-annot" cx="320" cy="100" r="3" fill="#f56a35" opacity="0.6"/>'
       + '<text class="p-annot" x="54"  y="97" fill="#6e7681" font-size="7.5" font-family="monospace">BP-1</text>'
       + '<text class="p-annot" x="324" y="97" fill="#6e7681" font-size="7.5" font-family="monospace">BP-2</text>'
       + '<text class="p-annot" x="200" y="42" fill="#6e7681" font-size="9" font-family="monospace" text-anchor="middle">RO-7731 · DN50 · 48,3×2,0 · WS 1.4301</text>'
@@ -174,7 +174,7 @@
       + '<line x1="52" y1="' + STEG_TOP + '" x2="228" y2="' + STEG_TOP + '" stroke="#484f58" stroke-width="0.7" stroke-dasharray="4 3" clip-path="url(#pc)"/>'
       + '<line x1="52" y1="' + STEG_BOT + '" x2="228" y2="' + STEG_BOT + '" stroke="#484f58" stroke-width="0.7" stroke-dasharray="4 3" clip-path="url(#pc)"/>'
       // symmetry line
-      + '<line x1="48" y1="' + CY + '" x2="236" y2="' + CY + '" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="8 4" opacity="0.4"/>';
+      + '<line x1="48" y1="' + CY + '" x2="236" y2="' + CY + '" stroke="#f56a35" stroke-width="0.8" stroke-dasharray="8 4" opacity="0.4"/>';
 
     // bores — smaller (r=7)
     PLATE_BORES.forEach(function (b, i) {
@@ -190,7 +190,7 @@
       + '<line class="p-annot" x1="237" y1="' + STEG_TOP + '" x2="243" y2="' + STEG_TOP + '" stroke="#484f58" stroke-width="1"/>'
       + '<line class="p-annot" x1="237" y1="' + STEG_BOT + '" x2="243" y2="' + STEG_BOT + '" stroke="#484f58" stroke-width="1"/>'
       + '<text class="p-annot" x="246" y="' + (CY + 3) + '" fill="#6e7681" font-size="7" font-family="monospace">Steg</text>'
-      + '<text class="p-annot" x="244" y="' + (CY + 12) + '" fill="#6366f1" font-size="6.5" font-family="monospace" opacity="0.7">Sym.</text>'
+      + '<text class="p-annot" x="244" y="' + (CY + 12) + '" fill="#f56a35" font-size="6.5" font-family="monospace" opacity="0.7">Sym.</text>'
       + '<text class="p-annot" x="' + CX + '" y="10" fill="#6e7681" font-size="7.5" font-family="monospace" text-anchor="middle">Rohrplatte · 16× ø 52 · t = 22</text>'
       + '<text class="p-annot" x="' + CX + '" y="200" fill="#6e7681" font-size="6.5" font-family="monospace" text-anchor="middle">Schlangenlauf · Raster 33 mm · Steg ±11 mm</text>'
       + '</svg>';
@@ -233,8 +233,8 @@
       setTimeout(function () {
         var circle = bore.querySelector('circle');
         var label  = bore.querySelector('text');
-        if (circle) { circle.setAttribute('stroke', '#6366f1'); circle.style.fill = 'rgba(99,102,241,0.12)'; }
-        if (label)  { label.setAttribute('fill', '#818cf8'); }
+        if (circle) { circle.setAttribute('stroke', '#f56a35'); circle.style.fill = 'rgba(245,106,53,0.12)'; }
+        if (label)  { label.setAttribute('fill', '#f56a35'); }
         if (ncEl) {
           var prev = ncEl.querySelector('.nc-b--on');
           if (prev) prev.classList.remove('nc-b--on');
