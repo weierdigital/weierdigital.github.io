@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Snake · kleine Pause | weier.digital</title>
+<meta name="description" content="Snake. Steuerung per Pfeiltasten, WASD oder Wisch." />
+<meta name="robots" content="noindex,follow" />
+<link rel="canonical" href="https://weier.digital/snake/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<link rel="icon" href="/assets/icons/weier-digital-icon.svg" type="image/svg+xml" />
+<link rel="icon" href="/assets/icons/weier-digital-icon.png" type="image/png" />
+</head>
+<body>
+
+<header class="top is-stuck">
+  <div class="wrap toprow">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 512 512" aria-hidden="true">
+        <polygon points="213.370,151.600 251.650,151.600 161.170,360.400 122.890,360.400" fill="currentColor"/>
+        <polygon points="312.550,151.600 350.830,151.600 260.350,360.400 222.070,360.400" fill="currentColor"/>
+        <rect x="363.010" y="311.680" width="34.800" height="34.800" fill="currentColor"/>
+      </svg>
+      <span>Carsten Weier</span>
+    </a>
+    <a class="btn btn--line" href="/">Zur Startseite</a>
+  </div>
+</header>
+
+<main class="wrap snake">
+
+  <div class="snake-head">
+    <span class="tag tag--plain">Kleine Pause</span>
+    <h1>Snake</h1>
+    <p>Iss die grünen Punkte, stoß nirgends an.</p>
+  </div>
+
+  <div class="snake-wrap">
+
+    <div class="snake-hud">
+      <div class="snake-score">
+        <span class="snake-score-label">Punkte</span>
+        <span class="snake-score-val" id="snakeScore">0</span>
+      </div>
+      <div class="snake-score">
+        <span class="snake-score-label">Bestwert</span>
+        <span class="snake-score-val" id="snakeBest">0</span>
+      </div>
+      <div class="snake-modes" role="group" aria-label="Spielmodus">
+        <button class="snake-mode is-on" id="snakeModeWall" type="button" aria-pressed="true">Wände</button>
+        <button class="snake-mode" id="snakeModeWrap" type="button" aria-pressed="false">Tunnel</button>
+      </div>
+      <button class="snake-btn" id="snakePause" type="button" disabled>Pause</button>
+      <button class="snake-btn" id="snakeRestart" type="button">Neu</button>
+    </div>
+
+    <div class="snake-board" id="snakeBoard">
+      <canvas class="snake-canvas" id="snakeCanvas" width="504" height="504"
+              role="img" aria-label="Snake-Spielfeld"></canvas>
+      <div class="snake-overlay" id="snakeOverlay">
+        <div class="snake-overlay-inner">
+          <p class="snake-overlay-title" id="snakeOverlayTitle">Bereit?</p>
+          <p class="snake-overlay-sub" id="snakeOverlaySub">Lostippen, wischen oder Start drücken.</p>
+          <button class="snake-start" id="snakeStart" type="button">Start</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="snake-dpad" aria-label="Steuerkreuz">
+      <button class="snake-dbtn snake-dbtn--up"    type="button" data-dir="up"    aria-label="Hoch">▲</button>
+      <button class="snake-dbtn snake-dbtn--left"  type="button" data-dir="left"  aria-label="Links">◀</button>
+      <button class="snake-dbtn snake-dbtn--down"  type="button" data-dir="down"  aria-label="Runter">▼</button>
+      <button class="snake-dbtn snake-dbtn--right" type="button" data-dir="right" aria-label="Rechts">▶</button>
+    </div>
+
+    <p class="snake-hint">Pfeiltasten oder WASD · Pause mit P oder Leertaste · Im Tunnel-Modus geht es durch die Wände</p>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap footrow">
+    <span>© <span id="y">2026</span> Carsten Weier</span>
+    <nav aria-label="Rechtliches">
+      <a href="/">Startseite</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script src="/assets/snake.js"></script>
+</body>
+</html>

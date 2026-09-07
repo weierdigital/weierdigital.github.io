@@ -1,0 +1,27 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor backups
+*~
+*.swp
+*.swo
+
+# Node (falls mal Tools genutzt werden)
+node_modules/
+npm-debug.log*
+
+# Interne Arbeitsdokumentation (nicht öffentlich)
+private_docs/
+
+# Lokales Tooling und AI-Konfiguration (nicht deployen)
+.agents/
+.claude/
+.impeccable/
+skills-lock.json
