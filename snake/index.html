@@ -41,20 +41,29 @@
   <div class="snake-wrap">
 
     <div class="snake-hud">
-      <div class="snake-score">
-        <span class="snake-score-label">Punkte</span>
-        <span class="snake-score-val" id="snakeScore">0</span>
+      <div class="snake-scores">
+        <div class="snake-score">
+          <span class="snake-score-label">Punkte</span>
+          <span class="snake-score-val" id="snakeScore">0</span>
+        </div>
+        <div class="snake-score snake-score--best" id="snakeBestWallBox">
+          <span class="snake-score-label">Best Wände</span>
+          <span class="snake-score-val" id="snakeBestWall">0</span>
+        </div>
+        <div class="snake-score snake-score--best" id="snakeBestWrapBox">
+          <span class="snake-score-label">Best Tunnel</span>
+          <span class="snake-score-val" id="snakeBestWrap">0</span>
+        </div>
       </div>
-      <div class="snake-score">
-        <span class="snake-score-label">Bestwert</span>
-        <span class="snake-score-val" id="snakeBest">0</span>
+
+      <div class="snake-controls">
+        <div class="snake-modes" role="group" aria-label="Spielmodus">
+          <button class="snake-mode is-on" id="snakeModeWall" type="button" aria-pressed="true">Wände</button>
+          <button class="snake-mode" id="snakeModeWrap" type="button" aria-pressed="false">Tunnel</button>
+        </div>
+        <button class="snake-btn" id="snakePause" type="button" disabled>Pause</button>
+        <button class="snake-btn" id="snakeRestart" type="button">Neu</button>
       </div>
-      <div class="snake-modes" role="group" aria-label="Spielmodus">
-        <button class="snake-mode is-on" id="snakeModeWall" type="button" aria-pressed="true">Wände</button>
-        <button class="snake-mode" id="snakeModeWrap" type="button" aria-pressed="false">Tunnel</button>
-      </div>
-      <button class="snake-btn" id="snakePause" type="button" disabled>Pause</button>
-      <button class="snake-btn" id="snakeRestart" type="button">Neu</button>
     </div>
 
     <div class="snake-board" id="snakeBoard">

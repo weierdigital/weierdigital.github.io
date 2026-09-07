@@ -8,7 +8,8 @@
   if (!canvas || !canvas.getContext) return;
   var ctx = canvas.getContext('2d');
 
-  var BEST_KEY = 'weier_snake_best';
+  var BEST_KEY_WALL = 'weier_snake_best';       // Bestwert im Wand-Modus
+  var BEST_KEY_WRAP = 'weier_snake_best_wrap';  // Bestwert im Tunnel-Modus
   var MODE_KEY = 'weier_snake_mode';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -25,23 +26,43 @@
   var pauseBtn = document.getElementById('snakePause');
   var restartBtn = document.getElementById('snakeRestart');
   var scoreEl = document.getElementById('snakeScore');
-  var bestEl = document.getElementById('snakeBest');
+  var bestWallEl = document.getElementById('snakeBestWall');
+  var bestWrapEl = document.getElementById('snakeBestWrap');
+  var bestWallBox = document.getElementById('snakeBestWallBox');
+  var bestWrapBox = document.getElementById('snakeBestWrapBox');
 
   var modeWallBtn = document.getElementById('snakeModeWall');
   var modeWrapBtn = document.getElementById('snakeModeWrap');
 
-  var snake, dir, nextDir, food, score, best, speed, state, timer;
+  var snake, dir, nextDir, food, score, speed, state, timer;
+  var bestWall, bestWrap;
   var bulges = [];  // Zellen, in denen gerade ein gefressener Happen sichtbar ist
   var cssSize = 0;  // CSS-Pixel-Kantenlänge des (quadratischen) Bretts
   // state: 'idle' | 'running' | 'paused' | 'over'
 
   // Modus: 'wall' = Wand ist toedlich, 'wrap' = auf der Gegenseite wieder rein.
   // Der Bestwert wird je Modus getrennt gefuehrt, weil wrap deutlich leichter ist.
-  var wrap = localStorage.getItem(MODE_KEY) === 'wrap';
-  function bestKey() { return wrap ? BEST_KEY + '_wrap' : BEST_KEY; }
-  function loadBest() { return parseInt(localStorage.getItem(bestKey()) || '0', 10) || 0; }
-  function saveBest() { localStorage.setItem(bestKey(), String(best)); }
-  best = loadBest();
+  // localStorage kann im privaten Fenster werfen. Ohne Kapselung stuende das
+  // ganze Spiel still, deshalb faellt es still auf Standardwerte zurueck.
+  function readStore(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  }
+  function writeStore(key, val) {
+    try { localStorage.setItem(key, val); } catch (e) { /* kein Speicher, nicht schlimm */ }
+  }
+
+  var wrap = readStore(MODE_KEY) === 'wrap';
+  function bestKeyFor(w) { return w ? BEST_KEY_WRAP : BEST_KEY_WALL; }
+  function readBest(w) { return parseInt(readStore(bestKeyFor(w)) || '0', 10) || 0; }
+  bestWall = readBest(false);
+  bestWrap = readBest(true);
+
+  // Bestwert des gerade gespielten Modus lesen und schreiben.
+  function best() { return wrap ? bestWrap : bestWall; }
+  function setBest(v) {
+    if (wrap) bestWrap = v; else bestWall = v;
+    writeStore(bestKeyFor(wrap), String(v));
+  }
 
   function lang() { return 'de'; } // Seite ist seit dem Relaunch 2026 einsprachig
   function t(de, en) { return lang() === 'en' ? en : de; }
@@ -85,7 +106,10 @@
 
   function updateHud() {
     if (scoreEl) scoreEl.textContent = String(score);
-    if (bestEl) bestEl.textContent = String(best);
+    if (bestWallEl) bestWallEl.textContent = String(bestWall);
+    if (bestWrapEl) bestWrapEl.textContent = String(bestWrap);
+    if (bestWallBox) bestWallBox.classList.toggle('is-active', !wrap);
+    if (bestWrapBox) bestWrapBox.classList.toggle('is-active', wrap);
   }
 
   function showOverlay(title, sub, btn) {
@@ -100,6 +124,7 @@
   function setState(s) {
     state = s;
     if (pauseBtn) pauseBtn.disabled = (s !== 'running' && s !== 'paused');
+    updateModeButtons();
     if (s === 'idle') {
       showOverlay(t('Bereit?', 'Ready?'),
         t('Lostippen, wischen oder Start drücken.', 'Press a key, swipe, or hit Start.'),
@@ -110,7 +135,7 @@
         t('Weiter', 'Resume'));
     } else if (s === 'over') {
       showOverlay(t('Vorbei', 'Game over'),
-        t('Punkte ' + score + ' · Bestwert ' + best, 'Score ' + score + ' · Best ' + best),
+        t('Punkte ' + score + ' · Bestwert ' + best(), 'Score ' + score + ' · Best ' + best()),
         t('Nochmal', 'Again'));
     } else {
       hideOverlay();
@@ -144,7 +169,7 @@
   }
   function gameOver() {
     clearTimeout(timer);
-    if (score > best) { best = score; saveBest(); }
+    if (score > best()) setBest(score);
     updateHud();
     setState('over');
     draw();
@@ -177,7 +202,7 @@
     snake.unshift(head);
     if (head.x === food.x && head.y === food.y) {
       score++;
-      if (score > best) { best = score; saveBest(); }
+      if (score > best()) setBest(score);
       speed = Math.max(MIN_SPEED, BASE_SPEED - score * SPEED_STEP);
       // Der Happen bleibt an genau dieser Zelle liegen und wandert dadurch
       // sichtbar durch den Körper, bis der Schwanz die Stelle verlassen hat.
@@ -342,10 +367,25 @@
   if (pauseBtn) pauseBtn.addEventListener('click', togglePause);
   if (restartBtn) restartBtn.addEventListener('click', function () { reset(); start(); });
 
-  // Modusumschaltung. Wirkt sofort und bricht einen laufenden Zug nicht ab.
+  // Der Modus bestimmt, in welchen Bestwert die Punkte laufen. Ein Wechsel
+  // mitten im Spiel wuerde die Runde im falschen Modus verbuchen, deshalb ist
+  // er nur zwischen zwei Runden erlaubt.
+  function modeLocked() { return state === 'running' || state === 'paused'; }
+
+  function updateModeButtons() {
+    var locked = modeLocked();
+    [modeWallBtn, modeWrapBtn].forEach(function (b) {
+      if (!b) return;
+      b.disabled = locked;
+      if (locked) b.setAttribute('title', 'Modus lässt sich nur zwischen zwei Runden wechseln');
+      else b.removeAttribute('title');
+    });
+  }
+
   function applyMode(toWrap) {
+    if (modeLocked()) return;
     wrap = !!toWrap;
-    localStorage.setItem(MODE_KEY, wrap ? 'wrap' : 'wall');
+    writeStore(MODE_KEY, wrap ? 'wrap' : 'wall');
     if (modeWallBtn) {
       modeWallBtn.classList.toggle('is-on', !wrap);
       modeWallBtn.setAttribute('aria-pressed', String(!wrap));
@@ -355,7 +395,6 @@
       modeWrapBtn.setAttribute('aria-pressed', String(wrap));
     }
     board.classList.toggle('is-wrap', wrap); // gestrichelter Rand als Hinweis
-    best = loadBest();
     updateHud();
     draw();
   }
@@ -365,14 +404,6 @@
   // Beim Wegklicken pausieren
   document.addEventListener('visibilitychange', function () {
     if (document.hidden && state === 'running') pause();
-  });
-
-  // Optionale Theme-/Sprachschalter, falls eine Seite sie einbindet
-  var themeBtn = document.getElementById('themeToggle');
-  if (themeBtn) themeBtn.addEventListener('click', function () { setTimeout(draw, 0); });
-  var langBtn = document.getElementById('langToggle');
-  if (langBtn) langBtn.addEventListener('click', function () {
-    setTimeout(function () { if (overlay && !overlay.hidden) setState(state); }, 0);
   });
 
   var rt;
