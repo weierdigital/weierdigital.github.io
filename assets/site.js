@@ -1,5 +1,5 @@
 /* weier.digital — One-Pager Interaktion
-   Scroll-Reveal, Scrollspy, Timeline-Fortschritt, Zähler. Ohne Abhängigkeiten. */
+   Scrollspy und Timeline-Fortschritt. Ohne Abhängigkeiten. */
 (function () {
   'use strict';
 
@@ -25,23 +25,6 @@
       };
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
-    }
-
-    /* ── Scroll-Reveal ───────────────────────────────────────────────────── */
-    var rv = document.querySelectorAll('.rv');
-    if (rv.length) {
-      if (reduce || !hasIO) {
-        rv.forEach(function (el) { el.classList.add('in'); });
-      } else {
-        var ro = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (!e.isIntersecting) return;
-            e.target.classList.add('in');
-            ro.unobserve(e.target);
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-        rv.forEach(function (el) { ro.observe(el); });
-      }
     }
 
     /* ── Scrollspy für die Kopfnavigation ────────────────────────────────── */
@@ -71,8 +54,8 @@
       var paint = function () {
         var r  = cv.getBoundingClientRect();
         var mid = window.innerHeight * 0.62;
-        var h  = Math.max(0, Math.min(r.height, mid - r.top));
-        fill.style.height = h + 'px';
+        var p  = Math.max(0, Math.min(1, (mid - r.top) / r.height));
+        fill.style.transform = 'scaleY(' + p + ')';
         items.forEach(function (it) {
           var ir = it.getBoundingClientRect();
           it.classList.toggle('lit', ir.top < mid);
@@ -83,7 +66,7 @@
       window.addEventListener('resize', paint);
     } else if (cv) {
       cv.querySelectorAll('.cv-item').forEach(function (it) { it.classList.add('lit'); });
-      if (fill) fill.style.height = '100%';
+      if (fill) fill.style.transform = 'none';
     }
   });
 })();
