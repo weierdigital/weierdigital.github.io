@@ -1,5 +1,5 @@
 /* ============================================================================
-   weier.digital — Relaunch 2026 · "Vorstellung"
+   weier.digital
    Eigenständiges Stylesheet für One-Pager, Impressum, Datenschutz und Snake.
    ========================================================================== */
 
@@ -321,7 +321,7 @@ section{ position:relative; }
 }
 .cv-badge--edu{ color:var(--muted); border-color:var(--line-2); }
 
-/* Systeme ──────────────────────────────────────────────────────────────── */
+/* Projekte ──────────────────────────────────────────────────────────────── */
 .sys{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
 .sys-item{
   background:var(--surface); border:1px solid var(--line);

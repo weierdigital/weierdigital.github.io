@@ -64,7 +64,7 @@
     writeStore(bestKeyFor(wrap), String(v));
   }
 
-  function lang() { return 'de'; } // Seite ist seit dem Relaunch 2026 einsprachig
+  function lang() { return 'de'; } // Seite ist einsprachig
   function t(de, en) { return lang() === 'en' ? en : de; }
   function cssVar(name, fallback) {
     var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
