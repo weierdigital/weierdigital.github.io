@@ -322,6 +322,9 @@ section{ position:relative; }
   letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
   padding-bottom:13px; border-bottom:1px solid var(--line); margin-bottom:17px;
 }
+.tools h3{ display:flex; align-items:center; gap:10px; }
+.tools h3 svg{ width:22px; height:22px; flex:none; fill:none; stroke:var(--accent);
+  stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
 .tools li{ font-size:16px; color:var(--ink-2); padding:7px 0; }
 .tools li b{ color:var(--ink); font-weight:600; }
 
@@ -350,6 +353,17 @@ section{ position:relative; }
 .klink svg{ width:16px; height:16px; flex:none; }
 .klink--static{ border-style:dashed; color:var(--muted); cursor:default; }
 .klink--static:hover{ border-color:var(--line-2); color:var(--muted); }
+
+/* Kontakt auf Akzentfläche: Weiß auf --accent = 4.9:1 */
+.band--accent{ background:var(--accent); color:#fff; }
+.band--accent > .wrap > p{ color:#fff; }
+.band--accent .mailto{ color:#fff; border-bottom-color:#fff; }
+.band--accent .mailto:hover{ color:#fff; border-bottom-color:transparent; }
+.band--accent .klink{ background:transparent; color:#fff; border-color:#ffffff8c; }
+.band--accent .klink:hover{ background:#fff; color:var(--accent-deep); border-color:#fff; }
+.band--accent .klink--static,
+.band--accent .klink--static:hover{ background:transparent; color:#fff; border-color:#ffffff8c; }
+.band--accent :focus-visible{ outline-color:#fff; }
 
 /* Footer ───────────────────────────────────────────────────────────────── */
 .foot{ border-top:1px solid var(--line); padding:34px 0; }
