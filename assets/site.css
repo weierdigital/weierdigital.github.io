@@ -205,13 +205,6 @@ section{ position:relative; }
   text-transform:uppercase; color:var(--muted); padding-top:4px; }
 .kurz dd{ margin:0; color:var(--ink); font-size:16px; }
 
-/* Kompetenz-Karten ─────────────────────────────────────────────────────── */
-.cards{ display:grid; grid-template-columns:repeat(2,1fr); column-gap:56px;
-  border-top:1px solid var(--line); }
-.card{ padding:24px 0 26px; border-bottom:1px solid var(--line); }
-.card h3{ font-size:21px; margin:0 0 8px; }
-.card p{ color:var(--ink-2); font-size:16px; line-height:1.6; max-width:52ch; }
-
 /* Werdegang ────────────────────────────────────────────────────────────── */
 .cv{ position:relative; padding-left:34px; }
 .cv::before{
@@ -237,14 +230,9 @@ section{ position:relative; }
 }
 .cv-item h3{ font-size:20px; margin:9px 0 3px; }
 .cv-where{ font-size:14.5px; color:var(--muted); font-weight:500; }
+.cv-item > p a{ color:var(--accent); }
 .cv-item > p{ margin-top:13px; color:var(--ink-2); font-size:16px; max-width:64ch; }
-.cv-bul{ margin-top:15px; display:flex; flex-wrap:wrap; gap:8px; }
-.cv-bul li{
-  font-family:var(--f-label); font-size:13px; color:var(--ink-2);
-  background:var(--surface); border:1px solid var(--line);
-  padding:5px 10px; border-radius:var(--r);
-}
-/* Beschreibende Taetigkeiten (im Gegensatz zu den Stichwort-Chips oben) */
+/* Beschreibende Tätigkeiten */
 .cv-tasks{ margin-top:15px; display:grid; gap:8px; }
 .cv-tasks li{
   position:relative; padding-left:19px; max-width:64ch;
@@ -287,7 +275,7 @@ section{ position:relative; }
 
 .sys-note{ margin-top:22px; color:var(--muted); font-size:15px; }
 
-/* Werkzeuge ────────────────────────────────────────────────────────────── */
+/* Kompetenzen ────────────────────────────────────────────────────────────── */
 .tools{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
 .tools h3{
   font-family:var(--f-label); font-size:12.5px; font-weight:500;
@@ -470,7 +458,6 @@ section{ position:relative; }
   .hero-in{ grid-template-columns:1fr; gap:52px; }
   .shot{ order:-1; max-width:280px; justify-self:start; }
     .profil-grid{ grid-template-columns:1fr; gap:38px; }
-  .cards{ grid-template-columns:repeat(2,1fr); }
   .tools{ grid-template-columns:1fr 1fr; gap:32px; }
 }
 @media (max-width:760px){
@@ -485,8 +472,7 @@ section{ position:relative; }
   .hero-in{ gap:26px; }
   .shot{ max-width:none; }
   .shot-img{ width:96px; flex:none; border-radius:8px; }
-      .cards{ grid-template-columns:1fr; }
-  .sys-item{ grid-template-columns:1fr; }
+      .sys-item{ grid-template-columns:1fr; }
   .sys-item h3{ grid-row:auto; margin-bottom:12px; }
   .sys-row,.sys-stack{ grid-column:auto; }
   .tools{ grid-template-columns:1fr; gap:28px; }
@@ -510,5 +496,5 @@ section{ position:relative; }
   .top,.btn,.klinks,.foot nav{ display:none !important; }
   body{ background:#fff; font-size:11pt; }
   .band{ padding:22px 0; break-inside:avoid; }
-  .cv-item,.sys-item,.card{ break-inside:avoid; }
+  .cv-item,.sys-item{ break-inside:avoid; }
 }

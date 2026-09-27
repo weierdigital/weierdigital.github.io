@@ -8,7 +8,7 @@ Kein Framework, kein Tracking, keine Cookies, kein Backend. Kontakt läuft über
 ## Struktur
 
 ```
-index.html              One-Pager: Profil, Schwerpunkte, Stationen, Projekte, Werkzeuge, Kontakt
+index.html              One-Pager: Über mich, Stationen, Projekte, Kompetenzen, Kontakt
 impressum/index.html    Impressum
 datenschutz/index.html  Datenschutzerklärung
 snake/index.html        Kleines Spiel, aus dem Footer verlinkt
