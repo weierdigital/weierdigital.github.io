@@ -85,36 +85,5 @@
       cv.querySelectorAll('.cv-item').forEach(function (it) { it.classList.add('lit'); });
       if (fill) fill.style.height = '100%';
     }
-
-    /* ── Kennzahlen hochzählen ───────────────────────────────────────────── */
-    var nums = document.querySelectorAll('[data-count]');
-    if (nums.length) {
-      var run = function (el) {
-        var target = parseFloat(el.getAttribute('data-count'));
-        var dec    = (el.getAttribute('data-count').split('.')[1] || '').length;
-        if (reduce) { el.textContent = target.toFixed(dec).replace('.', ','); return; }
-        var t0 = null, dur = 1100;
-        var step = function (t) {
-          if (t0 === null) t0 = t;
-          var p = Math.min(1, (t - t0) / dur);
-          var e = 1 - Math.pow(1 - p, 3);
-          el.textContent = (target * e).toFixed(dec).replace('.', ',');
-          if (p < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      };
-      if (!hasIO) {
-        nums.forEach(run);
-      } else {
-        var no = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (!e.isIntersecting) return;
-            run(e.target);
-            no.unobserve(e.target);
-          });
-        }, { threshold: 0.6 });
-        nums.forEach(function (el) { no.observe(el); });
-      }
-    }
   });
 })();
